@@ -6,7 +6,7 @@ sidebar_position: 7
 
 Securely manage sensitive configuration data for your .NET projects.
 
-![User Secrets](./img/user-secrets.png)
+![User Secrets](../../static/img/user-secrets.png)
 
 ## Overview
 

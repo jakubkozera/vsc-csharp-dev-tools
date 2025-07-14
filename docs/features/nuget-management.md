@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Manage your NuGet packages directly from the VS Code environment.
 
-![NuGet Management](./img/nuget-manager.png)
+![NuGet Management](../../static/img/nuget-manager.png)
 
 ## Overview
 

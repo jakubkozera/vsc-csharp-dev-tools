@@ -72,7 +72,7 @@ For more detailed logging:
 
 If you encounter a bug or have a feature request:
 
-1. Visit the [GitHub repository](https://github.com/your-publisher/csharp-dev-tools)
+1. Visit the [GitHub repository](https://github.com/jakubkozera/vsc-csharp-dev-tools)
 2. Check if your issue has already been reported
 3. Click on "Issues" and then "New Issue"
 4. Select the appropriate template
@@ -111,7 +111,7 @@ If you experience persistent issues, try resetting the extension:
 For additional help:
 
 1. Check the documentation (this site)
-2. Look for community discussions on [GitHub Discussions](https://github.com/your-publisher/csharp-dev-tools/discussions)
+2. Look for community discussions on [GitHub Discussions](https://github.com/jakubkozera/vsc-csharp-dev-tools/discussions)
 3. Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode-csharp-dev-tools) with the tag `vscode-csharp-dev-tools`
 4. Join the community Discord or Slack channel (if available)
 

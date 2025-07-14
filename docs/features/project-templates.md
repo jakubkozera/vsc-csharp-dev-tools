@@ -6,7 +6,7 @@ sidebar_position: 5
 
 Create new projects and add files with built-in templates designed for .NET development.
 
-![File Templates](./img/file-templates.png)
+![File Templates](../../static/img/project-creation.png)
 
 ## Overview
 
@@ -83,7 +83,7 @@ namespace YourProject.YourNamespace
     {
         public YourClass()
         {
-            
+
         }
     }
 }
@@ -98,7 +98,7 @@ namespace YourProject.YourNamespace
 {
     public interface IYourInterface
     {
-        
+
     }
 }
 ```
@@ -159,8 +159,7 @@ namespace YourProject.Controllers
 Creates a Razor Page with its code-behind file:
 
 ```html
-@page
-@model YourProject.Pages.YourPageModel
+@page @model YourProject.Pages.YourPageModel
 
 <h1>Your Page</h1>
 
@@ -175,15 +174,12 @@ Creates a Blazor component:
 @namespace YourProject.Components
 
 <div class="your-component">
-    <h2>@Title</h2>
-    
-    <p>This is a new Blazor component.</p>
+  <h2>@Title</h2>
+
+  <p>This is a new Blazor component.</p>
 </div>
 
-@code {
-    [Parameter]
-    public string Title { get; set; } = "Your Component";
-}
+@code { [Parameter] public string Title { get; set; } = "Your Component"; }
 ```
 
 ### Configuration Templates

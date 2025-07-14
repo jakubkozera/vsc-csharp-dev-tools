@@ -4,9 +4,12 @@ sidebar_position: 1
 
 # Introduction to C# Dev Tools
 
-**C# Dev Tools** is a comprehensive extension for Visual Studio Code that enhances the .NET development experience, bringing many Visual Studio IDE features into VS Code.
-
-![C# Dev Tools Logo](../static/img/logo.png)
+<div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+  <img src={require("../static/img/logo.png").default} alt="C# Dev Tools Logo" style={{ width: "100px", height: "100px", objectFit: "contain" }} />
+  <span>
+    <strong>C# Dev Tools</strong> is a comprehensive extension for Visual Studio Code that enhances the .NET development experience, bringing many Visual Studio IDE features into VS Code.
+  </span>
+</div>
 
 ## What is C# Dev Tools?
 

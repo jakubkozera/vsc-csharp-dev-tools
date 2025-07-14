@@ -6,17 +6,27 @@ sidebar_position: 1
 
 The Solution Explorer is a core feature of C# Dev Tools, providing a Visual Studio-like experience for managing .NET projects.
 
-![Solution Explorer](./img/solution-explorer.png)
-
 ## Overview
 
-The Solution Explorer gives you a complete hierarchical view of your .NET solution, including:
-
-- Solution files and properties
-- Projects and project references
-- Solution folders
-- File system folders and files
-- Dependencies (NuGet packages and project references)
+<div style={{ display: "flex", alignItems: "flex-start", gap: "32px" }}>
+  <div style={{ flex: 1 }}>
+    <p>
+      The Solution Explorer gives you a complete hierarchical view of your .NET solution, including:
+    </p>
+    <ul>
+      <li>Solution files and properties</li>
+      <li>Projects and project references</li>
+      <li>Solution folders</li>
+      <li>File system folders and files</li>
+      <li>Dependencies (NuGet packages and project references)</li>
+    </ul>
+  </div>
+  <img
+    src={require("../../static/img/solution-explorer.png").default}
+    alt="Solution Explorer"
+    style={{ width: "320px", maxWidth: "40%" }}
+  />
+</div>
 
 ## Basic Navigation
 

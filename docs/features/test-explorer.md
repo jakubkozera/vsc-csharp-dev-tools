@@ -6,7 +6,7 @@ sidebar_position: 2
 
 The Test Explorer integrates with VS Code's testing functionality to provide a seamless testing experience for .NET projects.
 
-![Test Explorer](./img/test-explorer.png)
+![Test Explorer](../../static/img/test-explorer.png)
 
 ## Overview
 
@@ -82,6 +82,7 @@ To debug a test:
 After running tests:
 
 1. Test icons will update to show pass/fail status
+
    - ✓ Green check: Passed
    - ✗ Red X: Failed
    - ⚠ Yellow triangle: Skipped or inconclusive

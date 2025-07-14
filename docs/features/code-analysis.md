@@ -6,7 +6,7 @@ sidebar_position: 6
 
 Enhance your coding experience with intelligent code analysis features designed specifically for C# development.
 
-![Code Analysis](./img/code-analysis.png)
+![Code Analysis](../../static/img/editor-features.png)
 
 ## Overview
 

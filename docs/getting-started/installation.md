@@ -6,6 +6,9 @@ sidebar_position: 1
 
 Get up and running with C# Dev Tools quickly and easily.
 
+> **Marketplace Link:**  
+> [C# Dev Tools on Visual Studio Marketplace](https://marketplace.visualstudio.com/items/?itemName=JakubKozera.csharp-dev-tools)
+
 ## Prerequisites
 
 Before installing C# Dev Tools, ensure you have:
@@ -22,16 +25,6 @@ Before installing C# Dev Tools, ensure you have:
 2. Click on the Extensions view icon in the Activity Bar (or press `Ctrl+Shift+X`)
 3. Search for "C# Dev Tools"
 4. Click the **Install** button
-
-### From VSIX File
-
-If you have a `.vsix` file:
-
-1. Open VS Code
-2. Press `Ctrl+Shift+P` to open the Command Palette
-3. Type "Install from VSIX" and select that command
-4. Navigate to your `.vsix` file and select it
-5. Restart VS Code when prompted
 
 ## Verifying Installation
 

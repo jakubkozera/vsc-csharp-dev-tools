@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Advanced Search provides powerful type and symbol search capabilities across your entire codebase.
 
-![Advanced Search](./img/advanced-search.png)
+![Advanced Search](../../static/img/advanced-search.png)
 
 ## Overview
 
@@ -60,40 +60,6 @@ ShoppingCart@AddItem
 
 This will find methods named "AddItem" within types named "ShoppingCart".
 
-### Namespace Filtering
-
-To search within a specific namespace:
-
-```csharp
-namespace:Company.Project
-```
-
-This can be combined with other searches:
-
-```csharp
-namespace:Company.Project Customer@Update
-```
-
-### Advanced Filtering
-
-You can filter by symbol type:
-
-- `class:` - Search for classes only
-- `interface:` - Search for interfaces only
-- `enum:` - Search for enumerations only
-- `struct:` - Search for structs only
-- `record:` - Search for records only
-- `method:` - Search for methods only
-- `property:` - Search for properties only
-
-Examples:
-
-```csharp
-class:Repository
-method:GetUsers
-interface:ICustomer
-```
-
 ## Search Results
 
 The search results display:
@@ -111,20 +77,6 @@ To navigate to a search result:
 1. Click on the result
 2. The file will open with the cursor positioned at the symbol definition
 3. For large files, the relevant section will be automatically expanded and scrolled into view
-
-## Using Wildcards
-
-The search supports wildcards for more flexible matching:
-
-- `*` - Matches any number of characters
-- `?` - Matches a single character
-
-Examples:
-
-```csharp
-User*Repository
-I?Command
-```
 
 ## Search Index
 
@@ -147,7 +99,6 @@ For optimal performance:
 1. Be specific in your searches to reduce result count
 2. Use scoped searches when looking for common member names
 3. Rebuild the search index if results seem outdated
-4. Consider using namespace filters in large codebases
 
 ## Customizing Advanced Search
 

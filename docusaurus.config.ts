@@ -3,8 +3,8 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "C# Dev Tools",
+  tagline: "Powerful tools for C# development in VS Code",
   favicon: "img/favicon.ico",
 
   future: {
@@ -12,13 +12,9 @@ const config: Config = {
   },
 
   // Set the production URL of your site
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://jakubkozera.github.io",
   // Set the base URL to point directly to the docs
   baseUrl: "/docs", // Changed to make /docs/ the root
-
-  // GitHub pages deployment config
-  organizationName: "facebook", // Your GitHub org/user name
-  projectName: "docusaurus", // Your repo name
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -49,22 +45,17 @@ const config: Config = {
   themeConfig: {
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "My Site",
-      logo: {
-        alt: "My Site Logo",
-        src: "img/logo.png",
-      },
       items: [
         {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Docs", // Changed label to reflect focus on docs
+          label: "C# Dev Tools Docs", // Changed label to reflect focus on docs
         },
         {
-          href: "https://github.com/jakubkozera/csharp-dev-tools",
+          href: "https://github.com/jakubkozera/vsc-csharp-dev-tools",
           label: "GitHub",
-          position: "right",
+          position: "left",
         },
       ],
     },
