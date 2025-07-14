@@ -14,7 +14,7 @@ const config: Config = {
   // Set the production URL of your site
   url: "https://jakubkozera.github.io",
   // Set the base URL to point directly to the docs
-  baseUrl: "/docs", // Changed to make /docs/ the root
+  baseUrl: "/vsc-csharp-dev-tools", // Changed to make /docs/ the root
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
