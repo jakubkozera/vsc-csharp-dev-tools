@@ -1,3 +1,5 @@
+![Demo](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/csharp-dev-tools.mp4)
+
 # C# Solution Explorer Extension
 
 A comprehensive VS Code extension that provides Solution Explorer functionality for .NET projects with file template support and code analysis features.
