@@ -1,4 +1,4 @@
-![Demo](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/csharp-dev-tools.mp4)
+![Demo](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/csharp-dev-tools.gif)
 
 # C# Solution Explorer Extension
 
