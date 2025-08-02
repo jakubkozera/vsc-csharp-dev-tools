@@ -65,5 +65,6 @@ Now that you're familiar with the basics, explore these features:
 
 - [Solution Explorer](../features/solution-explorer): Learn how to navigate and manage your .NET solutions
 - [Test Explorer](../features/test-explorer): Discover, run, and debug your tests
+- [Test Generation](../features/test-generation): Generate AI-powered unit tests with GitHub Copilot
 - [Advanced Search](../features/advanced-search): Quickly find types and symbols in your codebase
 - [NuGet Management](../features/nuget-management): Manage your project's packages

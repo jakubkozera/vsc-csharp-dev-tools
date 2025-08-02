@@ -17,6 +17,7 @@ C# Dev Tools transforms VS Code into a powerful C# development environment by pr
 
 - A full-featured **Solution Explorer** similar to Visual Studio
 - Advanced **Test Explorer** integration
+- **AI-Powered Test Generation** with GitHub Copilot integration
 - Quick **Symbol Search** for navigating large codebases
 - Built-in **NuGet Package Management**
 - Smart **Code Analysis** tools
