@@ -21,6 +21,7 @@ C# Dev Tools transforms VS Code into a powerful C# development environment by pr
 - Quick **Symbol Search** for navigating large codebases
 - Built-in **NuGet Package Management**
 - Smart **Code Analysis** tools
+- Comprehensive **Bookmark System** for code navigation
 - Robust **Project & File Templates**
 - Secure **User Secrets Management**
 

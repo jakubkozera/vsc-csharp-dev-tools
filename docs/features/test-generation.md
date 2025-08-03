@@ -1,8 +1,8 @@
 # Test Generation
 
-The Test Generation feature provides an advanced, AI-powered system for creating comprehensive unit tests for your C# methods. With full GitHub Copilot integration, it intelligently analyzes your source code and generates contextually appropriate tests.
+The Test Generation feature provides an advanced, with optional AI-powered system for creating comprehensive unit tests for your C# methods. With full GitHub Copilot integration, it intelligently analyzes your source code and generates contextually appropriate tests.
 
-![Test Generation](../../static/img/test-explorer.png)
+![Test Generation](./img/test-generation.png)
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ You can access the test generation feature in several ways:
 
 ### Prerequisites
 
-- GitHub Copilot extension must be installed and activated
+- (optional) GitHub Copilot extension must be installed and activated
 - A .NET solution must be loaded in your workspace
 - The source file must contain at least one method
 

@@ -35,6 +35,15 @@ These shortcuts are active when the Solution Explorer is focused:
 | `Ctrl+F5` | Run Startup Project without debugging |
 | `Shift+Ctrl+F5` | Select Startup Project |
 
+## Bookmark Shortcuts
+
+| Shortcut | Description |
+|----------|-------------|
+| `Alt+Shift+Down` | Toggle bookmark at current line |
+| `Alt+Shift+Right` | Go to next bookmark (globally) |
+| `Alt+Shift+Left` | Go to previous bookmark (globally) |
+| `Alt+Shift+Up` | Show bookmark and breakpoint quick-pick |
+
 ## Editor Shortcuts
 
 | Shortcut | Command | Description |
