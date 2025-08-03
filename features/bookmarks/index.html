@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-features/bookmarks" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">Bookmarks | C# Dev Tools</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/features/bookmarks"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Bookmarks | C# Dev Tools"><meta data-rh="true" name="description" content="The Bookmarks feature provides a comprehensive system for marking and navigating to important locations in your code across your entire workspace."><meta data-rh="true" property="og:description" content="The Bookmarks feature provides a comprehensive system for marking and navigating to important locations in your code across your entire workspace."><link data-rh="true" rel="icon" href="/vsc-csharp-dev-tools/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/features/bookmarks"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/features/bookmarks" hreflang="en"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/features/bookmarks" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Features","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/category/features"},{"@type":"ListItem","position":2,"name":"Bookmarks","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/features/bookmarks"}]}</script><link rel="stylesheet" href="/vsc-csharp-dev-tools/assets/css/styles.be11d6db.css">
+<script src="/vsc-csharp-dev-tools/assets/js/runtime~main.a711910b.js" defer="defer"></script>
+<script src="/vsc-csharp-dev-tools/assets/js/main.5987cffa.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/vsc-csharp-dev-tools/assets/images/bookmarks-7bc99fa039f069db99a6863d5c6594b5.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/vsc-csharp-dev-tools/"></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/vsc-csharp-dev-tools/">C# Dev Tools Docs</a><a href="https://github.com/jakubkozera/vsc-csharp-dev-tools" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/vsc-csharp-dev-tools/">Introduction to C# Dev Tools</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/category/getting-started">Getting Started</a><button aria-label="Expand sidebar category &#x27;Getting Started&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/vsc-csharp-dev-tools/category/features">Features</a><button aria-label="Collapse sidebar category &#x27;Features&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/features/solution-explorer">Solution Explorer</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/features/test-explorer">Test Explorer</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/features/advanced-search">Advanced Search</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/features/nuget-management">NuGet Management</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/features/project-templates">Project and File Templates</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/features/code-analysis">Code Analysis Features</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/features/user-secrets">User Secrets Management</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/vsc-csharp-dev-tools/features/bookmarks">Bookmarks</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/features/test-generation">Test Generation</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/category/configuration">Configuration</a><button aria-label="Expand sidebar category &#x27;Configuration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/category/advanced-usage">Advanced Usage</a><button aria-label="Expand sidebar category &#x27;Advanced Usage&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/vsc-csharp-dev-tools/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/vsc-csharp-dev-tools/category/features"><span>Features</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Bookmarks</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Bookmarks</h1></header>
+<p>The Bookmarks feature provides a comprehensive system for marking and navigating to important locations in your code across your entire workspace.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<div style="display:flex;align-items:flex-start;gap:32px"><div style="flex:1"><p></p><p>The Bookmark system enhances your coding workflow by allowing you to:</p><p></p><ul><li>Mark important code locations with visual indicators</li><li>Navigate between bookmarks globally across all files</li><li>Organize bookmarks in a dedicated tree view</li><li>Add labels to bookmarks for better organization</li><li>Integrate with debugging breakpoints for unified navigation</li><li>Use keyboard shortcuts for efficient bookmark management</li></ul></div></div>
+<img src="/vsc-csharp-dev-tools/assets/images/bookmarks-7bc99fa039f069db99a6863d5c6594b5.png" alt="Bookmarks Feature" style="max-width:80%">
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="getting-started">Getting Started<a href="#getting-started" class="hash-link" aria-label="Direct link to Getting Started" title="Direct link to Getting Started">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="accessing-bookmarks">Accessing Bookmarks<a href="#accessing-bookmarks" class="hash-link" aria-label="Direct link to Accessing Bookmarks" title="Direct link to Accessing Bookmarks">​</a></h3>
+<p>Bookmarks are available in the <strong>Tools</strong> section of the Solution Explorer:</p>
+<ol>
+<li>Open the Solution Explorer from the Activity Bar</li>
+<li>Expand the <strong>Tools</strong> section</li>
+<li>The <strong>Bookmarks</strong> subsection shows all your workspace bookmarks</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="creating-your-first-bookmark">Creating Your First Bookmark<a href="#creating-your-first-bookmark" class="hash-link" aria-label="Direct link to Creating Your First Bookmark" title="Direct link to Creating Your First Bookmark">​</a></h3>
+<p>There are several ways to create a bookmark:</p>
+<p><strong>Using Keyboard Shortcut:</strong></p>
+<ol>
+<li>Position your cursor on the line you want to bookmark</li>
+<li>Press <code>Alt+Shift+Down</code> to toggle a bookmark</li>
+</ol>
+<p><strong>Using Gutter Right-Click:</strong></p>
+<ol>
+<li>Right-click on the line number in the editor gutter</li>
+<li>Select <strong>Toggle Bookmark</strong> or <strong>Add Labeled Bookmark</strong></li>
+</ol>
+<p><strong>Using Command Palette:</strong></p>
+<ol>
+<li>Press <code>Ctrl+Shift+P</code> to open the Command Palette</li>
+<li>Type &quot;Toggle Bookmark&quot; and select the command</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="navigation">Navigation<a href="#navigation" class="hash-link" aria-label="Direct link to Navigation" title="Direct link to Navigation">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="global-navigation">Global Navigation<a href="#global-navigation" class="hash-link" aria-label="Direct link to Global Navigation" title="Direct link to Global Navigation">​</a></h3>
+<p>Unlike many bookmark systems that only navigate within the current file, C# Dev Tools provides <strong>global navigation</strong> across your entire workspace:</p>
+<ul>
+<li><strong>Next Bookmark</strong>: <code>Alt+Shift+Right</code> - Jump to the next bookmark in any file</li>
+<li><strong>Previous Bookmark</strong>: <code>Alt+Shift+Left</code> - Jump to the previous bookmark in any file</li>
+</ul>
+<p>Navigation wraps around, so after the last bookmark, it will jump to the first bookmark in your workspace.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="unified-bookmark-and-breakpoint-navigation">Unified Bookmark and Breakpoint Navigation<a href="#unified-bookmark-and-breakpoint-navigation" class="hash-link" aria-label="Direct link to Unified Bookmark and Breakpoint Navigation" title="Direct link to Unified Bookmark and Breakpoint Navigation">​</a></h3>
+<p>Press <code>Alt+Shift+Up</code> to open a unified quick-pick interface that shows:</p>
+<ul>
+<li>All workspace bookmarks with their labels and file locations</li>
+<li>All active debugging breakpoints</li>
+<li>Visual separator between bookmarks and breakpoints</li>
+</ul>
+<p>This allows you to quickly jump between both code bookmarks and debugging breakpoints from a single interface.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tree-view-navigation">Tree View Navigation<a href="#tree-view-navigation" class="hash-link" aria-label="Direct link to Tree View Navigation" title="Direct link to Tree View Navigation">​</a></h3>
+<p>In the Solution Explorer&#x27;s Tools &gt; Bookmarks section:</p>
+<ol>
+<li><strong>File Level</strong>: See all files that contain bookmarks</li>
+<li><strong>Bookmark Level</strong>: Expand files to see individual bookmarks with their labels and line numbers</li>
+<li><strong>Click to Navigate</strong>: Click any bookmark to jump directly to that location</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="visual-indicators">Visual Indicators<a href="#visual-indicators" class="hash-link" aria-label="Direct link to Visual Indicators" title="Direct link to Visual Indicators">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="gutter-icons">Gutter Icons<a href="#gutter-icons" class="hash-link" aria-label="Direct link to Gutter Icons" title="Direct link to Gutter Icons">​</a></h3>
+<p>Bookmarked lines display a bookmark icon in the editor gutter, making them easily visible while coding.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="bookmark-management">Bookmark Management<a href="#bookmark-management" class="hash-link" aria-label="Direct link to Bookmark Management" title="Direct link to Bookmark Management">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="adding-labels">Adding Labels<a href="#adding-labels" class="hash-link" aria-label="Direct link to Adding Labels" title="Direct link to Adding Labels">​</a></h3>
+<p>When creating a bookmark via right-click gutter menu:</p>
+<ol>
+<li>Right-click on a line number in the gutter</li>
+<li>Select <strong>Add Labeled Bookmark</strong></li>
+<li>Enter a descriptive label for the bookmark</li>
+<li>The label will appear in the tree view and quick-pick interface</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="removing-bookmarks">Removing Bookmarks<a href="#removing-bookmarks" class="hash-link" aria-label="Direct link to Removing Bookmarks" title="Direct link to Removing Bookmarks">​</a></h3>
+<p><strong>Individual Bookmarks:</strong></p>
+<ul>
+<li>Use <code>Alt+Shift+Down</code> on a bookmarked line to toggle it off</li>
+<li>Right-click the gutter and select <strong>Remove Bookmark</strong></li>
+<li>Click the X button next to a bookmark in the tree view (appears on hover)</li>
+</ul>
+<p><strong>File-Level Clearing:</strong></p>
+<ul>
+<li>In the tree view, hover over a file with bookmarks</li>
+<li>Click the X button to clear all bookmarks in that file</li>
+</ul>
+<p><strong>Clear All Bookmarks:</strong></p>
+<ul>
+<li>Click the <strong>Clear All</strong> button in the Bookmarks tree view header</li>
+<li>Or use the command palette: &quot;Clear All Bookmarks&quot;</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="inline-actions">Inline Actions<a href="#inline-actions" class="hash-link" aria-label="Direct link to Inline Actions" title="Direct link to Inline Actions">​</a></h3>
+<p>The bookmark tree view provides hover-activated inline actions:</p>
+<ul>
+<li><strong>X Button on Files</strong>: Clear all bookmarks in the selected file</li>
+<li><strong>X Button on Bookmarks</strong>: Remove individual bookmarks</li>
+<li><strong>Clear All Button</strong>: Remove all bookmarks from the workspace</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="keyboard-shortcuts">Keyboard Shortcuts<a href="#keyboard-shortcuts" class="hash-link" aria-label="Direct link to Keyboard Shortcuts" title="Direct link to Keyboard Shortcuts">​</a></h2>
+<table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody><tr><td><code>Alt+Shift+Down</code></td><td>Toggle bookmark at current line</td></tr><tr><td><code>Alt+Shift+Right</code></td><td>Go to next bookmark (globally)</td></tr><tr><td><code>Alt+Shift+Left</code></td><td>Go to previous bookmark (globally)</td></tr><tr><td><code>Alt+Shift+Up</code></td><td>Show bookmark and breakpoint quick-pick</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="context-menus">Context Menus<a href="#context-menus" class="hash-link" aria-label="Direct link to Context Menus" title="Direct link to Context Menus">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="gutter-context-menu">Gutter Context Menu<a href="#gutter-context-menu" class="hash-link" aria-label="Direct link to Gutter Context Menu" title="Direct link to Gutter Context Menu">​</a></h3>
+<p>Right-click on any line number in the editor gutter to access:</p>
+<ul>
+<li><strong>Toggle Bookmark</strong>: Add or remove a bookmark on that line</li>
+<li><strong>Add Labeled Bookmark</strong>: Create a bookmark with a custom label</li>
+<li><strong>Remove Bookmark</strong>: Remove an existing bookmark (when present)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tree-view-context-menu">Tree View Context Menu<a href="#tree-view-context-menu" class="hash-link" aria-label="Direct link to Tree View Context Menu" title="Direct link to Tree View Context Menu">​</a></h3>
+<p>Right-click on items in the bookmark tree view:</p>
+<p><strong>File Items:</strong></p>
+<ul>
+<li><strong>Clear File Bookmarks</strong>: Remove all bookmarks from the selected file</li>
+</ul>
+<p><strong>Bookmark Items:</strong></p>
+<ul>
+<li><strong>Go to Bookmark</strong>: Navigate to the bookmark location</li>
+<li><strong>Remove Bookmark</strong>: Delete the selected bookmark</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="integration-features">Integration Features<a href="#integration-features" class="hash-link" aria-label="Direct link to Integration Features" title="Direct link to Integration Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="auto-refresh">Auto-Refresh<a href="#auto-refresh" class="hash-link" aria-label="Direct link to Auto-Refresh" title="Direct link to Auto-Refresh">​</a></h3>
+<p>The bookmark tree view automatically updates when:</p>
+<ul>
+<li>New bookmarks are added</li>
+<li>Existing bookmarks are removed</li>
+<li>Files are renamed or moved</li>
+<li>The workspace is refreshed</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="multi-file-support">Multi-File Support<a href="#multi-file-support" class="hash-link" aria-label="Direct link to Multi-File Support" title="Direct link to Multi-File Support">​</a></h3>
+<p>Bookmarks work seamlessly across:</p>
+<ul>
+<li>Multiple files in the same project</li>
+<li>Files in different projects within the solution</li>
+<li>Files outside of projects but within the workspace</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="smart-sorting">Smart Sorting<a href="#smart-sorting" class="hash-link" aria-label="Direct link to Smart Sorting" title="Direct link to Smart Sorting">​</a></h3>
+<p>Bookmarks are displayed in a logical order:</p>
+<ul>
+<li><strong>Tree View</strong>: Grouped by file, then by line number</li>
+<li><strong>Quick-Pick</strong>: Sorted by file path, then by line number</li>
+<li><strong>Global Navigation</strong>: Sequential order across all files</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tips-and-best-practices">Tips and Best Practices<a href="#tips-and-best-practices" class="hash-link" aria-label="Direct link to Tips and Best Practices" title="Direct link to Tips and Best Practices">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="effective-labeling">Effective Labeling<a href="#effective-labeling" class="hash-link" aria-label="Direct link to Effective Labeling" title="Direct link to Effective Labeling">​</a></h3>
+<p>Use descriptive labels for your bookmarks:</p>
+<ul>
+<li><code>TODO: Refactor this method</code></li>
+<li><code>Bug: Fix null reference here</code></li>
+<li><code>Review: Performance bottleneck</code></li>
+<li><code>Entry point for feature X</code></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="workflow-integration">Workflow Integration<a href="#workflow-integration" class="hash-link" aria-label="Direct link to Workflow Integration" title="Direct link to Workflow Integration">​</a></h3>
+<p>Combine bookmarks with other features:</p>
+<ul>
+<li>Mark important code sections while debugging</li>
+<li>Bookmark areas that need refactoring</li>
+<li>Mark entry points for complex features</li>
+<li>Use with breakpoints for comprehensive code navigation</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="keyboard-driven-workflow">Keyboard-Driven Workflow<a href="#keyboard-driven-workflow" class="hash-link" aria-label="Direct link to Keyboard-Driven Workflow" title="Direct link to Keyboard-Driven Workflow">​</a></h3>
+<p>For maximum efficiency:</p>
+<ol>
+<li>Use <code>Alt+Shift+Down</code> to quickly mark locations while coding</li>
+<li>Use <code>Alt+Shift+Right/Left</code> for fast navigation during code reviews</li>
+<li>Use <code>Alt+Shift+Up</code> when you need to choose between multiple bookmarks or breakpoints</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="project-organization">Project Organization<a href="#project-organization" class="hash-link" aria-label="Direct link to Project Organization" title="Direct link to Project Organization">​</a></h3>
+<p>Organize bookmarks by purpose:</p>
+<ul>
+<li>Keep temporary bookmarks for current work sessions</li>
+<li>Use labeled bookmarks for permanent reference points</li>
+<li>Clear old bookmarks regularly to maintain a clean workspace</li>
+</ul>
+<p>The bookmark system is designed to enhance your coding productivity by providing quick access to important code locations while maintaining a clean and organized development environment.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/vsc-csharp-dev-tools/features/user-secrets"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">User Secrets Management</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/vsc-csharp-dev-tools/features/test-generation"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Test Generation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#getting-started" class="table-of-contents__link toc-highlight">Getting Started</a><ul><li><a href="#accessing-bookmarks" class="table-of-contents__link toc-highlight">Accessing Bookmarks</a></li><li><a href="#creating-your-first-bookmark" class="table-of-contents__link toc-highlight">Creating Your First Bookmark</a></li></ul></li><li><a href="#navigation" class="table-of-contents__link toc-highlight">Navigation</a><ul><li><a href="#global-navigation" class="table-of-contents__link toc-highlight">Global Navigation</a></li><li><a href="#unified-bookmark-and-breakpoint-navigation" class="table-of-contents__link toc-highlight">Unified Bookmark and Breakpoint Navigation</a></li><li><a href="#tree-view-navigation" class="table-of-contents__link toc-highlight">Tree View Navigation</a></li></ul></li><li><a href="#visual-indicators" class="table-of-contents__link toc-highlight">Visual Indicators</a><ul><li><a href="#gutter-icons" class="table-of-contents__link toc-highlight">Gutter Icons</a></li></ul></li><li><a href="#bookmark-management" class="table-of-contents__link toc-highlight">Bookmark Management</a><ul><li><a href="#adding-labels" class="table-of-contents__link toc-highlight">Adding Labels</a></li><li><a href="#removing-bookmarks" class="table-of-contents__link toc-highlight">Removing Bookmarks</a></li><li><a href="#inline-actions" class="table-of-contents__link toc-highlight">Inline Actions</a></li></ul></li><li><a href="#keyboard-shortcuts" class="table-of-contents__link toc-highlight">Keyboard Shortcuts</a></li><li><a href="#context-menus" class="table-of-contents__link toc-highlight">Context Menus</a><ul><li><a href="#gutter-context-menu" class="table-of-contents__link toc-highlight">Gutter Context Menu</a></li><li><a href="#tree-view-context-menu" class="table-of-contents__link toc-highlight">Tree View Context Menu</a></li></ul></li><li><a href="#integration-features" class="table-of-contents__link toc-highlight">Integration Features</a><ul><li><a href="#auto-refresh" class="table-of-contents__link toc-highlight">Auto-Refresh</a></li><li><a href="#multi-file-support" class="table-of-contents__link toc-highlight">Multi-File Support</a></li><li><a href="#smart-sorting" class="table-of-contents__link toc-highlight">Smart Sorting</a></li></ul></li><li><a href="#tips-and-best-practices" class="table-of-contents__link toc-highlight">Tips and Best Practices</a><ul><li><a href="#effective-labeling" class="table-of-contents__link toc-highlight">Effective Labeling</a></li><li><a href="#workflow-integration" class="table-of-contents__link toc-highlight">Workflow Integration</a></li><li><a href="#keyboard-driven-workflow" class="table-of-contents__link toc-highlight">Keyboard-Driven Workflow</a></li><li><a href="#project-organization" class="table-of-contents__link toc-highlight">Project Organization</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
