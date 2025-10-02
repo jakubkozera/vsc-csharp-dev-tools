@@ -38,6 +38,7 @@ const sidebars: SidebarsConfig = {
         'solution-explorer/adding-existing-projects',
         'solution-explorer/multi-root-workspace',
         'solution-explorer/running-debugging',
+        'solution-explorer/advanced-search',
         'solution-explorer/recent-solutions',
       ],
     },
