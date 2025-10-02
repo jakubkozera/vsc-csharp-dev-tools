@@ -1,0 +1,8 @@
+{
+  "label": "Tools",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Additional productivity tools and utilities."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Source Control",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Integrated source control features for GitHub and Azure DevOps."
+  }
+}

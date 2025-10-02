@@ -12,7 +12,7 @@ Get help with common issues and learn how to get support for C# Dev Tools.
 
 If the Solution Explorer doesn't appear:
 
-1. Ensure you have a `.sln` file in your workspace
+1. Ensure you have a `.sln` file in your workspac e
 2. Click the C# icon in the Activity Bar
 3. Try running the command "C# Solution Explorer: Open Solution Explorer" from the Command Palette
 4. Check that the extension is properly installed and enabled

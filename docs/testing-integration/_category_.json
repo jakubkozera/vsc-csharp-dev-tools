@@ -1,0 +1,8 @@
+{
+  "label": "Testing Integration",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Comprehensive testing support for .NET projects."
+  }
+}

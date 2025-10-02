@@ -1,0 +1,8 @@
+{
+  "label": "NuGet Package Management",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Comprehensive NuGet package management for .NET projects."
+  }
+}
