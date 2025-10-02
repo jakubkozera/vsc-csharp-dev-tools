@@ -33,12 +33,28 @@ const config: Config = {
           // Set the docs route as the default landing page
           routeBasePath: "/", // Makes /docs/ content appear at the root
         },
-        // Disable the blog if you don’t need it
+        // Disable the blog if you don't need it
         blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: "/",
+      },
     ],
   ],
 
