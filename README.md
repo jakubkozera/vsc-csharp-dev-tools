@@ -1,8 +1,75 @@
 ![Demo](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/csharp-dev-tools.gif)
 
-# C# Solution Explorer Extension
+<table>
+<tr>
+<td width="50%" valign="top">
 
-A comprehensive VS Code extension that provides Solution Explorer functionality for .NET projects with file template support and code analysis features.
+### [Solution Explorer](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer)
+
+- [Opening Solutions](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/opening-solutions)
+- [Creating Projects](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/creating-projects)
+- [Adding Existing Projects](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/adding-existing-projects)
+- [Multi-root Workspace](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/multi-root-workspace)
+- [Running & Debugging](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/running-debugging)
+- [Advanced Search](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/advanced-search)
+- [Recent Solutions](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/recent-solutions)
+
+### [NuGet Package Management](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management)
+
+- [Browsing Packages](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management/browsing-packages)
+- [Installing Packages](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management/installing-packages)
+- [Updating Packages](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management/updating-packages)
+- [Removing Packages](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management/removing-packages)
+- [Credential Injection](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management/credential-injection)
+- [Package Restore](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management/package-restore)
+- [NuGet Configuration](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management/nuget-configuration)
+
+### [File Templates & Quick File Creation](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates)
+
+- [Quick Add (Shift+F2)](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/quick-add)
+- [JSON to C# Conversion](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/json-to-csharp)
+- [Available Templates](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/available-templates)
+- [Custom Templates](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/custom-templates)
+- [Namespace Detection](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/namespace-detection)
+- [File Location Context](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/file-location-context)
+
+### [Testing Integration](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration)
+
+- [Running & Debugging Tests](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/running-debugging-tests)
+- [Test Generation](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/test-generation)
+- [SpecFlow Support](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/specflow-support)
+- [Playwright Integration](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/playwright-integration)
+
+### [Code Navigation & IntelliSense](https://jakubkozera.github.io/vsc-csharp-dev-tools/code-navigation)
+
+- [Inlay Hints](https://jakubkozera.github.io/vsc-csharp-dev-tools/code-navigation/inlay-hints)
+- [Unused Symbols Detection](https://jakubkozera.github.io/vsc-csharp-dev-tools/code-navigation/unused-symbols)
+- [Code Lens Features](https://jakubkozera.github.io/vsc-csharp-dev-tools/code-navigation/code-lens)
+- [Semantic Colors](https://jakubkozera.github.io/vsc-csharp-dev-tools/code-navigation/semantic-colors)
+
+### [Source Control](https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control)
+
+- [GitHub Integration](https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/github-integration)
+- [Azure DevOps Integration](https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/azure-devops-integration)
+- [Copilot Code Review](https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/copilot-code-review)
+
+### [Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools)
+
+- [Bookmarks](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/bookmarks)
+- [Diagrams](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/diagrams)
+- [Text Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/text-tools)
+- [UI Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/ui-tools)
+
+</td>
+<td width="50%" valign="top">
+
+![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/solution-explorer.png)
+
+</td>
+</tr>
+</table>
+
+---
 
 ## Features
 
@@ -22,7 +89,6 @@ A comprehensive VS Code extension that provides Solution Explorer functionality 
 - View projects, folders, and files in a hierarchical view
 - Support for solution folders and nested projects
 - Drag and drop functionality for moving files
-
 
 ### Code Analysis
 
@@ -47,12 +113,51 @@ The extension automatically detects and highlights unused properties, methods, a
 - Fields (public and private)
 - Events (public and private)
 
+### Debugger Hints
+
+![Debugger Hints](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/debugger-hints.png)
+
+The extension provides advanced debugging features that enhance your debugging experience:
+
+#### Inline Debug Values
+
+- **Real-time Variable Display** - Shows variable values inline at the end of lines where variables are declared or used during debugging sessions
+- **Change Highlighting** - Optional highlighting of changed variables in red/orange (can be disabled), unchanged variables shown in blue for easy identification
+- **Smart Detection** - Automatically finds variable declarations, assignments, loop variables, and method parameters
+- **Complex Object Support** - Displays summaries for objects, arrays, and collections with expandable hover tooltips
+- **Collection Viewer** - Advanced data table with LINQ query execution, sorting, filtering, and CSV export for inspecting collections
+- **Monaco Editor Integration** - Professional C# code editor with IntelliSense for writing and executing LINQ expressions
+- **Performance Optimized** - Debounced updates and efficient refresh logic for smooth debugging experience
+- **Fully Configurable** - Comprehensive settings to customize display behavior, color highlighting, array limits, and object property display
+- **Multi-file Support** - Works seamlessly across all C# files in your workspace during debugging sessions
+
+**Key Features:**
+
+- Toggle on/off via command palette or settings
+- Automatic activation during .NET debug sessions
+- Rich hover tooltips with variable type and full value information
+- Intelligent handling of large collections and complex objects
+- Professional data exploration with LINQ query capabilities
 
 ### File Templates
 
 ![Quick Add](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/quick-add.png)
 
 Right-click on any project or folder in the Solution Explorer to access the "Add -> New Item" menu with the following templates:
+
+### Test generation
+
+![Test generation](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/test-generation.png)
+
+Use the 'Create Tests' code lens to quickly generate test methods for your code.
+
+### Bookmarks
+
+![Bookmarks](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/bookmarks.png)
+
+Use `SHIFT + ALT + DOWN` to toggle bookmarks in your code. Bookmarks are saved per file and can be used to quickly navigate to important sections of your code.
+`SHIFT + ALT + LEFT` and `SHIFT + ALT + RIGHT` can be used to navigate between bookmarks.
+`SHIFT + ALT + UP` can be used to quick pick from all bookmarks in the current workspace.
 
 #### C# Templates
 
@@ -118,7 +223,6 @@ Enhanced Entity Framework Core development with integrated migration management:
 - **Icon Support** - All file types display with appropriate icons from the extensive icon library
 - **File Name Validation** - Ensures valid file names and prevents conflicts
 
-
 ## Usage
 
 ![Project Creation](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/project-creation.png)
@@ -138,7 +242,6 @@ Enhanced Entity Framework Core development with integrated migration management:
 ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
 
 ### Feature Previews
 
@@ -174,22 +277,7 @@ The extension provides the following commands accessible via the Command Palette
 - `C# Solution Explorer: Toggle Unused Symbol Highlighting` - Toggle the unused symbol highlighting feature on/off
 - `C# Solution Explorer: Open Extension Walkthroughs` (Alt+W) - Open the extension walkthroughs to learn about all features
 
-## Known Issues
 
-- Reference analysis may take a moment for large files
-- Some symbols may not be detected correctly if the C# language server is not fully initialized
-
-## Release Notes
-
-### 0.0.1
-
-Initial release featuring:
-
-- Solution Explorer with drag & drop support
-- Comprehensive file templates for C# development
-- Unused symbol highlighting with configurable visual feedback
-
----
 
 ## Following extension guidelines
 
