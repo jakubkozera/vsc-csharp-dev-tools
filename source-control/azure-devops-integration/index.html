@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-source-control/azure-devops-integration" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">Azure DevOps Integration | C# Dev Tools</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/azure-devops-integration"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Azure DevOps Integration | C# Dev Tools"><meta data-rh="true" name="description" content="Comprehensive Azure DevOps integration for pull requests and work items."><meta data-rh="true" property="og:description" content="Comprehensive Azure DevOps integration for pull requests and work items."><link data-rh="true" rel="icon" href="/vsc-csharp-dev-tools/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/azure-devops-integration"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/azure-devops-integration" hreflang="en"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/azure-devops-integration" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Source Control","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/"},{"@type":"ListItem","position":2,"name":"Azure DevOps Integration","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/azure-devops-integration"}]}</script><link rel="stylesheet" href="/vsc-csharp-dev-tools/assets/css/styles.1c0ec940.css">
+<script src="/vsc-csharp-dev-tools/assets/js/runtime~main.ea15d759.js" defer="defer"></script>
+<script src="/vsc-csharp-dev-tools/assets/js/main.d98df4ae.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/vsc-csharp-dev-tools/"></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/vsc-csharp-dev-tools/">C# Dev Tools Docs</a><a href="https://github.com/jakubkozera/vsc-csharp-dev-tools" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/vsc-csharp-dev-tools/">Introduction to C# Dev Tools</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/getting-started/installation">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/solution-explorer/">Solution Explorer</a><button aria-label="Expand sidebar category &#x27;Solution Explorer&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/nuget-management/">NuGet Package Management</a><button aria-label="Expand sidebar category &#x27;NuGet Package Management&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/file-templates/">File Templates &amp; Quick File Creation</a><button aria-label="Expand sidebar category &#x27;File Templates &amp; Quick File Creation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/testing-integration/">Testing Integration</a><button aria-label="Expand sidebar category &#x27;Testing Integration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/code-navigation/">Code Navigation &amp; IntelliSense</a><button aria-label="Expand sidebar category &#x27;Code Navigation &amp; IntelliSense&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/vsc-csharp-dev-tools/source-control/">Source Control</a><button aria-label="Collapse sidebar category &#x27;Source Control&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/source-control/github-integration">GitHub Integration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/vsc-csharp-dev-tools/source-control/azure-devops-integration">Azure DevOps Integration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/source-control/copilot-code-review">GitHub Copilot Code Review</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/tools/">Tools</a><button aria-label="Expand sidebar category &#x27;Tools&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/configuration/settings">Configuration</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/advanced/support">Advanced</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/vsc-csharp-dev-tools/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/vsc-csharp-dev-tools/source-control/"><span>Source Control</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Azure DevOps Integration</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Azure DevOps Integration</h1></header>
+<p>Comprehensive Azure DevOps integration for pull requests and work items.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>C# Dev Tools integrates with Azure DevOps, providing pull request management and collaboration features.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="setup">Setup<a href="#setup" class="hash-link" aria-label="Direct link to Setup" title="Direct link to Setup">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="connecting-to-azure-devops">Connecting to Azure DevOps<a href="#connecting-to-azure-devops" class="hash-link" aria-label="Direct link to Connecting to Azure DevOps" title="Direct link to Connecting to Azure DevOps">​</a></h3>
+<ol>
+<li>Open Command Palette (<code>Ctrl+Shift+P</code>)</li>
+<li>Type &quot;Pull Request Manager: Open Connection Manager&quot;</li>
+<li>Click &quot;Add Connection&quot;</li>
+<li>Select &quot;Azure DevOps&quot;</li>
+<li>Enter:<!-- -->
+<ul>
+<li>Organization name</li>
+<li>Project name</li>
+<li>Personal Access Token</li>
+</ul>
+</li>
+<li>Save connection</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="creating-a-personal-access-token">Creating a Personal Access Token<a href="#creating-a-personal-access-token" class="hash-link" aria-label="Direct link to Creating a Personal Access Token" title="Direct link to Creating a Personal Access Token">​</a></h3>
+<ol>
+<li>Go to Azure DevOps → User Settings → Personal Access Tokens</li>
+<li>Click &quot;New Token&quot;</li>
+<li>Set scopes:<!-- -->
+<ul>
+<li><code>Code (Read, write, &amp; manage)</code></li>
+<li><code>Work Items (Read &amp; write)</code></li>
+</ul>
+</li>
+<li>Create and copy token</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="viewing-pull-requests">Viewing Pull Requests<a href="#viewing-pull-requests" class="hash-link" aria-label="Direct link to Viewing Pull Requests" title="Direct link to Viewing Pull Requests">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="organization-and-project">Organization and Project<a href="#organization-and-project" class="hash-link" aria-label="Direct link to Organization and Project" title="Direct link to Organization and Project">​</a></h3>
+<p>Pull requests are organized by:</p>
+<ul>
+<li>Organization</li>
+<li>Project</li>
+<li>Repository</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="filter-options">Filter Options<a href="#filter-options" class="hash-link" aria-label="Direct link to Filter Options" title="Direct link to Filter Options">​</a></h3>
+<p>View PRs by:</p>
+<ul>
+<li>Assigned to me</li>
+<li>Created by me</li>
+<li>Review requested</li>
+<li>All pull requests</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="creating-pull-requests">Creating Pull Requests<a href="#creating-pull-requests" class="hash-link" aria-label="Direct link to Creating Pull Requests" title="Direct link to Creating Pull Requests">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="from-azure-devops">From Azure DevOps<a href="#from-azure-devops" class="hash-link" aria-label="Direct link to From Azure DevOps" title="Direct link to From Azure DevOps">​</a></h3>
+<p>Create PR in Azure DevOps:</p>
+<ol>
+<li>Push branch to Azure Repos</li>
+<li>Click &quot;Create Pull Request&quot;</li>
+<li>Fill in:<!-- -->
+<ul>
+<li>Title</li>
+<li>Description</li>
+<li>Target branch</li>
+<li>Reviewers</li>
+<li>Work items (optional)</li>
+</ul>
+</li>
+<li>Create PR</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="linking-work-items">Linking Work Items<a href="#linking-work-items" class="hash-link" aria-label="Direct link to Linking Work Items" title="Direct link to Linking Work Items">​</a></h3>
+<p>Link related work items:</p>
+<ol>
+<li>Search for work items</li>
+<li>Select items to link</li>
+<li>PR is associated with work items</li>
+<li>Work items show PR link</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="reviewing-pull-requests">Reviewing Pull Requests<a href="#reviewing-pull-requests" class="hash-link" aria-label="Direct link to Reviewing Pull Requests" title="Direct link to Reviewing Pull Requests">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pr-details">PR Details<a href="#pr-details" class="hash-link" aria-label="Direct link to PR Details" title="Direct link to PR Details">​</a></h3>
+<p>View comprehensive PR information:</p>
+<ul>
+<li>Title and description</li>
+<li>Source and target branches</li>
+<li>Changed files and commits</li>
+<li>Comments and discussions</li>
+<li>Review status</li>
+<li>Build and pipeline status</li>
+<li>Linked work items</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="code-review">Code Review<a href="#code-review" class="hash-link" aria-label="Direct link to Code Review" title="Direct link to Code Review">​</a></h3>
+<p>Review code changes:</p>
+<ol>
+<li>View file diffs</li>
+<li>Add inline comments</li>
+<li>Reply to discussions</li>
+<li>Approve or wait for author</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="review-votes">Review Votes<a href="#review-votes" class="hash-link" aria-label="Direct link to Review Votes" title="Direct link to Review Votes">​</a></h3>
+<p>Azure DevOps voting system:</p>
+<ul>
+<li><strong>Approve</strong>: PR looks good</li>
+<li><strong>Approve with suggestions</strong>: Minor changes suggested</li>
+<li><strong>Wait for Author</strong>: Changes requested</li>
+<li><strong>Reject</strong>: Major issues found</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="merging-pull-requests">Merging Pull Requests<a href="#merging-pull-requests" class="hash-link" aria-label="Direct link to Merging Pull Requests" title="Direct link to Merging Pull Requests">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="merge-types">Merge Types<a href="#merge-types" class="hash-link" aria-label="Direct link to Merge Types" title="Direct link to Merge Types">​</a></h3>
+<p>Azure DevOps supports:</p>
+<ol>
+<li><strong>Merge (no fast-forward)</strong>: Standard merge</li>
+<li><strong>Squash commit</strong>: Single commit</li>
+<li><strong>Rebase and fast-forward</strong>: Linear history</li>
+<li><strong>Semi-linear merge</strong>: Merge with rebase</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="merge-policies">Merge Policies<a href="#merge-policies" class="hash-link" aria-label="Direct link to Merge Policies" title="Direct link to Merge Policies">​</a></h3>
+<p>Respect policies:</p>
+<ul>
+<li>Minimum number of reviewers</li>
+<li>Required reviewers</li>
+<li>Build validation</li>
+<li>Work item linking</li>
+<li>Comment resolution</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="build-integration">Build Integration<a href="#build-integration" class="hash-link" aria-label="Direct link to Build Integration" title="Direct link to Build Integration">​</a></h2>
+<p>View build status:</p>
+<ul>
+<li>Pipeline results</li>
+<li>Build checks</li>
+<li>Test results</li>
+<li>Quality gates</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="work-items">Work Items<a href="#work-items" class="hash-link" aria-label="Direct link to Work Items" title="Direct link to Work Items">​</a></h2>
+<p>Manage associated work items:</p>
+<ul>
+<li>View linked items</li>
+<li>Update work item status</li>
+<li>Add new work items</li>
+<li>Complete items with PR merge</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="azure-specific-features">Azure-Specific Features<a href="#azure-specific-features" class="hash-link" aria-label="Direct link to Azure-Specific Features" title="Direct link to Azure-Specific Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="branch-policies">Branch Policies<a href="#branch-policies" class="hash-link" aria-label="Direct link to Branch Policies" title="Direct link to Branch Policies">​</a></h3>
+<p>Respect configured policies:</p>
+<ul>
+<li>Required reviewers</li>
+<li>Build validation</li>
+<li>Work item linking</li>
+<li>Comment resolution</li>
+<li>Merge strategy</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="permissions">Permissions<a href="#permissions" class="hash-link" aria-label="Direct link to Permissions" title="Direct link to Permissions">​</a></h3>
+<p>Permission-based features:</p>
+<ul>
+<li>View: Read pull requests</li>
+<li>Contribute: Create and comment</li>
+<li>Complete: Merge pull requests</li>
+<li>Admin: Policy management</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="best-practices">Best Practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices">​</a></h2>
+<ul>
+<li>Link work items to PRs</li>
+<li>Follow branch policies</li>
+<li>Use appropriate merge types</li>
+<li>Complete work items with merge</li>
+<li>Ensure builds pass before merge</li>
+<li>Resolve all comments</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="authentication-failed">Authentication Failed<a href="#authentication-failed" class="hash-link" aria-label="Direct link to Authentication Failed" title="Direct link to Authentication Failed">​</a></h3>
+<p>If Azure DevOps auth fails:</p>
+<ol>
+<li>Verify organization name is correct</li>
+<li>Check project name</li>
+<li>Verify PAT permissions</li>
+<li>Regenerate token if expired</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="prs-not-loading">PRs Not Loading<a href="#prs-not-loading" class="hash-link" aria-label="Direct link to PRs Not Loading" title="Direct link to PRs Not Loading">​</a></h3>
+<p>If PRs don&#x27;t appear:</p>
+<ol>
+<li>Check organization access</li>
+<li>Verify project permissions</li>
+<li>Refresh PR list</li>
+<li>Check network connectivity</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cant-merge-pr">Can&#x27;t Merge PR<a href="#cant-merge-pr" class="hash-link" aria-label="Direct link to Can&#x27;t Merge PR" title="Direct link to Can&#x27;t Merge PR">​</a></h3>
+<p>If merge fails:</p>
+<ol>
+<li>Check branch policies</li>
+<li>Ensure all checks pass</li>
+<li>Verify reviewer approvals</li>
+<li>Resolve all comments</li>
+<li>Check permissions</li>
+</ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/vsc-csharp-dev-tools/source-control/github-integration"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">GitHub Integration</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/vsc-csharp-dev-tools/source-control/copilot-code-review"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">GitHub Copilot Code Review</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#setup" class="table-of-contents__link toc-highlight">Setup</a><ul><li><a href="#connecting-to-azure-devops" class="table-of-contents__link toc-highlight">Connecting to Azure DevOps</a></li><li><a href="#creating-a-personal-access-token" class="table-of-contents__link toc-highlight">Creating a Personal Access Token</a></li></ul></li><li><a href="#viewing-pull-requests" class="table-of-contents__link toc-highlight">Viewing Pull Requests</a><ul><li><a href="#organization-and-project" class="table-of-contents__link toc-highlight">Organization and Project</a></li><li><a href="#filter-options" class="table-of-contents__link toc-highlight">Filter Options</a></li></ul></li><li><a href="#creating-pull-requests" class="table-of-contents__link toc-highlight">Creating Pull Requests</a><ul><li><a href="#from-azure-devops" class="table-of-contents__link toc-highlight">From Azure DevOps</a></li><li><a href="#linking-work-items" class="table-of-contents__link toc-highlight">Linking Work Items</a></li></ul></li><li><a href="#reviewing-pull-requests" class="table-of-contents__link toc-highlight">Reviewing Pull Requests</a><ul><li><a href="#pr-details" class="table-of-contents__link toc-highlight">PR Details</a></li><li><a href="#code-review" class="table-of-contents__link toc-highlight">Code Review</a></li><li><a href="#review-votes" class="table-of-contents__link toc-highlight">Review Votes</a></li></ul></li><li><a href="#merging-pull-requests" class="table-of-contents__link toc-highlight">Merging Pull Requests</a><ul><li><a href="#merge-types" class="table-of-contents__link toc-highlight">Merge Types</a></li><li><a href="#merge-policies" class="table-of-contents__link toc-highlight">Merge Policies</a></li></ul></li><li><a href="#build-integration" class="table-of-contents__link toc-highlight">Build Integration</a></li><li><a href="#work-items" class="table-of-contents__link toc-highlight">Work Items</a></li><li><a href="#azure-specific-features" class="table-of-contents__link toc-highlight">Azure-Specific Features</a><ul><li><a href="#branch-policies" class="table-of-contents__link toc-highlight">Branch Policies</a></li><li><a href="#permissions" class="table-of-contents__link toc-highlight">Permissions</a></li></ul></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#authentication-failed" class="table-of-contents__link toc-highlight">Authentication Failed</a></li><li><a href="#prs-not-loading" class="table-of-contents__link toc-highlight">PRs Not Loading</a></li><li><a href="#cant-merge-pr" class="table-of-contents__link toc-highlight">Can&#39;t Merge PR</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

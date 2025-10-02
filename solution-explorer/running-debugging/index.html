@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-solution-explorer/running-debugging" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">Running and Debugging | C# Dev Tools</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/running-debugging"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Running and Debugging | C# Dev Tools"><meta data-rh="true" name="description" content="Build, run, and debug your .NET applications directly from the Solution Explorer."><meta data-rh="true" property="og:description" content="Build, run, and debug your .NET applications directly from the Solution Explorer."><link data-rh="true" rel="icon" href="/vsc-csharp-dev-tools/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/running-debugging"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/running-debugging" hreflang="en"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/running-debugging" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Solution Explorer","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/"},{"@type":"ListItem","position":2,"name":"Running and Debugging","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer/running-debugging"}]}</script><link rel="stylesheet" href="/vsc-csharp-dev-tools/assets/css/styles.1c0ec940.css">
+<script src="/vsc-csharp-dev-tools/assets/js/runtime~main.ea15d759.js" defer="defer"></script>
+<script src="/vsc-csharp-dev-tools/assets/js/main.d98df4ae.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/vsc-csharp-dev-tools/"></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/vsc-csharp-dev-tools/">C# Dev Tools Docs</a><a href="https://github.com/jakubkozera/vsc-csharp-dev-tools" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/vsc-csharp-dev-tools/">Introduction to C# Dev Tools</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/getting-started/installation">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/vsc-csharp-dev-tools/solution-explorer/">Solution Explorer</a><button aria-label="Collapse sidebar category &#x27;Solution Explorer&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/solution-explorer/opening-solutions">Opening Solutions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/solution-explorer/creating-projects">Creating New Projects</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/solution-explorer/adding-existing-projects">Adding Existing Projects</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/solution-explorer/multi-root-workspace">Multi-root Workspace Support</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/vsc-csharp-dev-tools/solution-explorer/running-debugging">Running and Debugging</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/solution-explorer/recent-solutions">Recent Solutions</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/nuget-management/">NuGet Package Management</a><button aria-label="Expand sidebar category &#x27;NuGet Package Management&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/file-templates/">File Templates &amp; Quick File Creation</a><button aria-label="Expand sidebar category &#x27;File Templates &amp; Quick File Creation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/testing-integration/">Testing Integration</a><button aria-label="Expand sidebar category &#x27;Testing Integration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/code-navigation/">Code Navigation &amp; IntelliSense</a><button aria-label="Expand sidebar category &#x27;Code Navigation &amp; IntelliSense&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/source-control/">Source Control</a><button aria-label="Expand sidebar category &#x27;Source Control&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/tools/">Tools</a><button aria-label="Expand sidebar category &#x27;Tools&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/configuration/settings">Configuration</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/advanced/support">Advanced</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/vsc-csharp-dev-tools/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/vsc-csharp-dev-tools/solution-explorer/"><span>Solution Explorer</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Running and Debugging</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Running and Debugging</h1></header>
+<p>Build, run, and debug your .NET applications directly from the Solution Explorer.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>C# Dev Tools integrates with VS Code&#x27;s debugging and task system to provide a seamless development experience for .NET applications.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="building-projects">Building Projects<a href="#building-projects" class="hash-link" aria-label="Direct link to Building Projects" title="Direct link to Building Projects">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="build-commands">Build Commands<a href="#build-commands" class="hash-link" aria-label="Direct link to Build Commands" title="Direct link to Build Commands">​</a></h3>
+<p>Right-click on a project or solution and select:</p>
+<ul>
+<li><strong>Build</strong>: Compile the project and its dependencies</li>
+<li><strong>Rebuild</strong>: Clean and then build the project</li>
+<li><strong>Clean</strong>: Remove all build artifacts (bin/ and obj/)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="build-output">Build Output<a href="#build-output" class="hash-link" aria-label="Direct link to Build Output" title="Direct link to Build Output">​</a></h3>
+<p>Build output appears in:</p>
+<ol>
+<li>The <strong>Terminal</strong> panel - Shows full build logs</li>
+<li>The <strong>Problems</strong> panel - Lists errors and warnings</li>
+<li>Status bar - Shows build progress</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="keyboard-shortcuts">Keyboard Shortcuts<a href="#keyboard-shortcuts" class="hash-link" aria-label="Direct link to Keyboard Shortcuts" title="Direct link to Keyboard Shortcuts">​</a></h3>
+<ul>
+<li><code>Ctrl+Shift+B</code> - Build the current project</li>
+<li>Configure additional shortcuts in keyboard settings</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="setting-a-startup-project">Setting a Startup Project<a href="#setting-a-startup-project" class="hash-link" aria-label="Direct link to Setting a Startup Project" title="Direct link to Setting a Startup Project">​</a></h2>
+<p>The startup project is the project that runs when you press F5:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-startup-project">Set Startup Project<a href="#set-startup-project" class="hash-link" aria-label="Direct link to Set Startup Project" title="Direct link to Set Startup Project">​</a></h3>
+<ol>
+<li>Right-click on an executable project (console app, web app, etc.)</li>
+<li>Select <strong>Set as Startup Project</strong></li>
+<li>The project name will appear in bold in the Solution Explorer</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="multiple-startup-projects">Multiple Startup Projects<a href="#multiple-startup-projects" class="hash-link" aria-label="Direct link to Multiple Startup Projects" title="Direct link to Multiple Startup Projects">​</a></h3>
+<p>To run multiple projects simultaneously:</p>
+<ol>
+<li>Configure launch.json for multiple configurations</li>
+<li>Or use VS Code&#x27;s compound launch configurations</li>
+<li>Useful for running client and server projects together</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="running-applications">Running Applications<a href="#running-applications" class="hash-link" aria-label="Direct link to Running Applications" title="Direct link to Running Applications">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="console-applications">Console Applications<a href="#console-applications" class="hash-link" aria-label="Direct link to Console Applications" title="Direct link to Console Applications">​</a></h3>
+<p>To run a console application:</p>
+<ol>
+<li>Set it as the startup project</li>
+<li>Press <code>F5</code> to run with debugging</li>
+<li>Or press <code>Ctrl+F5</code> to run without debugging</li>
+</ol>
+<p>The application will run in the integrated terminal.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="web-applications">Web Applications<a href="#web-applications" class="hash-link" aria-label="Direct link to Web Applications" title="Direct link to Web Applications">​</a></h3>
+<p>To run a web application (ASP.NET Core):</p>
+<ol>
+<li>Set it as the startup project</li>
+<li>Press <code>F5</code> to launch with debugging</li>
+<li>The application will start and the browser will open automatically</li>
+</ol>
+<p>The browser will navigate to the configured URL (usually <a href="https://localhost:5001" target="_blank" rel="noopener noreferrer">https://localhost:5001</a>).</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="stopping-applications">Stopping Applications<a href="#stopping-applications" class="hash-link" aria-label="Direct link to Stopping Applications" title="Direct link to Stopping Applications">​</a></h3>
+<p>To stop a running application:</p>
+<ul>
+<li>Click the Stop button in the debug toolbar</li>
+<li>Press <code>Shift+F5</code></li>
+<li>Close the terminal (for console apps)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="debugging">Debugging<a href="#debugging" class="hash-link" aria-label="Direct link to Debugging" title="Direct link to Debugging">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="starting-a-debug-session">Starting a Debug Session<a href="#starting-a-debug-session" class="hash-link" aria-label="Direct link to Starting a Debug Session" title="Direct link to Starting a Debug Session">​</a></h3>
+<ol>
+<li>Set breakpoints by clicking in the left margin of the editor</li>
+<li>Set the startup project</li>
+<li>Press <code>F5</code> to start debugging</li>
+</ol>
+<p>The debugger will:</p>
+<ul>
+<li>Build the project if needed</li>
+<li>Launch the application</li>
+<li>Attach the debugger</li>
+<li>Stop at your breakpoints</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="debug-features">Debug Features<a href="#debug-features" class="hash-link" aria-label="Direct link to Debug Features" title="Direct link to Debug Features">​</a></h3>
+<p>While debugging, you can:</p>
+<ul>
+<li><strong>Step Through Code</strong>: F10 (Step Over), F11 (Step Into), Shift+F11 (Step Out)</li>
+<li><strong>Inspect Variables</strong>: Hover over variables or use the Variables panel</li>
+<li><strong>Watch Expressions</strong>: Add expressions to the Watch panel</li>
+<li><strong>Call Stack</strong>: View the call stack in the Call Stack panel</li>
+<li><strong>Breakpoints</strong>: Manage breakpoints in the Breakpoints panel</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="inline-debug-values">Inline Debug Values<a href="#inline-debug-values" class="hash-link" aria-label="Direct link to Inline Debug Values" title="Direct link to Inline Debug Values">​</a></h3>
+<p>C# Dev Tools provides inline debug values that show variable values directly in your code:</p>
+<ul>
+<li>Variable values appear at the end of lines during debugging</li>
+<li>Changed values are highlighted</li>
+<li>Arrays and objects show their contents inline</li>
+</ul>
+<p>Configure this feature in the extension settings.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="conditional-breakpoints">Conditional Breakpoints<a href="#conditional-breakpoints" class="hash-link" aria-label="Direct link to Conditional Breakpoints" title="Direct link to Conditional Breakpoints">​</a></h3>
+<p>Set breakpoints that only trigger under specific conditions:</p>
+<ol>
+<li>Right-click on a breakpoint</li>
+<li>Select <strong>Edit Breakpoint</strong></li>
+<li>Choose a condition type:<!-- -->
+<ul>
+<li>Expression is true</li>
+<li>Hit count</li>
+<li>Log message</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="launch-configurations">Launch Configurations<a href="#launch-configurations" class="hash-link" aria-label="Direct link to Launch Configurations" title="Direct link to Launch Configurations">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="viewing-launch-configuration">Viewing Launch Configuration<a href="#viewing-launch-configuration" class="hash-link" aria-label="Direct link to Viewing Launch Configuration" title="Direct link to Viewing Launch Configuration">​</a></h3>
+<p>The extension automatically generates launch configurations:</p>
+<ol>
+<li>Open <code>.vscode/launch.json</code></li>
+<li>View the generated configurations</li>
+<li>Customize as needed</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="program-arguments">Program Arguments<a href="#program-arguments" class="hash-link" aria-label="Direct link to Program Arguments" title="Direct link to Program Arguments">​</a></h3>
+<p>To pass command-line arguments:</p>
+<p><strong>Method 1: Edit launch.json</strong></p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;args&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token string" style="color:#e3116c">&quot;arg1&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;arg2&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;arg3&quot;</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+<p><strong>Method 2: Use Code Lens</strong></p>
+<p>Click the Code Lens above the <code>Main</code> method to configure arguments.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="environment-variables">Environment Variables<a href="#environment-variables" class="hash-link" aria-label="Direct link to Environment Variables" title="Direct link to Environment Variables">​</a></h3>
+<p>Set environment variables in launch.json:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;env&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;ASPNETCORE_ENVIRONMENT&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;Development&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;MY_VAR&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;value&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="running-tests">Running Tests<a href="#running-tests" class="hash-link" aria-label="Direct link to Running Tests" title="Direct link to Running Tests">​</a></h2>
+<p>The Solution Explorer integrates with the Test Explorer:</p>
+<ol>
+<li>Right-click on a test project</li>
+<li>Select <strong>Run Tests</strong></li>
+<li>Tests will execute and results will appear in the Test Explorer</li>
+</ol>
+<p>See the <a href="/vsc-csharp-dev-tools/testing-integration/">Testing Integration</a> section for more details.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="build-configurations">Build Configurations<a href="#build-configurations" class="hash-link" aria-label="Direct link to Build Configurations" title="Direct link to Build Configurations">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="debug-vs-release">Debug vs Release<a href="#debug-vs-release" class="hash-link" aria-label="Direct link to Debug vs Release" title="Direct link to Debug vs Release">​</a></h3>
+<p>Switch between build configurations:</p>
+<ol>
+<li>Open the command palette (<code>Ctrl+Shift+P</code>)</li>
+<li>Type &quot;C# Solution Explorer: Select Build Configuration&quot;</li>
+<li>Choose Debug or Release</li>
+</ol>
+<p>Debug builds:</p>
+<ul>
+<li>Include debugging symbols</li>
+<li>Disable optimizations</li>
+<li>Enable assertions</li>
+</ul>
+<p>Release builds:</p>
+<ul>
+<li>Exclude debugging symbols</li>
+<li>Enable optimizations</li>
+<li>Better performance</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="custom-configurations">Custom Configurations<a href="#custom-configurations" class="hash-link" aria-label="Direct link to Custom Configurations" title="Direct link to Custom Configurations">​</a></h3>
+<p>Create custom build configurations in your project files:</p>
+<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">PropertyGroup</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">Condition</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value punctuation" style="color:#393A34">&#x27;</span><span class="token tag attr-value" style="color:#e3116c">$(Configuration)&#x27;==&#x27;CustomConfig&#x27;</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">&lt;!-- Custom configuration properties --&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">PropertyGroup</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="build-fails">Build Fails<a href="#build-fails" class="hash-link" aria-label="Direct link to Build Fails" title="Direct link to Build Fails">​</a></h3>
+<p>If build fails:</p>
+<ol>
+<li>Check the Problems panel for errors</li>
+<li>Review the Terminal output for detailed messages</li>
+<li>Ensure all NuGet packages are restored</li>
+<li>Verify target framework is installed</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cannot-start-debugging">Cannot Start Debugging<a href="#cannot-start-debugging" class="hash-link" aria-label="Direct link to Cannot Start Debugging" title="Direct link to Cannot Start Debugging">​</a></h3>
+<p>If debugging won&#x27;t start:</p>
+<ol>
+<li>Ensure the startup project is set</li>
+<li>Check that launch.json is configured correctly</li>
+<li>Verify the project builds successfully</li>
+<li>Check for port conflicts (web applications)</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="breakpoints-not-hit">Breakpoints Not Hit<a href="#breakpoints-not-hit" class="hash-link" aria-label="Direct link to Breakpoints Not Hit" title="Direct link to Breakpoints Not Hit">​</a></h3>
+<p>If breakpoints aren&#x27;t working:</p>
+<ol>
+<li>Build in Debug configuration</li>
+<li>Ensure you&#x27;re debugging the correct process</li>
+<li>Check that the code file is part of the project</li>
+<li>Disable &quot;Just My Code&quot; if needed</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="performance-issues">Performance Issues<a href="#performance-issues" class="hash-link" aria-label="Direct link to Performance Issues" title="Direct link to Performance Issues">​</a></h3>
+<p>If builds or debugging is slow:</p>
+<ol>
+<li>Disable unnecessary extensions</li>
+<li>Exclude large folders from file watching</li>
+<li>Use Release configuration for non-debugging runs</li>
+<li>Close unused projects in the solution</li>
+</ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/vsc-csharp-dev-tools/solution-explorer/multi-root-workspace"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Multi-root Workspace Support</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/vsc-csharp-dev-tools/solution-explorer/recent-solutions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Recent Solutions</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#building-projects" class="table-of-contents__link toc-highlight">Building Projects</a><ul><li><a href="#build-commands" class="table-of-contents__link toc-highlight">Build Commands</a></li><li><a href="#build-output" class="table-of-contents__link toc-highlight">Build Output</a></li><li><a href="#keyboard-shortcuts" class="table-of-contents__link toc-highlight">Keyboard Shortcuts</a></li></ul></li><li><a href="#setting-a-startup-project" class="table-of-contents__link toc-highlight">Setting a Startup Project</a><ul><li><a href="#set-startup-project" class="table-of-contents__link toc-highlight">Set Startup Project</a></li><li><a href="#multiple-startup-projects" class="table-of-contents__link toc-highlight">Multiple Startup Projects</a></li></ul></li><li><a href="#running-applications" class="table-of-contents__link toc-highlight">Running Applications</a><ul><li><a href="#console-applications" class="table-of-contents__link toc-highlight">Console Applications</a></li><li><a href="#web-applications" class="table-of-contents__link toc-highlight">Web Applications</a></li><li><a href="#stopping-applications" class="table-of-contents__link toc-highlight">Stopping Applications</a></li></ul></li><li><a href="#debugging" class="table-of-contents__link toc-highlight">Debugging</a><ul><li><a href="#starting-a-debug-session" class="table-of-contents__link toc-highlight">Starting a Debug Session</a></li><li><a href="#debug-features" class="table-of-contents__link toc-highlight">Debug Features</a></li><li><a href="#inline-debug-values" class="table-of-contents__link toc-highlight">Inline Debug Values</a></li><li><a href="#conditional-breakpoints" class="table-of-contents__link toc-highlight">Conditional Breakpoints</a></li></ul></li><li><a href="#launch-configurations" class="table-of-contents__link toc-highlight">Launch Configurations</a><ul><li><a href="#viewing-launch-configuration" class="table-of-contents__link toc-highlight">Viewing Launch Configuration</a></li><li><a href="#program-arguments" class="table-of-contents__link toc-highlight">Program Arguments</a></li><li><a href="#environment-variables" class="table-of-contents__link toc-highlight">Environment Variables</a></li></ul></li><li><a href="#running-tests" class="table-of-contents__link toc-highlight">Running Tests</a></li><li><a href="#build-configurations" class="table-of-contents__link toc-highlight">Build Configurations</a><ul><li><a href="#debug-vs-release" class="table-of-contents__link toc-highlight">Debug vs Release</a></li><li><a href="#custom-configurations" class="table-of-contents__link toc-highlight">Custom Configurations</a></li></ul></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#build-fails" class="table-of-contents__link toc-highlight">Build Fails</a></li><li><a href="#cannot-start-debugging" class="table-of-contents__link toc-highlight">Cannot Start Debugging</a></li><li><a href="#breakpoints-not-hit" class="table-of-contents__link toc-highlight">Breakpoints Not Hit</a></li><li><a href="#performance-issues" class="table-of-contents__link toc-highlight">Performance Issues</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

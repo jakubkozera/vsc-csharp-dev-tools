@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-tools/diagrams" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">Diagrams | C# Dev Tools</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/diagrams"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Diagrams | C# Dev Tools"><meta data-rh="true" name="description" content="Create and manage technical diagrams using the integrated Excalidraw whiteboard."><meta data-rh="true" property="og:description" content="Create and manage technical diagrams using the integrated Excalidraw whiteboard."><link data-rh="true" rel="icon" href="/vsc-csharp-dev-tools/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/diagrams"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/diagrams" hreflang="en"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/diagrams" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/"},{"@type":"ListItem","position":2,"name":"Diagrams","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/diagrams"}]}</script><link rel="stylesheet" href="/vsc-csharp-dev-tools/assets/css/styles.1c0ec940.css">
+<script src="/vsc-csharp-dev-tools/assets/js/runtime~main.ea15d759.js" defer="defer"></script>
+<script src="/vsc-csharp-dev-tools/assets/js/main.d98df4ae.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/vsc-csharp-dev-tools/"></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/vsc-csharp-dev-tools/">C# Dev Tools Docs</a><a href="https://github.com/jakubkozera/vsc-csharp-dev-tools" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/vsc-csharp-dev-tools/">Introduction to C# Dev Tools</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/getting-started/installation">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/solution-explorer/">Solution Explorer</a><button aria-label="Expand sidebar category &#x27;Solution Explorer&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/nuget-management/">NuGet Package Management</a><button aria-label="Expand sidebar category &#x27;NuGet Package Management&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/file-templates/">File Templates &amp; Quick File Creation</a><button aria-label="Expand sidebar category &#x27;File Templates &amp; Quick File Creation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/testing-integration/">Testing Integration</a><button aria-label="Expand sidebar category &#x27;Testing Integration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/code-navigation/">Code Navigation &amp; IntelliSense</a><button aria-label="Expand sidebar category &#x27;Code Navigation &amp; IntelliSense&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/source-control/">Source Control</a><button aria-label="Expand sidebar category &#x27;Source Control&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/vsc-csharp-dev-tools/tools/">Tools</a><button aria-label="Collapse sidebar category &#x27;Tools&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/tools/bookmarks">Bookmarks</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/vsc-csharp-dev-tools/tools/diagrams">Diagrams</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/tools/text-tools">Text Tools</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/tools/ui-tools">User Interface Tools</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/configuration/settings">Configuration</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/advanced/support">Advanced</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/vsc-csharp-dev-tools/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/vsc-csharp-dev-tools/tools/"><span>Tools</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Diagrams</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Diagrams</h1></header>
+<p>Create and manage technical diagrams using the integrated Excalidraw whiteboard.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>C# Dev Tools includes Excalidraw integration for creating diagrams, flowcharts, and technical illustrations directly in VS Code.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="diagram-types">Diagram Types<a href="#diagram-types" class="hash-link" aria-label="Direct link to Diagram Types" title="Direct link to Diagram Types">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="global-diagrams">Global Diagrams<a href="#global-diagrams" class="hash-link" aria-label="Direct link to Global Diagrams" title="Direct link to Global Diagrams">​</a></h3>
+<p>Stored in your user profile, available across all workspaces:</p>
+<ul>
+<li>Reusable diagrams</li>
+<li>Personal reference</li>
+<li>Cross-project documentation</li>
+<li>Architecture diagrams</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="workspace-diagrams">Workspace Diagrams<a href="#workspace-diagrams" class="hash-link" aria-label="Direct link to Workspace Diagrams" title="Direct link to Workspace Diagrams">​</a></h3>
+<p>Stored per workspace:</p>
+<ul>
+<li>Project-specific diagrams</li>
+<li>Team collaboration</li>
+<li>Version controlled</li>
+<li>Context-specific</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="creating-diagrams">Creating Diagrams<a href="#creating-diagrams" class="hash-link" aria-label="Direct link to Creating Diagrams" title="Direct link to Creating Diagrams">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="new-global-diagram">New Global Diagram<a href="#new-global-diagram" class="hash-link" aria-label="Direct link to New Global Diagram" title="Direct link to New Global Diagram">​</a></h3>
+<ol>
+<li>Open Solution Explorer</li>
+<li>Expand &quot;Tools&quot; → &quot;Diagrams&quot;</li>
+<li>Click &quot;Create Global Diagram&quot;</li>
+<li>Enter diagram name</li>
+<li>Diagram opens in Excalidraw</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="new-workspace-diagram">New Workspace Diagram<a href="#new-workspace-diagram" class="hash-link" aria-label="Direct link to New Workspace Diagram" title="Direct link to New Workspace Diagram">​</a></h3>
+<ol>
+<li>Open Solution Explorer</li>
+<li>Expand &quot;Tools&quot; → &quot;Diagrams&quot;</li>
+<li>Click &quot;Create Workspace Diagram&quot;</li>
+<li>Enter diagram name</li>
+<li>Diagram opens in editor</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="excalidraw-features">Excalidraw Features<a href="#excalidraw-features" class="hash-link" aria-label="Direct link to Excalidraw Features" title="Direct link to Excalidraw Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="drawing-tools">Drawing Tools<a href="#drawing-tools" class="hash-link" aria-label="Direct link to Drawing Tools" title="Direct link to Drawing Tools">​</a></h3>
+<ul>
+<li><strong>Shapes</strong>: Rectangle, circle, diamond, ellipse</li>
+<li><strong>Lines</strong>: Straight, arrows, curves</li>
+<li><strong>Text</strong>: Labels and annotations</li>
+<li><strong>Freehand</strong>: Hand-drawn elements</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="styling">Styling<a href="#styling" class="hash-link" aria-label="Direct link to Styling" title="Direct link to Styling">​</a></h3>
+<ul>
+<li>Colors and fills</li>
+<li>Stroke styles</li>
+<li>Opacity</li>
+<li>Font sizes</li>
+<li>Line types</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="organization">Organization<a href="#organization" class="hash-link" aria-label="Direct link to Organization" title="Direct link to Organization">​</a></h3>
+<ul>
+<li>Grouping elements</li>
+<li>Layers</li>
+<li>Alignment tools</li>
+<li>Distribution</li>
+<li>Z-order management</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="managing-diagrams">Managing Diagrams<a href="#managing-diagrams" class="hash-link" aria-label="Direct link to Managing Diagrams" title="Direct link to Managing Diagrams">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="opening-diagrams">Opening Diagrams<a href="#opening-diagrams" class="hash-link" aria-label="Direct link to Opening Diagrams" title="Direct link to Opening Diagrams">​</a></h3>
+<ol>
+<li>Expand &quot;Diagrams&quot; in Tools section</li>
+<li>View global and workspace diagrams</li>
+<li>Click to open</li>
+<li>Edits save automatically</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="renaming-diagrams">Renaming Diagrams<a href="#renaming-diagrams" class="hash-link" aria-label="Direct link to Renaming Diagrams" title="Direct link to Renaming Diagrams">​</a></h3>
+<ol>
+<li>Right-click diagram in tree</li>
+<li>Select &quot;Rename&quot;</li>
+<li>Enter new name</li>
+<li>File is renamed</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deleting-diagrams">Deleting Diagrams<a href="#deleting-diagrams" class="hash-link" aria-label="Direct link to Deleting Diagrams" title="Direct link to Deleting Diagrams">​</a></h3>
+<ol>
+<li>Right-click diagram in tree</li>
+<li>Select &quot;Delete&quot;</li>
+<li>Confirm deletion</li>
+<li>File is removed</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="exporting-diagrams">Exporting Diagrams<a href="#exporting-diagrams" class="hash-link" aria-label="Direct link to Exporting Diagrams" title="Direct link to Exporting Diagrams">​</a></h2>
+<p>Export diagrams in various formats:</p>
+<ul>
+<li><strong>PNG</strong>: Raster image</li>
+<li><strong>SVG</strong>: Vector graphics</li>
+<li><strong>JSON</strong>: Excalidraw format</li>
+</ul>
+<p>To export:</p>
+<ol>
+<li>Open diagram</li>
+<li>Use Excalidraw export menu</li>
+<li>Choose format</li>
+<li>Save file</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="version-control">Version Control<a href="#version-control" class="hash-link" aria-label="Direct link to Version Control" title="Direct link to Version Control">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="workspace-diagrams-1">Workspace Diagrams<a href="#workspace-diagrams-1" class="hash-link" aria-label="Direct link to Workspace Diagrams" title="Direct link to Workspace Diagrams">​</a></h3>
+<p>Workspace diagrams can be version controlled:</p>
+<ul>
+<li>Stored in <code>.vscode-csharp-dev-tools/diagrams</code></li>
+<li>JSON format for diffing</li>
+<li>Commit with code changes</li>
+<li>Share with team</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ignoring-diagrams">Ignoring Diagrams<a href="#ignoring-diagrams" class="hash-link" aria-label="Direct link to Ignoring Diagrams" title="Direct link to Ignoring Diagrams">​</a></h3>
+<p>Add to <code>.gitignore</code> if needed:</p>
+<div class="language-gitignore codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-gitignore codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">.vscode-csharp-dev-tools/diagrams/</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="use-cases">Use Cases<a href="#use-cases" class="hash-link" aria-label="Direct link to Use Cases" title="Direct link to Use Cases">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="architecture-documentation">Architecture Documentation<a href="#architecture-documentation" class="hash-link" aria-label="Direct link to Architecture Documentation" title="Direct link to Architecture Documentation">​</a></h3>
+<ul>
+<li>System architecture</li>
+<li>Component diagrams</li>
+<li>Deployment diagrams</li>
+<li>Network topology</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flow-charts">Flow Charts<a href="#flow-charts" class="hash-link" aria-label="Direct link to Flow Charts" title="Direct link to Flow Charts">​</a></h3>
+<ul>
+<li>Process flows</li>
+<li>Decision trees</li>
+<li>Algorithm visualization</li>
+<li>Workflow documentation</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="class-diagrams">Class Diagrams<a href="#class-diagrams" class="hash-link" aria-label="Direct link to Class Diagrams" title="Direct link to Class Diagrams">​</a></h3>
+<ul>
+<li>Class relationships</li>
+<li>Inheritance hierarchies</li>
+<li>Interface contracts</li>
+<li>Design patterns</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="wireframes">Wireframes<a href="#wireframes" class="hash-link" aria-label="Direct link to Wireframes" title="Direct link to Wireframes">​</a></h3>
+<ul>
+<li>UI layouts</li>
+<li>Screen flows</li>
+<li>User journeys</li>
+<li>Mockups</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="collaboration">Collaboration<a href="#collaboration" class="hash-link" aria-label="Direct link to Collaboration" title="Direct link to Collaboration">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sharing-diagrams">Sharing Diagrams<a href="#sharing-diagrams" class="hash-link" aria-label="Direct link to Sharing Diagrams" title="Direct link to Sharing Diagrams">​</a></h3>
+<p>Share diagrams with team:</p>
+<ol>
+<li>Commit workspace diagrams to repo</li>
+<li>Export as PNG/SVG for docs</li>
+<li>Use global diagrams as templates</li>
+<li>Share JSON files directly</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="team-standards">Team Standards<a href="#team-standards" class="hash-link" aria-label="Direct link to Team Standards" title="Direct link to Team Standards">​</a></h3>
+<p>Establish conventions:</p>
+<ul>
+<li>Naming patterns</li>
+<li>Color schemes</li>
+<li>Symbol meanings</li>
+<li>Diagram types</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tips-and-tricks">Tips and Tricks<a href="#tips-and-tricks" class="hash-link" aria-label="Direct link to Tips and Tricks" title="Direct link to Tips and Tricks">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="keyboard-shortcuts">Keyboard Shortcuts<a href="#keyboard-shortcuts" class="hash-link" aria-label="Direct link to Keyboard Shortcuts" title="Direct link to Keyboard Shortcuts">​</a></h3>
+<p>Excalidraw supports:</p>
+<ul>
+<li><code>Ctrl+Z</code>: Undo</li>
+<li><code>Ctrl+Y</code>: Redo</li>
+<li><code>Ctrl+D</code>: Duplicate</li>
+<li><code>Ctrl+G</code>: Group</li>
+<li>Arrow keys: Move elements</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="quick-workflows">Quick Workflows<a href="#quick-workflows" class="hash-link" aria-label="Direct link to Quick Workflows" title="Direct link to Quick Workflows">​</a></h3>
+<ul>
+<li>Double-click to add text</li>
+<li>Hold Shift for straight lines</li>
+<li>Alt+drag to duplicate</li>
+<li>Ctrl+drag for constrained movement</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="organization-1">Organization<a href="#organization-1" class="hash-link" aria-label="Direct link to Organization" title="Direct link to Organization">​</a></h3>
+<ul>
+<li>Use layers for complex diagrams</li>
+<li>Group related elements</li>
+<li>Name elements for clarity</li>
+<li>Use consistent colors</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="best-practices">Best Practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices">​</a></h2>
+<ul>
+<li>Keep diagrams focused and simple</li>
+<li>Use clear labels</li>
+<li>Maintain consistent style</li>
+<li>Version control workspace diagrams</li>
+<li>Export for documentation</li>
+<li>Update diagrams with code changes</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="diagram-wont-open">Diagram Won&#x27;t Open<a href="#diagram-wont-open" class="hash-link" aria-label="Direct link to Diagram Won&#x27;t Open" title="Direct link to Diagram Won&#x27;t Open">​</a></h3>
+<p>If diagram doesn&#x27;t open:</p>
+<ol>
+<li>Check file exists</li>
+<li>Verify file permissions</li>
+<li>Try creating new diagram</li>
+<li>Check VS Code output for errors</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cant-save-diagram">Can&#x27;t Save Diagram<a href="#cant-save-diagram" class="hash-link" aria-label="Direct link to Can&#x27;t Save Diagram" title="Direct link to Can&#x27;t Save Diagram">​</a></h3>
+<p>If save fails:</p>
+<ol>
+<li>Check disk space</li>
+<li>Verify write permissions</li>
+<li>Check file isn&#x27;t locked</li>
+<li>Try exporting instead</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="diagram-corrupted">Diagram Corrupted<a href="#diagram-corrupted" class="hash-link" aria-label="Direct link to Diagram Corrupted" title="Direct link to Diagram Corrupted">​</a></h3>
+<p>If diagram appears corrupted:</p>
+<ol>
+<li>Check JSON file syntax</li>
+<li>Restore from version control</li>
+<li>Create new diagram</li>
+<li>Report issue if persistent</li>
+</ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/vsc-csharp-dev-tools/tools/bookmarks"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Bookmarks</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/vsc-csharp-dev-tools/tools/text-tools"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Text Tools</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#diagram-types" class="table-of-contents__link toc-highlight">Diagram Types</a><ul><li><a href="#global-diagrams" class="table-of-contents__link toc-highlight">Global Diagrams</a></li><li><a href="#workspace-diagrams" class="table-of-contents__link toc-highlight">Workspace Diagrams</a></li></ul></li><li><a href="#creating-diagrams" class="table-of-contents__link toc-highlight">Creating Diagrams</a><ul><li><a href="#new-global-diagram" class="table-of-contents__link toc-highlight">New Global Diagram</a></li><li><a href="#new-workspace-diagram" class="table-of-contents__link toc-highlight">New Workspace Diagram</a></li></ul></li><li><a href="#excalidraw-features" class="table-of-contents__link toc-highlight">Excalidraw Features</a><ul><li><a href="#drawing-tools" class="table-of-contents__link toc-highlight">Drawing Tools</a></li><li><a href="#styling" class="table-of-contents__link toc-highlight">Styling</a></li><li><a href="#organization" class="table-of-contents__link toc-highlight">Organization</a></li></ul></li><li><a href="#managing-diagrams" class="table-of-contents__link toc-highlight">Managing Diagrams</a><ul><li><a href="#opening-diagrams" class="table-of-contents__link toc-highlight">Opening Diagrams</a></li><li><a href="#renaming-diagrams" class="table-of-contents__link toc-highlight">Renaming Diagrams</a></li><li><a href="#deleting-diagrams" class="table-of-contents__link toc-highlight">Deleting Diagrams</a></li></ul></li><li><a href="#exporting-diagrams" class="table-of-contents__link toc-highlight">Exporting Diagrams</a></li><li><a href="#version-control" class="table-of-contents__link toc-highlight">Version Control</a><ul><li><a href="#workspace-diagrams-1" class="table-of-contents__link toc-highlight">Workspace Diagrams</a></li><li><a href="#ignoring-diagrams" class="table-of-contents__link toc-highlight">Ignoring Diagrams</a></li></ul></li><li><a href="#use-cases" class="table-of-contents__link toc-highlight">Use Cases</a><ul><li><a href="#architecture-documentation" class="table-of-contents__link toc-highlight">Architecture Documentation</a></li><li><a href="#flow-charts" class="table-of-contents__link toc-highlight">Flow Charts</a></li><li><a href="#class-diagrams" class="table-of-contents__link toc-highlight">Class Diagrams</a></li><li><a href="#wireframes" class="table-of-contents__link toc-highlight">Wireframes</a></li></ul></li><li><a href="#collaboration" class="table-of-contents__link toc-highlight">Collaboration</a><ul><li><a href="#sharing-diagrams" class="table-of-contents__link toc-highlight">Sharing Diagrams</a></li><li><a href="#team-standards" class="table-of-contents__link toc-highlight">Team Standards</a></li></ul></li><li><a href="#tips-and-tricks" class="table-of-contents__link toc-highlight">Tips and Tricks</a><ul><li><a href="#keyboard-shortcuts" class="table-of-contents__link toc-highlight">Keyboard Shortcuts</a></li><li><a href="#quick-workflows" class="table-of-contents__link toc-highlight">Quick Workflows</a></li><li><a href="#organization-1" class="table-of-contents__link toc-highlight">Organization</a></li></ul></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#diagram-wont-open" class="table-of-contents__link toc-highlight">Diagram Won&#39;t Open</a></li><li><a href="#cant-save-diagram" class="table-of-contents__link toc-highlight">Can&#39;t Save Diagram</a></li><li><a href="#diagram-corrupted" class="table-of-contents__link toc-highlight">Diagram Corrupted</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
