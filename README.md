@@ -24,6 +24,14 @@
 - [Package Restore](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management/package-restore)
 - [NuGet Configuration](https://jakubkozera.github.io/vsc-csharp-dev-tools/nuget-management/nuget-configuration)
 
+### [Testing Integration](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration)
+
+- [Running & Debugging Tests](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/running-debugging-tests)
+- [Test Generation](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/test-generation)
+- [Code Coverage](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/code-coverage)
+- [SpecFlow Support](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/specflow-support)
+- [Playwright Integration](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/playwright-integration)
+
 ### [File Templates & Quick File Creation](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates)
 
 - [Quick Add (Shift+F2)](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/quick-add)
@@ -32,13 +40,6 @@
 - [Custom Templates](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/custom-templates)
 - [Namespace Detection](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/namespace-detection)
 - [File Location Context](https://jakubkozera.github.io/vsc-csharp-dev-tools/file-templates/file-location-context)
-
-### [Testing Integration](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration)
-
-- [Running & Debugging Tests](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/running-debugging-tests)
-- [Test Generation](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/test-generation)
-- [SpecFlow Support](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/specflow-support)
-- [Playwright Integration](https://jakubkozera.github.io/vsc-csharp-dev-tools/testing-integration/playwright-integration)
 
 ### [Code Navigation & IntelliSense](https://jakubkozera.github.io/vsc-csharp-dev-tools/code-navigation)
 
@@ -63,7 +64,11 @@
 </td>
 <td width="50%" valign="top">
 
-![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/solution-explorer.png)
+![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/solution-explorer.png)
+
+<br />
+
+![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/testing.png)
 
 </td>
 </tr>
@@ -277,7 +282,22 @@ The extension provides the following commands accessible via the Command Palette
 - `C# Solution Explorer: Toggle Unused Symbol Highlighting` - Toggle the unused symbol highlighting feature on/off
 - `C# Solution Explorer: Open Extension Walkthroughs` (Alt+W) - Open the extension walkthroughs to learn about all features
 
+## Known Issues
 
+- Reference analysis may take a moment for large files
+- Some symbols may not be detected correctly if the C# language server is not fully initialized
+
+## Release Notes
+
+### 0.0.1
+
+Initial release featuring:
+
+- Solution Explorer with drag & drop support
+- Comprehensive file templates for C# development
+- Unused symbol highlighting with configurable visual feedback
+
+---
 
 ## Following extension guidelines
 
