@@ -85,6 +85,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'testing-integration/running-debugging-tests',
         'testing-integration/test-generation',
+        'testing-integration/code-coverage',
         'testing-integration/specflow-support',
         'testing-integration/playwright-integration',
       ],
