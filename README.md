@@ -1,8 +1,20 @@
-![Demo](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/csharp-dev-tools.gif)
+**The go-to VS Code extension for C# developers** - A comprehensive toolkit for .NET development featuring Solution Explorer, NuGet management, advanced testing, file templates, and powerful developer tools.
 
-<table>
-<tr>
-<td width="50%" valign="top">
+---
+
+## Quick Links
+
+<style>
+#quick-links a {
+  text-decoration: none;
+}
+#quick-links a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<div id="quick-links" style="display: flex; gap: 20px;">
+<div style="flex: 1;">
 
 ### [Solution Explorer](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer)
 
@@ -61,18 +73,17 @@
 - [Text Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/text-tools)
 - [UI Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/ui-tools)
 
-</td>
-<td width="50%" valign="top">
+</div>
+<div style="flex: 1;">
 
 ![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/solution-explorer.png)
 
 <br />
 
-![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/testing.png)
+![Testing](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/testing.png)
 
-</td>
-</tr>
-</table>
+</div>
+</div>
 
 ---
 
@@ -90,7 +101,7 @@
 
 ![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/solution-explorer.png)
 
-- Browse .NET solutions (.sln files) with a familiar tree structure
+- Browse .NET solutions (.sln(x) files) with a familiar tree structure
 - View projects, folders, and files in a hierarchical view
 - Support for solution folders and nested projects
 - Drag and drop functionality for moving files
@@ -232,7 +243,7 @@ Enhanced Entity Framework Core development with integrated migration management:
 
 ![Project Creation](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/project-creation.png)
 
-1. Open a workspace containing a .NET solution (.sln file)
+1. Open a workspace containing a .NET solution (.sln(x) file)
 2. The Solution Explorer will automatically appear in the Explorer panel
 3. Right-click on any project or folder to see the "Add" context menu
 4. Select "New Item" to access file templates
@@ -242,7 +253,7 @@ Enhanced Entity Framework Core development with integrated migration management:
 ## Requirements
 
 - Visual Studio Code 1.100.0 or higher
-- A workspace containing .NET solution files (.sln)
+- A workspace containing .NET solution files (.sln(x))
 
 ## Extension Settings
 
@@ -281,21 +292,6 @@ The extension provides the following commands accessible via the Command Palette
 
 - `C# Solution Explorer: Toggle Unused Symbol Highlighting` - Toggle the unused symbol highlighting feature on/off
 - `C# Solution Explorer: Open Extension Walkthroughs` (Alt+W) - Open the extension walkthroughs to learn about all features
-
-## Known Issues
-
-- Reference analysis may take a moment for large files
-- Some symbols may not be detected correctly if the C# language server is not fully initialized
-
-## Release Notes
-
-### 0.0.1
-
-Initial release featuring:
-
-- Solution Explorer with drag & drop support
-- Comprehensive file templates for C# development
-- Unused symbol highlighting with configurable visual feedback
 
 ---
 
