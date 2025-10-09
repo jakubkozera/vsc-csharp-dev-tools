@@ -2,8 +2,6 @@
 
 ---
 
-## Quick Links
-
 <style>
 #quick-links a {
   text-decoration: none;
@@ -13,8 +11,9 @@
 }
 </style>
 
-<div id="quick-links" style="display: flex; gap: 20px;">
-<div style="flex: 1;">
+<table style="border: none; width: 100%;">
+<tr style="border: none;">
+<td style="border: none; vertical-align: top; width: 50%;">
 
 ### [Solution Explorer](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer)
 
@@ -73,8 +72,8 @@
 - [Text Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/text-tools)
 - [UI Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/ui-tools)
 
-</div>
-<div style="flex: 1;">
+</td>
+<td style="border: none; vertical-align: top; width: 30%; text-align: center;">
 
 ![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/solution-explorer.png)
 
@@ -82,8 +81,9 @@
 
 ![Testing](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/testing.png)
 
-</div>
-</div>
+</td>
+</tr>
+</table>
 
 ---
 
