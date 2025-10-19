@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-tools/secret-scanning" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">Secret Scanning | C# Dev Tools</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/secret-scanning"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Secret Scanning | C# Dev Tools"><meta data-rh="true" name="description" content="Comprehensive security tool for detecting exposed secrets, credentials, and sensitive information in your codebase."><meta data-rh="true" property="og:description" content="Comprehensive security tool for detecting exposed secrets, credentials, and sensitive information in your codebase."><link data-rh="true" rel="icon" href="/vsc-csharp-dev-tools/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/secret-scanning"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/secret-scanning" hreflang="en"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/secret-scanning" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/"},{"@type":"ListItem","position":2,"name":"Secret Scanning","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/secret-scanning"}]}</script><link rel="stylesheet" href="/vsc-csharp-dev-tools/assets/css/styles.1c0ec940.css">
+<script src="/vsc-csharp-dev-tools/assets/js/runtime~main.7bba0497.js" defer="defer"></script>
+<script src="/vsc-csharp-dev-tools/assets/js/main.9e3837ec.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/vsc-csharp-dev-tools/"></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/vsc-csharp-dev-tools/">C# Dev Tools Docs</a><a href="https://github.com/jakubkozera/vsc-csharp-dev-tools" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/vsc-csharp-dev-tools/">Introduction to C# Dev Tools</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/getting-started/installation">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/solution-explorer/">Solution Explorer</a><button aria-label="Expand sidebar category &#x27;Solution Explorer&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/nuget-management/">NuGet Package Management</a><button aria-label="Expand sidebar category &#x27;NuGet Package Management&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/file-templates/">File Templates &amp; Quick File Creation</a><button aria-label="Expand sidebar category &#x27;File Templates &amp; Quick File Creation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/testing-integration/">Testing Integration</a><button aria-label="Expand sidebar category &#x27;Testing Integration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/code-navigation/">Code Navigation &amp; IntelliSense</a><button aria-label="Expand sidebar category &#x27;Code Navigation &amp; IntelliSense&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/vsc-csharp-dev-tools/source-control/">Source Control</a><button aria-label="Expand sidebar category &#x27;Source Control&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/vsc-csharp-dev-tools/tools/">Tools</a><button aria-label="Collapse sidebar category &#x27;Tools&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/tools/bookmarks">Bookmarks</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/tools/diagrams">Diagrams</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/vsc-csharp-dev-tools/tools/secret-scanning">Secret Scanning</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/tools/text-tools">Text Tools</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vsc-csharp-dev-tools/tools/ui-tools">User Interface Tools</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/configuration/settings">Configuration</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/vsc-csharp-dev-tools/advanced/support">Advanced</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/vsc-csharp-dev-tools/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/vsc-csharp-dev-tools/tools/"><span>Tools</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Secret Scanning</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Secret Scanning</h1></header>
+<p>Comprehensive security tool for detecting exposed secrets, credentials, and sensitive information in your codebase.</p>
+<p><img decoding="async" loading="lazy" alt="Secret Scanning Interface" src="/vsc-csharp-dev-tools/assets/images/secret-scanning-2728a4d948bcd759bc9e0b3e72f4b7ac.png" width="597" height="677" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>C# Dev Tools includes a powerful secret scanning feature that helps protect your applications by detecting potentially exposed secrets, API keys, passwords, and other sensitive information in your codebase. The tool uses <a href="https://github.com/trufflesecurity/trufflehog" target="_blank" rel="noopener noreferrer">TruffleHog</a>, an industry-standard secret detection engine, to perform comprehensive scans.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-gets-scanned">What Gets Scanned<a href="#what-gets-scanned" class="hash-link" aria-label="Direct link to What Gets Scanned" title="Direct link to What Gets Scanned">​</a></h2>
+<p>The secret scanner analyzes various types of content in your workspace:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="file-types">File Types<a href="#file-types" class="hash-link" aria-label="Direct link to File Types" title="Direct link to File Types">​</a></h3>
+<ul>
+<li>Source code files (C#, JavaScript, Python, etc.)</li>
+<li>Configuration files (appsettings.json, web.config, etc.)</li>
+<li>Environment files (.env, .env.local)</li>
+<li>Documentation files (README.md, docs)</li>
+<li>Script files (PowerShell, Bash, Batch)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="secret-types-detected">Secret Types Detected<a href="#secret-types-detected" class="hash-link" aria-label="Direct link to Secret Types Detected" title="Direct link to Secret Types Detected">​</a></h3>
+<ul>
+<li><strong>API Keys</strong>: AWS, Azure, Google Cloud, GitHub tokens</li>
+<li><strong>Database Credentials</strong>: Connection strings, passwords</li>
+<li><strong>Authentication Tokens</strong>: JWT tokens, OAuth secrets</li>
+<li><strong>Encryption Keys</strong>: Private keys, certificates</li>
+<li><strong>Third-party Services</strong>: Slack tokens, Discord webhooks</li>
+<li><strong>Custom Patterns</strong>: User-defined secret patterns</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-secret-scanning-works">How Secret Scanning Works<a href="#how-secret-scanning-works" class="hash-link" aria-label="Direct link to How Secret Scanning Works" title="Direct link to How Secret Scanning Works">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="detection-process">Detection Process<a href="#detection-process" class="hash-link" aria-label="Direct link to Detection Process" title="Direct link to Detection Process">​</a></h3>
+<ol>
+<li><strong>File Discovery</strong>: The scanner recursively searches your workspace for supported file types</li>
+<li><strong>Content Analysis</strong>: Each file is analyzed using advanced pattern matching and entropy analysis</li>
+<li><strong>TruffleHog Integration</strong>: Leverages TruffleHog&#x27;s detection rules and algorithms</li>
+<li><strong>Verification</strong>: Attempts to verify found secrets when possible</li>
+<li><strong>Reporting</strong>: Generates a comprehensive report with findings</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="trufflehog-integration">TruffleHog Integration<a href="#trufflehog-integration" class="hash-link" aria-label="Direct link to TruffleHog Integration" title="Direct link to TruffleHog Integration">​</a></h3>
+<p>The extension integrates with <a href="https://github.com/trufflesecurity/trufflehog" target="_blank" rel="noopener noreferrer">TruffleHog</a>, a powerful open-source secret scanner:</p>
+<ul>
+<li><strong>High Accuracy</strong>: Uses machine learning and entropy analysis to reduce false positives</li>
+<li><strong>Extensive Database</strong>: Detects over 700+ secret types from various services</li>
+<li><strong>Active Verification</strong>: Attempts to verify secrets with their respective services</li>
+<li><strong>Regular Updates</strong>: Pattern database is continuously updated with new secret types</li>
+<li><strong>Git History Scanning</strong>: Can scan through commit history (when configured)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="scanning-modes">Scanning Modes<a href="#scanning-modes" class="hash-link" aria-label="Direct link to Scanning Modes" title="Direct link to Scanning Modes">​</a></h3>
+<p><strong>Filesystem Scan</strong></p>
+<ul>
+<li>Scans current workspace files</li>
+<li>Fast and lightweight</li>
+<li>Ideal for quick security checks</li>
+</ul>
+<p><strong>Git History Scan</strong></p>
+<ul>
+<li>Scans through commit history</li>
+<li>Detects secrets in previous commits</li>
+<li>Comprehensive but slower</li>
+<li>Useful for thorough audits</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="using-secret-scanning">Using Secret Scanning<a href="#using-secret-scanning" class="hash-link" aria-label="Direct link to Using Secret Scanning" title="Direct link to Using Secret Scanning">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="starting-a-scan">Starting a Scan<a href="#starting-a-scan" class="hash-link" aria-label="Direct link to Starting a Scan" title="Direct link to Starting a Scan">​</a></h3>
+<ol>
+<li>Open Solution Explorer</li>
+<li>Navigate to Tools section</li>
+<li>Click on &quot;Secret Scanning&quot;</li>
+<li>Choose scan type (Filesystem or Git History)</li>
+<li>Wait for scan completion</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="scan-results">Scan Results<a href="#scan-results" class="hash-link" aria-label="Direct link to Scan Results" title="Direct link to Scan Results">​</a></h3>
+<p>The scan results provide detailed information:</p>
+<p><strong>Active Secrets</strong></p>
+<ul>
+<li>Number of verified active secrets</li>
+<li>High-priority items requiring immediate attention</li>
+</ul>
+<p><strong>All Findings</strong></p>
+<ul>
+<li>Total number of potential secrets detected</li>
+<li>Includes both verified and unverified findings</li>
+</ul>
+<p><strong>File Coverage</strong></p>
+<ul>
+<li>Number of files scanned</li>
+<li>Scan duration and performance metrics</li>
+</ul>
+<p><strong>Ignored Secrets</strong></p>
+<ul>
+<li>Previously reviewed and ignored findings</li>
+<li>Helps track acknowledged false positives</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="managing-findings">Managing Findings<a href="#managing-findings" class="hash-link" aria-label="Direct link to Managing Findings" title="Direct link to Managing Findings">​</a></h3>
+<p><strong>Review Process</strong></p>
+<ol>
+<li>Examine each finding carefully</li>
+<li>Verify if it&#x27;s a real secret or false positive</li>
+<li>Take appropriate action (rotate, remove, or ignore)</li>
+<li>Mark findings as reviewed</li>
+</ol>
+<p><strong>Actions Available</strong></p>
+<ul>
+<li><strong>View Details</strong>: See file location and context</li>
+<li><strong>Open File</strong>: Navigate directly to the finding</li>
+<li><strong>Ignore</strong>: Mark as false positive</li>
+<li><strong>Copy</strong>: Copy finding details for documentation</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="security-best-practices">Security Best Practices<a href="#security-best-practices" class="hash-link" aria-label="Direct link to Security Best Practices" title="Direct link to Security Best Practices">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="immediate-actions">Immediate Actions<a href="#immediate-actions" class="hash-link" aria-label="Direct link to Immediate Actions" title="Direct link to Immediate Actions">​</a></h3>
+<p>When secrets are found:</p>
+<ol>
+<li><strong>Rotate Compromised Secrets</strong>: Change API keys, passwords immediately</li>
+<li><strong>Remove from Code</strong>: Delete secrets from source code</li>
+<li><strong>Use Secure Storage</strong>: Implement proper secret management</li>
+<li><strong>Review Git History</strong>: Check if secrets exist in previous commits</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="prevention-strategies">Prevention Strategies<a href="#prevention-strategies" class="hash-link" aria-label="Direct link to Prevention Strategies" title="Direct link to Prevention Strategies">​</a></h3>
+<p><strong>Environment Variables</strong></p>
+<div class="language-csharp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-csharp codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">// Instead of hardcoded secrets</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">var apiKey = &quot;sk-1234567890abcdef&quot;; // ❌ Don&#x27;t do this</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// Use environment variables</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">var apiKey = Environment.GetEnvironmentVariable(&quot;API_KEY&quot;); // ✅ Better</span><br></span></code></pre></div></div>
+<p><strong>Configuration Files</strong></p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">// appsettings.json - Use user secrets in development</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;ConnectionStrings&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;DefaultConnection&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;Data Source=localhost;...&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+<p><strong>User Secrets</strong> (Development)</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">dotnet user-secrets set &quot;ConnectionStrings:DefaultConnection&quot; &quot;your-connection-string&quot;</span><br></span></code></pre></div></div>
+<p><strong>Azure Key Vault</strong> (Production)</p>
+<div class="language-csharp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-csharp codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">// Use Azure Key Vault for production secrets</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">var client = new SecretClient(new Uri(keyVaultUrl), new DefaultAzureCredential());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">var secret = await client.GetSecretAsync(&quot;database-connection&quot;);</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="secure-development-workflow">Secure Development Workflow<a href="#secure-development-workflow" class="hash-link" aria-label="Direct link to Secure Development Workflow" title="Direct link to Secure Development Workflow">​</a></h3>
+<ol>
+<li><strong>Pre-commit Scanning</strong>: Run scans before committing code</li>
+<li><strong>CI/CD Integration</strong>: Include secret scanning in build pipelines</li>
+<li><strong>Regular Audits</strong>: Schedule periodic comprehensive scans</li>
+<li><strong>Team Training</strong>: Educate team on secure coding practices</li>
+<li><strong>Secret Management</strong>: Implement proper secret storage solutions</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="configuration">Configuration<a href="#configuration" class="hash-link" aria-label="Direct link to Configuration" title="Direct link to Configuration">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="scan-settings">Scan Settings<a href="#scan-settings" class="hash-link" aria-label="Direct link to Scan Settings" title="Direct link to Scan Settings">​</a></h3>
+<p>Configure scanning behavior through VS Code settings:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;csharp-dev-tools.secretScanning.includeGitHistory&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">true</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;csharp-dev-tools.secretScanning.maxFileSizeKB&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1024</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;csharp-dev-tools.secretScanning.excludePatterns&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token string" style="color:#e3116c">&quot;**/node_modules/**&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token string" style="color:#e3116c">&quot;**/bin/**&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token string" style="color:#e3116c">&quot;**/obj/**&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="custom-patterns">Custom Patterns<a href="#custom-patterns" class="hash-link" aria-label="Direct link to Custom Patterns" title="Direct link to Custom Patterns">​</a></h3>
+<p>Define custom secret patterns:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;csharp-dev-tools.secretScanning.customPatterns&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;name&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;Custom API Key&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;pattern&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;custom_key_[a-zA-Z0-9]{32}&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;description&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;Internal API key format&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="advanced-features">Advanced Features<a href="#advanced-features" class="hash-link" aria-label="Direct link to Advanced Features" title="Direct link to Advanced Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="integration-with-source-control">Integration with Source Control<a href="#integration-with-source-control" class="hash-link" aria-label="Direct link to Integration with Source Control" title="Direct link to Integration with Source Control">​</a></h3>
+<p><strong>Pre-commit Hooks</strong></p>
+<ul>
+<li>Set up Git hooks to scan before commits</li>
+<li>Prevent secrets from entering repository</li>
+<li>Automated blocking of suspicious commits</li>
+</ul>
+<p><strong>Branch Protection</strong></p>
+<ul>
+<li>Configure branch protection rules</li>
+<li>Require secret scanning for pull requests</li>
+<li>Automated security reviews</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reporting-and-analytics">Reporting and Analytics<a href="#reporting-and-analytics" class="hash-link" aria-label="Direct link to Reporting and Analytics" title="Direct link to Reporting and Analytics">​</a></h3>
+<p><strong>Export Options</strong></p>
+<ul>
+<li>JSON format for integration</li>
+<li>CSV for spreadsheet analysis</li>
+<li>PDF reports for security audits</li>
+</ul>
+<p><strong>Historical Tracking</strong></p>
+<ul>
+<li>Track findings over time</li>
+<li>Monitor security improvements</li>
+<li>Generate compliance reports</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="performance-optimization">Performance Optimization<a href="#performance-optimization" class="hash-link" aria-label="Direct link to Performance Optimization" title="Direct link to Performance Optimization">​</a></h3>
+<p><strong>Selective Scanning</strong></p>
+<ul>
+<li>Configure file type filters</li>
+<li>Exclude binary files and dependencies</li>
+<li>Focus on critical code areas</li>
+</ul>
+<p><strong>Parallel Processing</strong></p>
+<ul>
+<li>Multi-threaded scanning</li>
+<li>Optimized for large codebases</li>
+<li>Progress reporting and cancellation</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="common-issues">Common Issues<a href="#common-issues" class="hash-link" aria-label="Direct link to Common Issues" title="Direct link to Common Issues">​</a></h3>
+<p><strong>No Findings Displayed</strong></p>
+<ul>
+<li>Check workspace permissions</li>
+<li>Verify file access rights</li>
+<li>Review scan log for errors</li>
+</ul>
+<p><strong>Slow Scanning Performance</strong></p>
+<ul>
+<li>Exclude large binary files</li>
+<li>Limit Git history depth</li>
+<li>Increase file size limits</li>
+</ul>
+<p><strong>False Positives</strong></p>
+<ul>
+<li>Review detection patterns</li>
+<li>Adjust sensitivity settings</li>
+<li>Add custom ignore rules</li>
+</ul>
+<p><strong>TruffleHog Not Found</strong></p>
+<ul>
+<li>Ensure TruffleHog is installed</li>
+<li>Check PATH configuration</li>
+<li>Verify executable permissions</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="getting-help">Getting Help<a href="#getting-help" class="hash-link" aria-label="Direct link to Getting Help" title="Direct link to Getting Help">​</a></h3>
+<p>If you encounter issues:</p>
+<ol>
+<li>Check the Output panel for error messages</li>
+<li>Review VS Code Developer Tools console</li>
+<li>File issues on the extension repository</li>
+<li>Consult TruffleHog documentation for advanced usage</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="best-practices-summary">Best Practices Summary<a href="#best-practices-summary" class="hash-link" aria-label="Direct link to Best Practices Summary" title="Direct link to Best Practices Summary">​</a></h2>
+<p>✅ <strong>Do:</strong></p>
+<ul>
+<li>Run scans regularly as part of your workflow</li>
+<li>Review all findings carefully before ignoring</li>
+<li>Use proper secret management solutions</li>
+<li>Educate your team on security practices</li>
+<li>Integrate scanning into CI/CD pipelines</li>
+</ul>
+<p>❌ <strong>Don&#x27;t:</strong></p>
+<ul>
+<li>Ignore security findings without proper review</li>
+<li>Commit secrets to version control</li>
+<li>Use hardcoded credentials in production</li>
+<li>Skip scanning in shared repositories</li>
+<li>Disable scanning without security team approval</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="resources">Resources<a href="#resources" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources">​</a></h2>
+<ul>
+<li><a href="https://github.com/trufflesecurity/trufflehog" target="_blank" rel="noopener noreferrer">TruffleHog GitHub Repository</a></li>
+<li><a href="https://trufflesecurity.com/trufflehog" target="_blank" rel="noopener noreferrer">TruffleHog Documentation</a></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">OWASP Secret Management Guide</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/key-vault/" target="_blank" rel="noopener noreferrer">Azure Key Vault Documentation</a></li>
+<li><a href="https://docs.aws.amazon.com/secretsmanager/" target="_blank" rel="noopener noreferrer">AWS Secrets Manager</a></li>
+</ul>
+<p>The secret scanning tool is an essential component of a secure development workflow. Regular use helps maintain the security posture of your applications and prevents accidental exposure of sensitive information.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/vsc-csharp-dev-tools/tools/diagrams"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Diagrams</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/vsc-csharp-dev-tools/tools/text-tools"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Text Tools</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#what-gets-scanned" class="table-of-contents__link toc-highlight">What Gets Scanned</a><ul><li><a href="#file-types" class="table-of-contents__link toc-highlight">File Types</a></li><li><a href="#secret-types-detected" class="table-of-contents__link toc-highlight">Secret Types Detected</a></li></ul></li><li><a href="#how-secret-scanning-works" class="table-of-contents__link toc-highlight">How Secret Scanning Works</a><ul><li><a href="#detection-process" class="table-of-contents__link toc-highlight">Detection Process</a></li><li><a href="#trufflehog-integration" class="table-of-contents__link toc-highlight">TruffleHog Integration</a></li><li><a href="#scanning-modes" class="table-of-contents__link toc-highlight">Scanning Modes</a></li></ul></li><li><a href="#using-secret-scanning" class="table-of-contents__link toc-highlight">Using Secret Scanning</a><ul><li><a href="#starting-a-scan" class="table-of-contents__link toc-highlight">Starting a Scan</a></li><li><a href="#scan-results" class="table-of-contents__link toc-highlight">Scan Results</a></li><li><a href="#managing-findings" class="table-of-contents__link toc-highlight">Managing Findings</a></li></ul></li><li><a href="#security-best-practices" class="table-of-contents__link toc-highlight">Security Best Practices</a><ul><li><a href="#immediate-actions" class="table-of-contents__link toc-highlight">Immediate Actions</a></li><li><a href="#prevention-strategies" class="table-of-contents__link toc-highlight">Prevention Strategies</a></li><li><a href="#secure-development-workflow" class="table-of-contents__link toc-highlight">Secure Development Workflow</a></li></ul></li><li><a href="#configuration" class="table-of-contents__link toc-highlight">Configuration</a><ul><li><a href="#scan-settings" class="table-of-contents__link toc-highlight">Scan Settings</a></li><li><a href="#custom-patterns" class="table-of-contents__link toc-highlight">Custom Patterns</a></li></ul></li><li><a href="#advanced-features" class="table-of-contents__link toc-highlight">Advanced Features</a><ul><li><a href="#integration-with-source-control" class="table-of-contents__link toc-highlight">Integration with Source Control</a></li><li><a href="#reporting-and-analytics" class="table-of-contents__link toc-highlight">Reporting and Analytics</a></li><li><a href="#performance-optimization" class="table-of-contents__link toc-highlight">Performance Optimization</a></li></ul></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#common-issues" class="table-of-contents__link toc-highlight">Common Issues</a></li><li><a href="#getting-help" class="table-of-contents__link toc-highlight">Getting Help</a></li></ul></li><li><a href="#best-practices-summary" class="table-of-contents__link toc-highlight">Best Practices Summary</a></li><li><a href="#resources" class="table-of-contents__link toc-highlight">Resources</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
