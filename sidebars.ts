@@ -127,6 +127,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'tools/bookmarks',
         'tools/diagrams',
+        'tools/secret-scanning',
         'tools/text-tools',
         'tools/ui-tools',
       ],

@@ -12,6 +12,7 @@ C# Dev Tools includes a comprehensive set of developer tools:
 
 - **[Bookmarks](./bookmarks.md)** - Mark and navigate code locations
 - **[Diagrams](./diagrams.md)** - Create and manage diagrams with Excalidraw
+- **[Secret Scanning](./secret-scanning.md)** - Security tool for detecting exposed secrets
 - **[Text Tools](./text-tools.md)** - Encoders, decoders, and text utilities
 - **[User Interface Tools](./ui-tools.md)** - Color tools and UI design utilities
 
@@ -34,6 +35,16 @@ Create and manage technical diagrams:
 - Whiteboard-style drawing
 - Export and share diagrams
 - Version control friendly
+
+## Secret Scanning
+
+Detect exposed secrets and credentials:
+
+- TruffleHog integration
+- Filesystem and Git history scanning
+- 700+ secret pattern detection
+- Active secret verification
+- Comprehensive security reporting
 
 ## Text Tools
 
