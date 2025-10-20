@@ -2,170 +2,127 @@
 sidebar_position: 5
 ---
 
+
 # Secret Scanning
 
-Comprehensive security tool for detecting exposed secrets, credentials, and sensitive information in your codebase.
+Short, human version: this tool helps you find accidentally committed secrets in your code and configs — API keys, tokens, passwords, and similar items that shouldn't be in a repository.
 
 ![Secret Scanning Interface](../../docs/features/img/secret-scanning.png)
 
-## Overview
+## What this is about
 
-C# Dev Tools includes a powerful secret scanning feature that helps protect your applications by detecting potentially exposed secrets, API keys, passwords, and other sensitive information in your codebase. The tool uses [TruffleHog](https://github.com/trufflesecurity/trufflehog), an industry-standard secret detection engine, to perform comprehensive scans.
+C# Dev Tools includes secret scanning powered by TruffleHog. It looks through project files, searches for high-entropy patterns and known signatures, and points out places that may contain sensitive data. Not every match is an actual secret — you may see false positives — but it's a reliable starting point for manual review.
 
-## What Gets Scanned
+## What gets scanned
 
-The secret scanner analyzes various types of content in your workspace:
+Common places we check:
 
-### File Types
-- Source code files (C#, JavaScript, Python, etc.)
-- Configuration files (appsettings.json, web.config, etc.)
-- Environment files (.env, .env.local)
-- Documentation files (README.md, docs)
-- Script files (PowerShell, Bash, Batch)
+- source files (C#, JavaScript, Python, etc.)
+- configuration files (appsettings.json, web.config, etc.)
+- environment files (.env, .env.local)
+- documentation (README.md, docs folder)
+- scripts (PowerShell, Bash, Batch)
 
-### Secret Types Detected
-- **API Keys**: AWS, Azure, Google Cloud, GitHub tokens
-- **Database Credentials**: Connection strings, passwords
-- **Authentication Tokens**: JWT tokens, OAuth secrets
-- **Encryption Keys**: Private keys, certificates
-- **Third-party Services**: Slack tokens, Discord webhooks
-- **Custom Patterns**: User-defined secret patterns
+Types of secrets that can be detected:
 
-## How Secret Scanning Works
+- API keys (AWS, Azure, Google Cloud, GitHub tokens, etc.)
+- database credentials (connection strings, passwords)
+- authentication tokens (JWT, OAuth secrets)
+- encryption keys and private certificates
+- third-party service tokens (Slack, Discord webhooks, etc.)
+- custom patterns (you can add rules for project-specific secrets)
 
-### Detection Process
+## How it works (short)
 
-1. **File Discovery**: The scanner recursively searches your workspace for supported file types
-2. **Content Analysis**: Each file is analyzed using advanced pattern matching and entropy analysis
-3. **TruffleHog Integration**: Leverages TruffleHog's detection rules and algorithms
-4. **Verification**: Attempts to verify found secrets when possible
-5. **Reporting**: Generates a comprehensive report with findings
+1. We discover files in the workspace matching supported types.
+2. Each file is analyzed using pattern matching, entropy checks, and TruffleHog rules.
+3. When suspicious items are found we try to verify them if possible.
+4. The tool generates a report with findings and metadata.
 
-### TruffleHog Integration
+TruffleHog is an open-source engine that uses entropy analysis and many detection rules to reduce false positives and cover a wide range of secret types. You can also enable Git history scanning to find secrets that were committed in the past.
 
-The extension integrates with [TruffleHog](https://github.com/trufflesecurity/trufflehog), a powerful open-source secret scanner:
+## Scanning modes
 
-- **High Accuracy**: Uses machine learning and entropy analysis to reduce false positives
-- **Extensive Database**: Detects over 700+ secret types from various services
-- **Active Verification**: Attempts to verify secrets with their respective services
-- **Regular Updates**: Pattern database is continuously updated with new secret types
-- **Git History Scanning**: Can scan through commit history (when configured)
+- Filesystem Scan — a fast, lightweight scan of files in the current workspace. Good for quick checks.
+- Git History Scan — scans commit history; more thorough but slower. Useful for audits.
 
-### Scanning Modes
-
-**Filesystem Scan**
-- Scans current workspace files
-- Fast and lightweight
-- Ideal for quick security checks
-
-**Git History Scan** 
-- Scans through commit history
-- Detects secrets in previous commits
-- Comprehensive but slower
-- Useful for thorough audits
-
-## Using Secret Scanning
-
-### Starting a Scan
+## How to start
 
 1. Open Solution Explorer
-2. Navigate to Tools section
-3. Click on "Secret Scanning"
-4. Choose scan type (Filesystem or Git History)
-5. Wait for scan completion
+2. Go to the Tools section
+3. Select "Secret Scanning"
+4. Pick a scan mode (Filesystem or Git History)
+5. Wait for the scan to finish
 
-### Scan Results
+### What the results include
 
-The scan results provide detailed information:
+- Active secrets — verified or high-confidence items that need quick action.
+- All findings — the total list of potential secrets (both verified and unverified).
+- File coverage — number of files scanned, duration and performance stats.
+- Ignored — findings you've previously reviewed and marked as false positives.
 
-**Active Secrets**
-- Number of verified active secrets
-- High-priority items requiring immediate attention
+### Review and actions
 
-**All Findings**
-- Total number of potential secrets detected
-- Includes both verified and unverified findings
+For each finding you can:
 
-**File Coverage**
-- Number of files scanned
-- Scan duration and performance metrics
+- View details (file location and surrounding context)
+- Open the file in the editor
+- Mark as ignored (false positive)
+- Copy details to your notes or ticketing system
 
-**Ignored Secrets**
-- Previously reviewed and ignored findings
-- Helps track acknowledged false positives
+Typical review flow:
 
-### Managing Findings
+1. Check the context — is this actually a secret?
+2. If yes — rotate/regenerate the secret, remove it from code, and move it to a secret manager.
+3. If it's a false positive — mark it ignored.
 
-**Review Process**
-1. Examine each finding carefully
-2. Verify if it's a real secret or false positive
-3. Take appropriate action (rotate, remove, or ignore)
-4. Mark findings as reviewed
+## What to do when you find a secret
 
-**Actions Available**
-- **View Details**: See file location and context
-- **Open File**: Navigate directly to the finding
-- **Ignore**: Mark as false positive
-- **Copy**: Copy finding details for documentation
+1. Rotate compromised keys and passwords immediately.
+2. Remove the secret from the repository and replace it with a safe configuration.
+3. If needed, inspect Git history and remove or rewrite past commits that contain secrets.
+4. Store secrets in a dedicated secret manager (Azure Key Vault, AWS Secrets Manager, etc.).
 
-## Security Best Practices
+## Simple best-practices (examples)
 
-### Immediate Actions
+Don't hardcode secrets in code:
 
-When secrets are found:
-
-1. **Rotate Compromised Secrets**: Change API keys, passwords immediately
-2. **Remove from Code**: Delete secrets from source code
-3. **Use Secure Storage**: Implement proper secret management
-4. **Review Git History**: Check if secrets exist in previous commits
-
-### Prevention Strategies
-
-**Environment Variables**
 ```csharp
-// Instead of hardcoded secrets
-var apiKey = "sk-1234567890abcdef"; // ❌ Don't do this
+// BAD: secret in code
+var apiKey = "sk-1234567890abcdef";
 
-// Use environment variables
-var apiKey = Environment.GetEnvironmentVariable("API_KEY"); // ✅ Better
+// BETTER: use environment variables
+var apiKey = Environment.GetEnvironmentVariable("API_KEY");
 ```
 
-**Configuration Files**
-```json
-// appsettings.json - Use user secrets in development
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Data Source=localhost;..."
-  }
-}
-```
+Use "user secrets" during development:
 
-**User Secrets** (Development)
 ```bash
 dotnet user-secrets set "ConnectionStrings:DefaultConnection" "your-connection-string"
 ```
 
-**Azure Key Vault** (Production)
+In production, keep secrets in a secure store (example: Azure Key Vault):
+
 ```csharp
-// Use Azure Key Vault for production secrets
 var client = new SecretClient(new Uri(keyVaultUrl), new DefaultAzureCredential());
 var secret = await client.GetSecretAsync("database-connection");
 ```
 
-### Secure Development Workflow
+## Integrating into your workflow
 
-1. **Pre-commit Scanning**: Run scans before committing code
-2. **CI/CD Integration**: Include secret scanning in build pipelines
-3. **Regular Audits**: Schedule periodic comprehensive scans
-4. **Team Training**: Educate team on secure coding practices
-5. **Secret Management**: Implement proper secret storage solutions
+- Run scans pre-commit (pre-commit hooks)
+- Include secret scanning in CI/CD pipelines
+- Schedule regular audits
+- Train the team on secure handling of secrets
+- Use a proper secret storage solution for production
 
 ## Resources
 
 - [TruffleHog GitHub Repository](https://github.com/trufflesecurity/trufflehog)
 - [TruffleHog Documentation](https://trufflesecurity.com/trufflehog)
 - [OWASP Secret Management Guide](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)
-- [Azure Key Vault Documentation](https://docs.microsoft.com/en-us/azure/key-vault/)
+- [Azure Key Vault Documentation](https://learn.microsoft.com/azure/key-vault/)
 - [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/)
 
-The secret scanning tool is an essential component of a secure development workflow. Regular use helps maintain the security posture of your applications and prevents accidental exposure of sensitive information.
+Regular secret scanning is an easy way to reduce the risk of accidental data leaks — the tool raises flags, and your team decides how to act on them.
+
