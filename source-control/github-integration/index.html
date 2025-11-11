@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">GitHub Integration | C# Dev Tools</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/github-integration"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="GitHub Integration | C# Dev Tools"><meta data-rh="true" name="description" content="Comprehensive GitHub integration for pull requests and code collaboration."><meta data-rh="true" property="og:description" content="Comprehensive GitHub integration for pull requests and code collaboration."><link data-rh="true" rel="icon" href="/vsc-csharp-dev-tools/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/github-integration"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/github-integration" hreflang="en"><link data-rh="true" rel="alternate" href="https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/github-integration" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Source Control","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/"},{"@type":"ListItem","position":2,"name":"GitHub Integration","item":"https://jakubkozera.github.io/vsc-csharp-dev-tools/source-control/github-integration"}]}</script><link rel="stylesheet" href="/vsc-csharp-dev-tools/assets/css/styles.1c0ec940.css">
-<script src="/vsc-csharp-dev-tools/assets/js/runtime~main.1629beb1.js" defer="defer"></script>
+<script src="/vsc-csharp-dev-tools/assets/js/runtime~main.246b169a.js" defer="defer"></script>
 <script src="/vsc-csharp-dev-tools/assets/js/main.9e3837ec.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,10 +22,45 @@
 <li>Type &quot;Pull Request Manager: Open Connection Manager&quot;</li>
 <li>Click &quot;Add Connection&quot;</li>
 <li>Select &quot;GitHub&quot;</li>
-<li>Enter your Personal Access Token</li>
+<li>Choose authentication method:<!-- -->
+<ul>
+<li><strong>OAuth (Recommended)</strong>: Uses VS Code&#x27;s built-in GitHub authentication</li>
+<li><strong>Personal Access Token</strong>: Manual token configuration</li>
+</ul>
+</li>
+<li>For OAuth:<!-- -->
+<ul>
+<li>Enter connection name and organization (optional)</li>
+<li>Click &quot;Create OAuth Connection&quot;</li>
+<li>Authenticate through VS Code&#x27;s secure GitHub authentication flow</li>
+</ul>
+</li>
+<li>For PAT:<!-- -->
+<ul>
+<li>Enter connection details and Personal Access Token</li>
 <li>Save connection</li>
+</ul>
+</li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="creating-a-personal-access-token">Creating a Personal Access Token<a href="#creating-a-personal-access-token" class="hash-link" aria-label="Direct link to Creating a Personal Access Token" title="Direct link to Creating a Personal Access Token">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="authentication-methods">Authentication Methods<a href="#authentication-methods" class="hash-link" aria-label="Direct link to Authentication Methods" title="Direct link to Authentication Methods">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="oauth-authentication-recommended">OAuth Authentication (Recommended)<a href="#oauth-authentication-recommended" class="hash-link" aria-label="Direct link to OAuth Authentication (Recommended)" title="Direct link to OAuth Authentication (Recommended)">​</a></h4>
+<p>OAuth provides the most secure and convenient authentication:</p>
+<ol>
+<li>Select &quot;OAuth&quot; as authentication method</li>
+<li>VS Code will prompt you to sign in to GitHub</li>
+<li>Authorize the application to access your GitHub account</li>
+<li>Connection is automatically configured with secure token management</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>No need to create or manage tokens manually</li>
+<li>Automatic token refresh and renewal</li>
+<li>Integrated with VS Code&#x27;s secure credential storage</li>
+<li>Easy revocation through GitHub&#x27;s authorized applications</li>
+<li>Supports all GitHub features including private repositories</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="personal-access-token-pat">Personal Access Token (PAT)<a href="#personal-access-token-pat" class="hash-link" aria-label="Direct link to Personal Access Token (PAT)" title="Direct link to Personal Access Token (PAT)">​</a></h4>
+<p>For scenarios requiring PAT authentication:</p>
 <ol>
 <li>Go to GitHub.com → Settings → Developer settings</li>
 <li>Click &quot;Personal access tokens&quot; → &quot;Tokens (classic)&quot;</li>
@@ -37,6 +72,7 @@
 </ul>
 </li>
 <li>Generate and copy the token</li>
+<li>Paste token in connection configuration</li>
 </ol>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="viewing-pull-requests">Viewing Pull Requests<a href="#viewing-pull-requests" class="hash-link" aria-label="Direct link to Viewing Pull Requests" title="Direct link to Viewing Pull Requests">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="assigned-to-me">Assigned to Me<a href="#assigned-to-me" class="hash-link" aria-label="Direct link to Assigned to Me" title="Direct link to Assigned to Me">​</a></h3>
@@ -182,12 +218,21 @@
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="authentication-failed">Authentication Failed<a href="#authentication-failed" class="hash-link" aria-label="Direct link to Authentication Failed" title="Direct link to Authentication Failed">​</a></h3>
-<p>If authentication fails:</p>
+<p>If GitHub authentication fails:</p>
+<p><strong>For OAuth connections:</strong></p>
 <ol>
-<li>Verify PAT is valid</li>
-<li>Check token permissions</li>
+<li>Sign out and sign back in to VS Code&#x27;s GitHub account</li>
+<li>Check GitHub permissions and authorized applications</li>
+<li>Revoke and re-authorize the application if needed</li>
+<li>Try recreating the OAuth connection</li>
+<li>Ensure you have access to the repositories you&#x27;re trying to access</li>
+</ol>
+<p><strong>For PAT connections:</strong></p>
+<ol>
+<li>Verify PAT is valid and not expired</li>
+<li>Check token permissions and scopes</li>
 <li>Regenerate token if needed</li>
-<li>Reconfigure connection</li>
+<li>Reconfigure connection with new token</li>
 </ol>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="prs-not-loading">PRs Not Loading<a href="#prs-not-loading" class="hash-link" aria-label="Direct link to PRs Not Loading" title="Direct link to PRs Not Loading">​</a></h3>
 <p>If PRs don&#x27;t load:</p>
@@ -204,6 +249,6 @@
 <li>Check write permissions</li>
 <li>Verify base branch exists</li>
 <li>Check for conflicts</li>
-</ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/vsc-csharp-dev-tools/source-control/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Source Control</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/vsc-csharp-dev-tools/source-control/azure-devops-integration"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Azure DevOps Integration</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#setup" class="table-of-contents__link toc-highlight">Setup</a><ul><li><a href="#connecting-to-github" class="table-of-contents__link toc-highlight">Connecting to GitHub</a></li><li><a href="#creating-a-personal-access-token" class="table-of-contents__link toc-highlight">Creating a Personal Access Token</a></li></ul></li><li><a href="#viewing-pull-requests" class="table-of-contents__link toc-highlight">Viewing Pull Requests</a><ul><li><a href="#assigned-to-me" class="table-of-contents__link toc-highlight">Assigned to Me</a></li><li><a href="#created-by-me" class="table-of-contents__link toc-highlight">Created by Me</a></li><li><a href="#review-requested" class="table-of-contents__link toc-highlight">Review Requested</a></li></ul></li><li><a href="#creating-pull-requests" class="table-of-contents__link toc-highlight">Creating Pull Requests</a><ul><li><a href="#from-current-branch" class="table-of-contents__link toc-highlight">From Current Branch</a></li><li><a href="#draft-pull-requests" class="table-of-contents__link toc-highlight">Draft Pull Requests</a></li></ul></li><li><a href="#reviewing-pull-requests" class="table-of-contents__link toc-highlight">Reviewing Pull Requests</a><ul><li><a href="#opening-a-pr" class="table-of-contents__link toc-highlight">Opening a PR</a></li><li><a href="#viewing-changes" class="table-of-contents__link toc-highlight">Viewing Changes</a></li><li><a href="#adding-comments" class="table-of-contents__link toc-highlight">Adding Comments</a></li><li><a href="#submitting-review" class="table-of-contents__link toc-highlight">Submitting Review</a></li></ul></li><li><a href="#merging-pull-requests" class="table-of-contents__link toc-highlight">Merging Pull Requests</a><ul><li><a href="#merge-options" class="table-of-contents__link toc-highlight">Merge Options</a></li><li><a href="#requirements" class="table-of-contents__link toc-highlight">Requirements</a></li></ul></li><li><a href="#pull-request-actions" class="table-of-contents__link toc-highlight">Pull Request Actions</a></li><li><a href="#status-indicators" class="table-of-contents__link toc-highlight">Status Indicators</a></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#authentication-failed" class="table-of-contents__link toc-highlight">Authentication Failed</a></li><li><a href="#prs-not-loading" class="table-of-contents__link toc-highlight">PRs Not Loading</a></li><li><a href="#cant-create-pr" class="table-of-contents__link toc-highlight">Can&#39;t Create PR</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/vsc-csharp-dev-tools/source-control/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Source Control</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/vsc-csharp-dev-tools/source-control/azure-devops-integration"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Azure DevOps Integration</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#setup" class="table-of-contents__link toc-highlight">Setup</a><ul><li><a href="#connecting-to-github" class="table-of-contents__link toc-highlight">Connecting to GitHub</a></li><li><a href="#authentication-methods" class="table-of-contents__link toc-highlight">Authentication Methods</a></li></ul></li><li><a href="#viewing-pull-requests" class="table-of-contents__link toc-highlight">Viewing Pull Requests</a><ul><li><a href="#assigned-to-me" class="table-of-contents__link toc-highlight">Assigned to Me</a></li><li><a href="#created-by-me" class="table-of-contents__link toc-highlight">Created by Me</a></li><li><a href="#review-requested" class="table-of-contents__link toc-highlight">Review Requested</a></li></ul></li><li><a href="#creating-pull-requests" class="table-of-contents__link toc-highlight">Creating Pull Requests</a><ul><li><a href="#from-current-branch" class="table-of-contents__link toc-highlight">From Current Branch</a></li><li><a href="#draft-pull-requests" class="table-of-contents__link toc-highlight">Draft Pull Requests</a></li></ul></li><li><a href="#reviewing-pull-requests" class="table-of-contents__link toc-highlight">Reviewing Pull Requests</a><ul><li><a href="#opening-a-pr" class="table-of-contents__link toc-highlight">Opening a PR</a></li><li><a href="#viewing-changes" class="table-of-contents__link toc-highlight">Viewing Changes</a></li><li><a href="#adding-comments" class="table-of-contents__link toc-highlight">Adding Comments</a></li><li><a href="#submitting-review" class="table-of-contents__link toc-highlight">Submitting Review</a></li></ul></li><li><a href="#merging-pull-requests" class="table-of-contents__link toc-highlight">Merging Pull Requests</a><ul><li><a href="#merge-options" class="table-of-contents__link toc-highlight">Merge Options</a></li><li><a href="#requirements" class="table-of-contents__link toc-highlight">Requirements</a></li></ul></li><li><a href="#pull-request-actions" class="table-of-contents__link toc-highlight">Pull Request Actions</a></li><li><a href="#status-indicators" class="table-of-contents__link toc-highlight">Status Indicators</a></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#authentication-failed" class="table-of-contents__link toc-highlight">Authentication Failed</a></li><li><a href="#prs-not-loading" class="table-of-contents__link toc-highlight">PRs Not Loading</a></li><li><a href="#cant-create-pr" class="table-of-contents__link toc-highlight">Can&#39;t Create PR</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
