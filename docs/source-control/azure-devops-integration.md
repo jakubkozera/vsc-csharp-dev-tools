@@ -18,13 +18,37 @@ C# Dev Tools integrates with Azure DevOps, providing pull request management and
 2. Type "Pull Request Manager: Open Connection Manager"
 3. Click "Add Connection"
 4. Select "Azure DevOps"
-5. Enter:
-   - Organization name
-   - Project name
-   - Personal Access Token
-6. Save connection
+5. Choose authentication method:
+   - **OAuth (Recommended)**: Uses VS Code's built-in Microsoft authentication
+   - **Personal Access Token**: Manual token configuration
+6. For OAuth:
+   - Enter organization and project name
+   - Click "Create OAuth Connection"
+   - Authenticate through VS Code's secure authentication flow
+7. For PAT:
+   - Enter organization name, project name, and Personal Access Token
+   - Save connection
 
-### Creating a Personal Access Token
+### Authentication Methods
+
+#### OAuth Authentication (Recommended)
+
+OAuth provides the most secure and convenient authentication:
+
+1. Select "OAuth" as authentication method
+2. VS Code will prompt you to sign in to Microsoft
+3. Authorize the application to access Azure DevOps
+4. Connection is automatically configured with secure token management
+
+**Benefits:**
+- No need to create or manage tokens manually
+- Automatic token refresh
+- Integrated with VS Code's secure credential storage
+- Easy revocation through Azure DevOps security settings
+
+#### Personal Access Token (PAT)
+
+For scenarios requiring PAT authentication:
 
 1. Go to Azure DevOps → User Settings → Personal Access Tokens
 2. Click "New Token"
@@ -32,6 +56,7 @@ C# Dev Tools integrates with Azure DevOps, providing pull request management and
    - `Code (Read, write, & manage)`
    - `Work Items (Read & write)`
 4. Create and copy token
+5. Paste token in connection configuration
 
 ## Viewing Pull Requests
 
@@ -182,8 +207,16 @@ Permission-based features:
 
 ### Authentication Failed
 
-If Azure DevOps auth fails:
+If Azure DevOps authentication fails:
 
+**For OAuth connections:**
+1. Verify organization name is correct
+2. Check project name
+3. Sign out and sign back in to VS Code's Microsoft account
+4. Check Azure DevOps permissions for your Microsoft account
+5. Try recreating the OAuth connection
+
+**For PAT connections:**
 1. Verify organization name is correct
 2. Check project name
 3. Verify PAT permissions

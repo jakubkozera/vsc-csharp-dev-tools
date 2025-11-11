@@ -18,10 +18,38 @@ C# Dev Tools provides full GitHub integration allowing you to manage pull reques
 2. Type "Pull Request Manager: Open Connection Manager"
 3. Click "Add Connection"
 4. Select "GitHub"
-5. Enter your Personal Access Token
-6. Save connection
+5. Choose authentication method:
+   - **OAuth (Recommended)**: Uses VS Code's built-in GitHub authentication
+   - **Personal Access Token**: Manual token configuration
+6. For OAuth:
+   - Enter connection name and organization (optional)
+   - Click "Create OAuth Connection"
+   - Authenticate through VS Code's secure GitHub authentication flow
+7. For PAT:
+   - Enter connection details and Personal Access Token
+   - Save connection
 
-### Creating a Personal Access Token
+### Authentication Methods
+
+#### OAuth Authentication (Recommended)
+
+OAuth provides the most secure and convenient authentication:
+
+1. Select "OAuth" as authentication method
+2. VS Code will prompt you to sign in to GitHub
+3. Authorize the application to access your GitHub account
+4. Connection is automatically configured with secure token management
+
+**Benefits:**
+- No need to create or manage tokens manually
+- Automatic token refresh and renewal
+- Integrated with VS Code's secure credential storage
+- Easy revocation through GitHub's authorized applications
+- Supports all GitHub features including private repositories
+
+#### Personal Access Token (PAT)
+
+For scenarios requiring PAT authentication:
 
 1. Go to GitHub.com → Settings → Developer settings
 2. Click "Personal access tokens" → "Tokens (classic)"
@@ -30,6 +58,7 @@ C# Dev Tools provides full GitHub integration allowing you to manage pull reques
    - `repo` (full repository access)
    - `read:org` (read organization data)
 5. Generate and copy the token
+6. Paste token in connection configuration
 
 ## Viewing Pull Requests
 
@@ -181,12 +210,20 @@ PR status indicators:
 
 ### Authentication Failed
 
-If authentication fails:
+If GitHub authentication fails:
 
-1. Verify PAT is valid
-2. Check token permissions
+**For OAuth connections:**
+1. Sign out and sign back in to VS Code's GitHub account
+2. Check GitHub permissions and authorized applications
+3. Revoke and re-authorize the application if needed
+4. Try recreating the OAuth connection
+5. Ensure you have access to the repositories you're trying to access
+
+**For PAT connections:**
+1. Verify PAT is valid and not expired
+2. Check token permissions and scopes
 3. Regenerate token if needed
-4. Reconfigure connection
+4. Reconfigure connection with new token
 
 ### PRs Not Loading
 
