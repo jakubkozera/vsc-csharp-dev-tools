@@ -2,15 +2,6 @@
 
 ---
 
-<style>
-#quick-links a {
-  text-decoration: none;
-}
-#quick-links a:hover {
-  text-decoration: underline;
-}
-</style>
-
 <table style="border: none; width: 100%;">
 <tr style="border: none;">
 <td style="border: none; vertical-align: top; width: 50%;">
