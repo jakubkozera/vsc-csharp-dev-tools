@@ -9,6 +9,7 @@ body:
     description: A clear and concise description of the bug.
   validations:
     required: true
+
 - type: textarea
   attributes:
     label: Steps to Reproduce
@@ -20,26 +21,48 @@ body:
       4. See error
   validations:
     required: true
+
 - type: textarea
   attributes:
     label: Expected Behavior
     description: What you expected to happen.
+
 - type: textarea
   attributes:
     label: Actual Behavior
     description: What actually happened.
+
 - type: input
   attributes:
     label: Extension Version
-    description: The version of the C# Dev Tools extension (e.g., 1.0.0)
+    description: The version of the C# Dev Tools extension (e.g., 1.0.19)
+  validations:
+    required: true
+
+- type: input
+  attributes:
+    label: VS Code Instance
+    description: Which editor/IDE and its version are you using? (VS Code, Cursor, VSCodium, other forks)
+    placeholder: "VS Code"
+  validations:
+    required: true
+
 - type: input
   attributes:
     label: Operating System
-    description: Your operating system (e.g., Windows 11, macOS 13.0, Ubuntu 22.04)
+    description: Your operating system and version (e.g., Windows 11 24H2, macOS 15.3.1, Ubuntu 24.04)
+    placeholder: "Windows 11"
+  validations:
+    required: true
+
 - type: input
   attributes:
     label: .NET Version
-    description: The .NET version of your project (e.g., .NET 6.0, .NET 8.0)
+    description: The .NET version of your project (e.g., .NET 8.0, .NET 9.0 Preview)
+    placeholder: ".NET 8.0"
+  validations:
+    required: true
+
 - type: dropdown
   attributes:
     label: Run Mode
@@ -50,6 +73,7 @@ body:
       - "N/A (not related)"
   validations:
     required: false
+
 - type: dropdown
   attributes:
     label: MTP Enabled? (if testing-related)
@@ -60,11 +84,13 @@ body:
       - "N/A (not testing-related)"
   validations:
     required: false
+
 - type: textarea
   attributes:
     label: C# Dev Tools Output
-    description: Output from the 'C# Dev Tools' output channel. To open it, go to View > Output in VS Code, then select 'C# Dev Tools' from the dropdown in the Output panel. Copy and paste any relevant error messages or logs here.
+    description: Output from the 'C# Dev Tools' output channel. To open it, go to View > Output in VS Code, then select 'C# Dev Tools' from the dropdown.
+
 - type: textarea
   attributes:
     label: Additional Context
-    description: Any other context about the problem, such as screenshots or logs.
+    description: Any other context about the problem, such as screenshots, full logs, reproduction project link, etc.
