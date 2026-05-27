@@ -144,6 +144,7 @@ const sidebars: SidebarsConfig = {
       label: 'Advanced',
       items: [
         'advanced/support',
+        'advanced/offline-installation',
       ],
     },
   ],
