@@ -1,0 +1,57 @@
+---
+/**
+ * Page Title — Windsurf-style with a small emerald "section" label above the H1.
+ * Uses Astro.locals.starlightRoute (Starlight 0.34+).
+ */
+const PAGE_TITLE_ID = '_top';
+
+const { entry, sidebar } = Astro.locals.starlightRoute;
+const slug = entry?.id?.replace(/\.(md|mdx)$/, '');
+
+function findSectionLabel(items: any[], targetSlug: string | undefined): string | undefined {
+  if (!targetSlug) return undefined;
+  for (const item of items) {
+    if (item?.type === 'group' && Array.isArray(item.entries)) {
+      for (const child of item.entries) {
+        if (child?.type === 'link' && typeof child.href === 'string') {
+          const cleaned = child.href.replace(/\/$/, '').split('/').filter(Boolean).join('/');
+          const target = targetSlug.replace(/\/index$/, '').replace(/\/$/, '');
+          if (cleaned.endsWith(target) && target.length > 0) {
+            return item.label;
+          }
+        }
+        if (child?.type === 'group') {
+          const found = findSectionLabel([child], targetSlug);
+          if (found) return found;
+        }
+      }
+    }
+  }
+  return undefined;
+}
+
+const sectionLabel = findSectionLabel(sidebar ?? [], slug);
+---
+
+{sectionLabel && <p class="page-section-label not-content">{sectionLabel}</p>}
+<h1 id={PAGE_TITLE_ID}>{entry.data.title}</h1>
+
+<style>
+  .page-section-label {
+    margin: 0 0 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--sl-color-text-accent);
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  h1 {
+    margin-top: 0.25rem;
+    font-size: var(--sl-text-h1);
+    line-height: var(--sl-line-height-headings, 1.15);
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    color: var(--sl-color-white);
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+/**
+ * Custom SocialIcons override — renders the default Starlight social links
+ * plus the Windsurf-style "Ask Assistant" + "Download" CTA buttons.
+ */
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+import AskAssistant from './AskAssistant.tsx';
+---
+
+<div class="header-actions">
+  <Default />
+  <AskAssistant client:idle />
+  <a
+    class="download-cta"
+    href="https://marketplace.visualstudio.com/items?itemName=jakubkozera.vsc-csharp-dev-tools"
+    target="_blank"
+    rel="noopener"
+  >
+    Install
+  </a>
+</div>
+
+<style>
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 50rem) {
+    .download-cta {
+      display: none;
+    }
+  }
+</style>
