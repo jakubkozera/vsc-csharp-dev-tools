@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
@@ -24,6 +25,43 @@ export default defineConfig({
         replacesTitle: false,
       },
       favicon: '/img/favicon.ico',
+      editLink: {
+        baseUrl:
+          'https://github.com/jakubkozera/vsc-csharp-dev-tools/edit/refactor-astro/src/content/docs/',
+      },
+      lastUpdated: true,
+      pagination: true,
+      head: [
+        {
+          tag: 'meta',
+          attrs: { property: 'og:type', content: 'website' },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image',
+            content: 'https://jakubkozera.github.io/vsc-csharp-dev-tools/img/logo.png',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:card',
+            content: 'summary_large_image',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:image',
+            content: 'https://jakubkozera.github.io/vsc-csharp-dev-tools/img/logo.png',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'theme-color', content: '#0b0d0e' },
+        },
+      ],
       social: [
         {
           icon: 'github',
@@ -81,5 +119,6 @@ export default defineConfig({
       ],
     }),
     react(),
+    sitemap(),
   ],
 });

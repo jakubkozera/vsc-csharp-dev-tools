@@ -14,6 +14,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.2.0",
+    "@astrojs/sitemap": "^3.7.3",
     "@astrojs/starlight": "^0.34.0",
     "@tailwindcss/vite": "^4.0.0",
     "@types/react": "^19.0.0",
