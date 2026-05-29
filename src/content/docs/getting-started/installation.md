@@ -62,4 +62,4 @@ If you encounter issues:
 - Try reloading the window (`Ctrl+Shift+P` and type "Reload Window")
 - Look for any error messages in the Output panel (`Ctrl+Shift+U` and select "C# Dev Tools" from the dropdown)
 
-If problems persist, see the [Support](../advanced/support) section for additional help.
+If problems persist, see the [Support](/vsc-csharp-dev-tools/advanced/support/) section for additional help.
