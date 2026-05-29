@@ -70,7 +70,7 @@
 
 <br />
 
-![Testing](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/test-explorer.png)
+![Testing](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/7b224c53cc6d45728f2e15b22917c2f81675cd03/docs/features/img/testing.png)
 
 </td>
 </tr>
