@@ -22,6 +22,8 @@ jobs:
 
       - name: Build Astro + Starlight site
         run: npm run build
+        env:
+          PUBLIC_APPINSIGHTS_CONNECTION_STRING: ${{ secrets.PUBLIC_APPINSIGHTS_CONNECTION_STRING }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
