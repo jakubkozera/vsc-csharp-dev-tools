@@ -42,8 +42,8 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
 </div>
 
 <script>
-  // Dropdown toggle logic — plain JS, no framework needed
-  document.addEventListener('DOMContentLoaded', () => {
+  // Dropdown toggle logic — uses astro:page-load for View Transitions compatibility
+  function initDropdown() {
     document.querySelectorAll('.install-dropdown').forEach((dropdown) => {
       const btn = dropdown.querySelector('.install-btn') as HTMLButtonElement;
       const menu = dropdown.querySelector('.install-menu') as HTMLElement;
@@ -63,7 +63,8 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
 
       menu.addEventListener('click', (e) => e.stopPropagation());
     });
-  });
+  }
+  document.addEventListener('astro:page-load', initDropdown);
 </script>
 
 <style>
