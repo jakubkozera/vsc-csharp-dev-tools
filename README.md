@@ -66,7 +66,7 @@
 </td>
 <td style="border: none; vertical-align: top; width: 30%; text-align: center;">
 
-![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/solution-explorer.png)
+![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/5f1aad7d324ca1b8f7b37118cc90b107eb9a0374/docs/features/img/solution-explorer.png)
 
 <br />
 
