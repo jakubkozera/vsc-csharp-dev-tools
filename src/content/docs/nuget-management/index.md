@@ -12,13 +12,13 @@ Manage your NuGet packages directly from the VS Code environment with comprehens
 
 The NuGet Management feature provides a complete package management experience:
 
-- **[Browsing NuGet Packages](./browsing-packages.md)** - Search and discover packages
-- **[Installing Packages](./installing-packages.md)** - Add packages to your projects
-- **[Updating Packages](./updating-packages.md)** - Keep packages up to date
-- **[Removing Packages](./removing-packages.md)** - Clean up unused packages
-- **[Credential Injection](./credential-injection.md)** - Secure access to private feeds
-- **[Package Restore](./package-restore.md)** - Restore missing packages
-- **[NuGet Configuration](./nuget-configuration.md)** - Manage package sources and settings
+- **[Browsing NuGet Packages](./browsing-packages/)** - Search and discover packages
+- **[Installing Packages](./installing-packages/)** - Add packages to your projects
+- **[Updating Packages](./updating-packages/)** - Keep packages up to date
+- **[Removing Packages](./removing-packages/)** - Clean up unused packages
+- **[Credential Injection](./credential-injection/)** - Secure access to private feeds
+- **[Package Restore](./package-restore/)** - Restore missing packages
+- **[NuGet Configuration](./nuget-configuration/)** - Manage package sources and settings
 
 ## Accessing the NuGet Manager
 

@@ -70,7 +70,7 @@ Format and validate JSON:
 
 Convert JSON to C# classes:
 
-(See [File Templates - JSON to C#](../file-templates/json-to-csharp.md) for details)
+(See [File Templates - JSON to C#](../file-templates/json-to-csharp/) for details)
 
 ## JWT Decoder
 

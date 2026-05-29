@@ -156,6 +156,6 @@ Or find all occurrences of a constant value:
 
 ## Related Features
 
-- [Solution Explorer](./index.md) - Main solution navigation
-- [Opening Solutions](./opening-solutions.md) - Solution management
-- [Code Navigation](../code-navigation/index.md) - Symbol navigation features
+- [Solution Explorer](./index/) - Main solution navigation
+- [Opening Solutions](./opening-solutions/) - Solution management
+- [Code Navigation](../code-navigation/) - Symbol navigation features

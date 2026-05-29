@@ -10,11 +10,11 @@ Additional productivity tools and utilities for enhanced development workflow.
 
 C# Dev Tools includes a comprehensive set of developer tools:
 
-- **[Bookmarks](./bookmarks.md)** - Mark and navigate code locations
-- **[Diagrams](./diagrams.md)** - Create and manage diagrams with Excalidraw
-- **[Secret Scanning](./secret-scanning.md)** - Security tool for detecting exposed secrets
-- **[Text Tools](./text-tools.md)** - Encoders, decoders, and text utilities
-- **[User Interface Tools](./ui-tools.md)** - Color tools and UI design utilities
+- **[Bookmarks](./bookmarks/)** - Mark and navigate code locations
+- **[Diagrams](./diagrams/)** - Create and manage diagrams with Excalidraw
+- **[Secret Scanning](./secret-scanning/)** - Security tool for detecting exposed secrets
+- **[Text Tools](./text-tools/)** - Encoders, decoders, and text utilities
+- **[User Interface Tools](./ui-tools/)** - Color tools and UI design utilities
 
 ## Bookmarks
 

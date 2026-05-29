@@ -174,7 +174,7 @@ The Solution Explorer integrates with the Test Explorer:
 2. Select **Run Tests**
 3. Tests will execute and results will appear in the Test Explorer
 
-See the [Testing Integration](../testing-integration/index.md) section for more details.
+See the [Testing Integration](../testing-integration/) section for more details.
 
 ## Build Configurations
 

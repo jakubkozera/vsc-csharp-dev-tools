@@ -10,10 +10,10 @@ Advanced code navigation features and enhanced IntelliSense for C# development.
 
 C# Dev Tools enhances VS Code's code navigation with:
 
-- **[Inlay Hints](./inlay-hints.md)** - Type and parameter hints
-- **[Unused Symbol Detection](./unused-symbols.md)** - Highlight dead code
-- **[Code Lens](./code-lens.md)** - Contextual information above code elements
-- **[Semantic Colors](./semantic-colors.md)** - Enhanced syntax highlighting
+- **[Inlay Hints](./inlay-hints/)** - Type and parameter hints
+- **[Unused Symbol Detection](./unused-symbols/)** - Highlight dead code
+- **[Code Lens](./code-lens/)** - Contextual information above code elements
+- **[Semantic Colors](./semantic-colors/)** - Enhanced syntax highlighting
 
 ## Key Features
 

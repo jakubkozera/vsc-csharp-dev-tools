@@ -324,7 +324,7 @@ Configure tool preferences:
 
 ## Related Features
 
-- [Text Tools](./text-tools.md) - For HTML encoding
+- [Text Tools](./text-tools/) - For HTML encoding
 - Theme customization
 - CSS generation
 - XAML color support

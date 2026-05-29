@@ -70,7 +70,7 @@ echo "1.4.1" > "$env:APPDATA\Code\User\globalStorage\jakubkozera.csharp-dev-tool
 echo "1.4.1" > ~/Library/Application\ Support/Code/User/globalStorage/jakubkozera.csharp-dev-tools/lsp/version.txt
 ```
 
-:::warning
+:::caution
 Replace `1.4.1` with the actual version number you downloaded.
 :::
 

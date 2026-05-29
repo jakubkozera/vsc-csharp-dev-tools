@@ -16,10 +16,10 @@ C# Dev Tools provides complete testing integration:
 - **Running Tests** - All tests, specific projects, individual tests
 - **Debugging Tests** - Full debugging support with breakpoints
 - **Test Filtering** - Group and filter tests efficiently
-- **[Code Coverage](./code-coverage.md)** - Interactive coverage dashboard with risk analysis
-- **[Test Generation](./test-generation.md)** - AI-powered test creation with GitHub Copilot
-- **[SpecFlow Support](./specflow-support.md)** - BDD testing integration
-- **[Playwright Integration](./playwright-integration.md)** - End-to-end browser testing
+- **[Code Coverage](./code-coverage/)** - Interactive coverage dashboard with risk analysis
+- **[Test Generation](./test-generation/)** - AI-powered test creation with GitHub Copilot
+- **[SpecFlow Support](./specflow-support/)** - BDD testing integration
+- **[Playwright Integration](./playwright-integration/)** - End-to-end browser testing
 
 ## Test Discovery
 

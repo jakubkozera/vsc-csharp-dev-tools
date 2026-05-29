@@ -10,12 +10,12 @@ Create files quickly with intelligent templates and powerful features including 
 
 C# Dev Tools provides a comprehensive file creation system:
 
-- **[Quick Add New File (Shift+F2)](./quick-add.md)** - Lightning-fast file creation
-- **[JSON to C# Conversion](./json-to-csharp.md)** - Convert JSON to C# classes instantly
-- **[Available Templates](./available-templates.md)** - Full list of file templates
-- **[Custom Template Support](./custom-templates.md)** - Create your own templates
-- **[Automatic Namespace Detection](./namespace-detection.md)** - Smart namespace management
-- **[File Location Context](./file-location-context.md)** - Location-aware file creation
+- **[Quick Add New File (Shift+F2)](./quick-add/)** - Lightning-fast file creation
+- **[JSON to C# Conversion](./json-to-csharp/)** - Convert JSON to C# classes instantly
+- **[Available Templates](./available-templates/)** - Full list of file templates
+- **[Custom Template Support](./custom-templates/)** - Create your own templates
+- **[Automatic Namespace Detection](./namespace-detection/)** - Smart namespace management
+- **[File Location Context](./file-location-context/)** - Location-aware file creation
 
 ## Quick Start
 
@@ -97,7 +97,7 @@ Available templates include:
 - **Configuration**: JSON, XML, YAML files
 - **And more...**
 
-See [Available Templates](./available-templates.md) for the complete list.
+See [Available Templates](./available-templates/) for the complete list.
 
 ## Advanced Features
 
