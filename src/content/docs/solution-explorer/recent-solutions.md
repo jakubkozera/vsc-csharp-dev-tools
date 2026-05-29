@@ -206,7 +206,7 @@ If list is too long:
 
 ## Related Features
 
-- [Opening Solutions](./opening-solutions.md) - Managing solution files
-- [Multi-root Workspace](./multi-root-workspace.md) - Multiple solutions
+- [Opening Solutions](./opening-solutions/) - Managing solution files
+- [Multi-root Workspace](./multi-root-workspace/) - Multiple solutions
 - Solution Explorer - Main navigation interface
 - Workspace management - VS Code workspaces

@@ -78,7 +78,7 @@ The browser searches configured package sources:
 2. Custom private feeds
 3. Local package folders
 
-To manage sources, see [NuGet Configuration](./nuget-configuration.md).
+To manage sources, see [NuGet Configuration](./nuget-configuration/).
 
 ## Troubleshooting
 

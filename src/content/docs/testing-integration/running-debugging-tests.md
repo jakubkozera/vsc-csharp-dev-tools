@@ -382,8 +382,8 @@ If tests run slowly:
 
 ## Related Features
 
-- [Test Generation](./test-generation.md) - Auto-generate unit tests
-- [SpecFlow Support](./specflow-support.md) - BDD testing
-- [Playwright Integration](./playwright-integration.md) - E2E testing
+- [Test Generation](./test-generation/) - Auto-generate unit tests
+- [SpecFlow Support](./specflow-support/) - BDD testing
+- [Playwright Integration](./playwright-integration/) - E2E testing
 - Code Coverage - Analyze test coverage
 - Test Explorer API - VS Code testing integration

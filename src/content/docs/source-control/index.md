@@ -10,9 +10,9 @@ Integrated source control features for GitHub and Azure DevOps with pull request
 
 C# Dev Tools provides comprehensive source control integration:
 
-- **[GitHub Integration](./github-integration.md)** - Pull requests and collaboration
-- **[Azure DevOps Integration](./azure-devops-integration.md)** - Work items and pull requests
-- **[GitHub Copilot Code Review](./copilot-code-review.md)** - AI-powered code reviews
+- **[GitHub Integration](./github-integration/)** - Pull requests and collaboration
+- **[Azure DevOps Integration](./azure-devops-integration/)** - Work items and pull requests
+- **[GitHub Copilot Code Review](./copilot-code-review/)** - AI-powered code reviews
 
 ## Key Features
 

@@ -314,13 +314,13 @@ public void HelperMethod()
 
 - Create tests from Risk Hotspots table
 - AI-powered test creation for low-coverage classes
-- See [Test Generation](./test-generation.md)
+- See [Test Generation](./test-generation/)
 
 ### Test Explorer
 
 - Run tests with coverage from Test Explorer
 - View coverage status in test tree
-- See [Running and Debugging Tests](./running-debugging-tests.md)
+- See [Running and Debugging Tests](./running-debugging-tests/)
 
 ### Solution Explorer
 
@@ -386,10 +386,10 @@ Track coverage over time:
 
 ## Related Documentation
 
-- [Running and Debugging Tests](./running-debugging-tests.md) - Test execution basics
-- [Test Generation](./test-generation.md) - Create tests with AI
-- [SpecFlow Support](./specflow-support.md) - BDD testing coverage
-- [Playwright Integration](./playwright-integration.md) - E2E test coverage
+- [Running and Debugging Tests](./running-debugging-tests/) - Test execution basics
+- [Test Generation](./test-generation/) - Create tests with AI
+- [SpecFlow Support](./specflow-support/) - BDD testing coverage
+- [Playwright Integration](./playwright-integration/) - E2E test coverage
 
 ## Additional Resources
 
