@@ -20,7 +20,6 @@ C# Dev Tools is available on two registries:
 Before installing C# Dev Tools, ensure you have:
 
 - **Visual Studio Code**: Version 1.100.0 or higher
-- **C# Extension**: The official [C# extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) (ms-dotnettools.csharp)
 - **.NET SDK**: Any recent version of the [.NET SDK](https://dotnet.microsoft.com/download)
 
 ## Installation Steps
