@@ -2,6 +2,21 @@
    C# Dev Tools — Windsurf-inspired Starlight theme overrides
    ========================================================================== */
 
+/* Restore list markers stripped by Tailwind Preflight */
+.sl-markdown-content ul {
+  list-style-type: disc;
+  padding-inline-start: 1.5em;
+}
+
+.sl-markdown-content ol {
+  list-style-type: decimal;
+  padding-inline-start: 1.5em;
+}
+
+.sl-markdown-content li {
+  margin-block: 0.25em;
+}
+
 /* Fonts — Inter for UI, JetBrains Mono for code */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
