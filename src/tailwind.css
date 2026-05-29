@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-windsurf-bg: #0b0d0e;
+  --color-windsurf-surface: #101213;
+  --color-windsurf-card: #16191b;
+  --color-windsurf-border: #2a2d2f;
+  --color-windsurf-mint: #2dd4bf;
+  --color-windsurf-mint-soft: #5eead4;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
