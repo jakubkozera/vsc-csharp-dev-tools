@@ -1,0 +1,3 @@
+*.astro linguist-detectable=false
+*.ts linguist-detectable=true
+*.tsx linguist-detectable=true

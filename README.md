@@ -62,6 +62,7 @@
 - [Diagrams](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/diagrams)
 - [Text Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/text-tools)
 - [UI Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/ui-tools)
+- [Secret Scanning](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/secret-scanning)
 
 </td>
 <td style="border: none; vertical-align: top; width: 30%; text-align: center;">
