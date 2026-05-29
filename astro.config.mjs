@@ -27,7 +27,7 @@ export default defineConfig({
       favicon: '/img/favicon.ico',
       editLink: {
         baseUrl:
-          'https://github.com/jakubkozera/vsc-csharp-dev-tools/edit/refactor-astro/src/content/docs/',
+          'https://github.com/jakubkozera/vsc-csharp-dev-tools/edit/main/',
       },
       lastUpdated: true,
       pagination: true,

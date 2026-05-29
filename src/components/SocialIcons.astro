@@ -41,30 +41,33 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
   </div>
 </div>
 
-<script>
-  // Dropdown toggle logic — uses astro:page-load for View Transitions compatibility
-  function initDropdown() {
-    document.querySelectorAll('.install-dropdown').forEach((dropdown) => {
-      const btn = dropdown.querySelector('.install-btn') as HTMLButtonElement;
-      const menu = dropdown.querySelector('.install-menu') as HTMLElement;
+<script is:inline>
+  // Dropdown toggle logic
+  function initInstallDropdown() {
+    document.querySelectorAll('.install-dropdown').forEach(function(dropdown) {
+      var btn = dropdown.querySelector('.install-btn');
+      var menu = dropdown.querySelector('.install-menu');
       if (!btn || !menu) return;
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = 'true';
 
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', function(e) {
         e.stopPropagation();
-        const open = btn.getAttribute('aria-expanded') === 'true';
+        var open = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!open));
         menu.classList.toggle('open', !open);
       });
 
-      document.addEventListener('click', () => {
+      document.addEventListener('click', function() {
         btn.setAttribute('aria-expanded', 'false');
         menu.classList.remove('open');
       });
 
-      menu.addEventListener('click', (e) => e.stopPropagation());
+      menu.addEventListener('click', function(e) { e.stopPropagation(); });
     });
   }
-  document.addEventListener('astro:page-load', initDropdown);
+  initInstallDropdown();
+  document.addEventListener('astro:after-swap', initInstallDropdown);
 </script>
 
 <style>
