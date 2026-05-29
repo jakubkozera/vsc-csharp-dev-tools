@@ -1,24 +1,77 @@
 ---
 /**
- * Custom SocialIcons override — renders the default Starlight social links
- * plus the Windsurf-style "Ask Assistant" + "Download" CTA buttons.
+ * Custom SocialIcons override — default Starlight social links + Install dropdown.
  */
 import Default from '@astrojs/starlight/components/SocialIcons.astro';
-import AskAssistant from './AskAssistant.tsx';
 ---
 
 <div class="header-actions">
   <Default />
-  <AskAssistant client:idle />
-  <a
-    class="download-cta"
-    href="https://marketplace.visualstudio.com/items?itemName=jakubkozera.vsc-csharp-dev-tools"
-    target="_blank"
-    rel="noopener"
-  >
-    Install
-  </a>
+  <div class="install-dropdown">
+    <button class="install-btn" aria-haspopup="true" aria-expanded="false">
+      Install
+      <svg class="chevron" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </button>
+    <ul class="install-menu" role="menu">
+      <li role="none">
+        <a
+          href="https://marketplace.visualstudio.com/items?itemName=JakubKozera.csharp-dev-tools"
+          target="_blank"
+          rel="noopener"
+          role="menuitem"
+          class="install-option"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="store-icon">
+            <path d="M17.5 0L23 5.5V19a2 2 0 01-2 2H7a2 2 0 01-2-2V2a2 2 0 012-2h10.5zM17 1.5V6h4.5L17 1.5zM6 3.5v15A1.5 1.5 0 007.5 20h13A1.5 1.5 0 0022 18.5V7h-5.5A1.5 1.5 0 0115 5.5V1H7.5A1.5 1.5 0 006 2.5z"/>
+            <path d="M1 5a2 2 0 012-2h1v1.5H3a.5.5 0 00-.5.5v14a.5.5 0 00.5.5h1V21H3a2 2 0 01-2-2V5z"/>
+          </svg>
+          VS Code Marketplace
+        </a>
+      </li>
+      <li role="none">
+        <a
+          href="https://open-vsx.org/extension/JakubKozera/csharp-dev-tools"
+          target="_blank"
+          rel="noopener"
+          role="menuitem"
+          class="install-option"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="store-icon">
+            <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 2a8 8 0 110 16A8 8 0 0112 4zm-.5 3v5.25l4.5 2.75-.75 1.23-5.25-3.23V7h1.5z"/>
+          </svg>
+          Open VSX Registry
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
+
+<script>
+  // Dropdown toggle logic — plain JS, no framework needed
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.install-dropdown').forEach((dropdown) => {
+      const btn = dropdown.querySelector('.install-btn') as HTMLButtonElement;
+      const menu = dropdown.querySelector('.install-menu') as HTMLElement;
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('open', !open);
+      });
+
+      document.addEventListener('click', () => {
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('open');
+      });
+
+      menu.addEventListener('click', (e) => e.stopPropagation());
+    });
+  });
+</script>
 
 <style>
   .header-actions {
@@ -27,8 +80,89 @@ import AskAssistant from './AskAssistant.tsx';
     gap: 0.5rem;
   }
 
+  /* ---- Install button ---- */
+  .install-dropdown {
+    position: relative;
+  }
+
+  .install-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sl-color-text-invert, #0b0d0e);
+    background: var(--sl-color-accent);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 150ms ease, transform 150ms ease;
+    white-space: nowrap;
+  }
+
+  .install-btn:hover {
+    background: var(--sl-color-accent-high, #99f6e4);
+    transform: translateY(-1px);
+  }
+
+  .chevron {
+    width: 12px;
+    height: 12px;
+    transition: transform 200ms ease;
+  }
+
+  .install-btn[aria-expanded='true'] .chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ---- Dropdown menu ---- */
+  .install-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 210px;
+    list-style: none;
+    margin: 0;
+    padding: 0.35rem 0;
+    background: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+  }
+
+  .install-menu.open {
+    display: block;
+  }
+
+  .install-option {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.875rem;
+    color: var(--sl-color-text);
+    text-decoration: none;
+    transition: background 120ms ease, color 120ms ease;
+    border: none;
+  }
+
+  .install-option:hover {
+    background: var(--sl-color-bg-sidebar);
+    color: var(--sl-color-text-accent);
+  }
+
+  .store-icon {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    opacity: 0.7;
+  }
+
   @media (max-width: 50rem) {
-    .download-cta {
+    .install-dropdown {
       display: none;
     }
   }

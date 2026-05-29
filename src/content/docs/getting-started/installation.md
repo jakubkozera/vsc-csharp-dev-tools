@@ -6,8 +6,14 @@ sidebar:
 
 Get up and running with C# Dev Tools quickly and easily.
 
-> **Marketplace Link:**  
-> [C# Dev Tools on Visual Studio Marketplace](https://marketplace.visualstudio.com/items/?itemName=JakubKozera.csharp-dev-tools)
+## Where to Install
+
+C# Dev Tools is available on two registries:
+
+| Registry | Link |
+|---|---|
+| **VS Code Marketplace** | [JakubKozera.csharp-dev-tools](https://marketplace.visualstudio.com/items?itemName=JakubKozera.csharp-dev-tools) |
+| **Open VSX Registry** (VS Codium, Cursor, Gitpod…) | [JakubKozera/csharp-dev-tools](https://open-vsx.org/extension/JakubKozera/csharp-dev-tools) |
 
 ## Prerequisites
 
@@ -23,8 +29,21 @@ Before installing C# Dev Tools, ensure you have:
 
 1. Open VS Code
 2. Click on the Extensions view icon in the Activity Bar (or press `Ctrl+Shift+X`)
-3. Search for "C# Dev Tools"
+3. Search for **C# Dev Tools**
 4. Click the **Install** button
+
+Or install directly: [marketplace.visualstudio.com → C# Dev Tools](https://marketplace.visualstudio.com/items?itemName=JakubKozera.csharp-dev-tools)
+
+### From Open VSX Registry (VS Codium / Cursor / Gitpod)
+
+If you are using a VS Code-compatible editor that does not have access to the VS Code Marketplace, install from Open VSX:
+
+1. Open the Extensions view (`Ctrl+Shift+X`)
+2. Search for **C# Dev Tools**
+3. Click **Install**
+
+Or install directly: [open-vsx.org → C# Dev Tools](https://open-vsx.org/extension/JakubKozera/csharp-dev-tools)
+
 
 ## Verifying Installation
 
