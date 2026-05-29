@@ -66,11 +66,11 @@
 </td>
 <td style="border: none; vertical-align: top; width: 30%; text-align: center;">
 
-![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/solution-explorer.png)
+![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/solution-explorer.png)
 
 <br />
 
-![Testing](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/testing.png)
+![Testing](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/test-explorer.png)
 
 </td>
 </tr>
@@ -82,15 +82,15 @@
 
 ### NuGet Management
 
-![NuGet Manager](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/nuget-manager.png)
+![NuGet Manager](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/nuget-manager.png)
 
 ### Advanced Search
 
-![Advanced Search](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/advanced-search.png)
+![Advanced Search](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/advanced-search.png)
 
 ### Solution Explorer
 
-![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/solution-explorer.png)
+![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/solution-explorer.png)
 
 - Browse .NET solutions (.sln(x) files) with a familiar tree structure
 - View projects, folders, and files in a hierarchical view
@@ -99,7 +99,7 @@
 
 ### Code Analysis
 
-![Editor Features](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/editor-features.png)
+![Editor Features](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/editor-features.png)
 
 #### Unused Symbol Highlighting
 
@@ -122,7 +122,7 @@ The extension automatically detects and highlights unused properties, methods, a
 
 ### Debugger Hints
 
-![Debugger Hints](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/debugger-hints.png)
+![Debugger Hints](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/debugger-hints.png)
 
 The extension provides advanced debugging features that enhance your debugging experience:
 
@@ -148,19 +148,19 @@ The extension provides advanced debugging features that enhance your debugging e
 
 ### File Templates
 
-![Quick Add](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/quick-add.png)
+![Quick Add](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/quick-add.png)
 
 Right-click on any project or folder in the Solution Explorer to access the "Add -> New Item" menu with the following templates:
 
 ### Test generation
 
-![Test generation](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/test-generation.png)
+![Test generation](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/test-generation.png)
 
 Use the 'Create Tests' code lens to quickly generate test methods for your code.
 
 ### Bookmarks
 
-![Bookmarks](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/docs/features/img/bookmarks.png)
+![Bookmarks](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/bookmarks.png)
 
 Use `SHIFT + ALT + DOWN` to toggle bookmarks in your code. Bookmarks are saved per file and can be used to quickly navigate to important sections of your code.
 `SHIFT + ALT + LEFT` and `SHIFT + ALT + RIGHT` can be used to navigate between bookmarks.
@@ -191,7 +191,7 @@ The extension provides comprehensive test support through the VS Code Testing AP
 - **File Navigation** - Click on any test to jump to its source code
 - **Test Framework Support** - Supports MSTest, xUnit, NUnit, and ASP.NET Core testing
 
-    ![Test Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/test-explorer.png)
+    ![Test Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/test-explorer.png)
 
 ### Entity Framework Support
 
@@ -232,7 +232,7 @@ Enhanced Entity Framework Core development with integrated migration management:
 
 ## Usage
 
-![Project Creation](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/project-creation.png)
+![Project Creation](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/project-creation.png)
 
 1. Open a workspace containing a .NET solution (.sln(x) file)
 2. The Solution Explorer will automatically appear in the Explorer panel
@@ -254,13 +254,13 @@ Include if your extension adds any VS Code settings through the `contributes.con
 
 Below are visual previews of the main features:
 
-![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/solution-explorer.png)
-![Advanced Search](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/advanced-search.png)
-![NuGet Manager](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/nuget-manager.png)
-![Editor Features](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/editor-features.png)
-![Test Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/test-explorer.png)
-![Quick Add](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/quick-add.png)
-![Project Creation](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/static/img/project-creation.png)
+![Solution Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/solution-explorer.png)
+![Advanced Search](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/advanced-search.png)
+![NuGet Manager](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/nuget-manager.png)
+![Editor Features](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/editor-features.png)
+![Test Explorer](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/test-explorer.png)
+![Quick Add](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/quick-add.png)
+![Project Creation](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/project-creation.png)
 For example:
 
 ## Configuration
