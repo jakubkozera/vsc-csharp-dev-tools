@@ -74,6 +74,7 @@ export default defineConfig({
       ],
       customCss: ['./src/tailwind.css', './src/styles/custom.css'],
       components: {
+        Head: './src/components/Head.astro',
         SiteTitle: './src/components/SiteTitle.astro',
         PageTitle: './src/components/PageTitle.astro',
         SocialIcons: './src/components/SocialIcons.astro',
