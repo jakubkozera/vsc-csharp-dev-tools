@@ -1,0 +1,57 @@
+---
+/**
+ * Site Title — Windsurf-inspired branded label with the C# Dev Tools logo.
+ * Uses Astro.locals.starlightRoute (Starlight 0.34+).
+ */
+import { logos } from 'virtual:starlight/user-images';
+import config from 'virtual:starlight/user-config';
+
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a href={siteTitleHref} class="site-title sl-flex" aria-label={`${siteTitle} home`}>
+  {
+    config.logo && logos.dark && (
+      <img
+        class="site-logo"
+        alt={config.logo.alt}
+        src={logos.dark.src}
+        width={logos.dark.width}
+        height={logos.dark.height}
+      />
+    )
+  }
+  <span class:list={{ 'sr-only': config.logo?.replacesTitle }} translate="no">
+    {siteTitle}
+  </span>
+</a>
+
+<style>
+  .site-title {
+    align-items: center;
+    gap: 0.625rem;
+    font-weight: 600;
+    color: var(--sl-color-text);
+    text-decoration: none;
+    line-height: 1;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .site-logo {
+    flex: none;
+    height: 28px;
+    width: auto;
+    transition: transform 200ms ease;
+  }
+
+  .site-title:hover .site-logo {
+    transform: rotate(-8deg) scale(1.05);
+  }
+
+  @media (max-width: 50rem) {
+    .site-title span {
+      display: none;
+    }
+  }
+</style>

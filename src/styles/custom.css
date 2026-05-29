@@ -1,1 +1,270 @@
-/* Placeholder for Phase 3 – Windsurf-inspired overrides will be added here. */
+/* ==========================================================================
+   C# Dev Tools — Windsurf-inspired Starlight theme overrides
+   ========================================================================== */
+
+/* Fonts — Inter for UI, JetBrains Mono for code */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root,
+:root[data-theme='light'] {
+  /* Light theme — neutral with the same mint accent */
+  --sl-color-accent-low: #c9f1e8;
+  --sl-color-accent: #0d9488;
+  --sl-color-accent-high: #115e59;
+
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #f7f8f9;
+  --sl-color-bg-inline-code: #f1f3f4;
+
+  --sl-color-text: #1a1d1f;
+  --sl-color-text-accent: #0d9488;
+
+  --sl-color-hairline: #e7eaec;
+  --sl-color-hairline-light: #f1f3f4;
+  --sl-color-hairline-shade: #d8dcde;
+}
+
+:root[data-theme='dark'] {
+  /* Dark theme — Windsurf-style background palette + emerald accent */
+  --sl-color-accent-low: #064e44;
+  --sl-color-accent: #2dd4bf;
+  --sl-color-accent-high: #99f6e4;
+
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #e7eaec;
+  --sl-color-gray-2: #b9bfc2;
+  --sl-color-gray-3: #7b8186;
+  --sl-color-gray-4: #4a5054;
+  --sl-color-gray-5: #2a2d2f;
+  --sl-color-gray-6: #1a1d1f;
+  --sl-color-black: #0b0d0e;
+
+  --sl-color-bg: #0b0d0e;
+  --sl-color-bg-nav: #0b0d0e;
+  --sl-color-bg-sidebar: #0e1011;
+  --sl-color-bg-inline-code: #16191b;
+  --sl-color-bg-accent: #064e44;
+
+  --sl-color-text: #d6dadd;
+  --sl-color-text-accent: #2dd4bf;
+  --sl-color-text-invert: #0b0d0e;
+
+  --sl-color-hairline: #1f2224;
+  --sl-color-hairline-light: #17191b;
+  --sl-color-hairline-shade: #2a2d2f;
+}
+
+/* Typography — Inter & JetBrains Mono */
+:root {
+  --sl-font: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', ui-monospace, 'Fira Code', SFMono-Regular, Menlo, monospace;
+  --sl-text-h1: 2.25rem;
+  --sl-text-h2: 1.5rem;
+  --sl-text-h3: 1.25rem;
+}
+
+/* ==========================================================================
+   Top header — sticky, subtle blur, hairline border
+   ========================================================================== */
+
+header.header {
+  border-bottom: 1px solid var(--sl-color-hairline);
+  backdrop-filter: saturate(180%) blur(10px);
+  background-color: color-mix(in oklab, var(--sl-color-bg-nav) 85%, transparent);
+}
+
+/* Site logo — gentle hover */
+.site-title img {
+  transition: transform 200ms ease;
+}
+.site-title:hover img {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+/* ==========================================================================
+   Sidebar — narrower, mono category headings (Windsurf vibe)
+   ========================================================================== */
+
+.sidebar-content nav > ul > li > details > summary,
+.sidebar-content nav > ul > li > a.large,
+.sidebar-content nav > ul > li > span.large {
+  font-family: var(--sl-font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sl-color-gray-2);
+  padding-top: 1rem;
+  padding-bottom: 0.25rem;
+}
+
+:root[data-theme='dark'] .sidebar-content nav > ul > li > details > summary,
+:root[data-theme='dark'] .sidebar-content nav > ul > li > a.large,
+:root[data-theme='dark'] .sidebar-content nav > ul > li > span.large {
+  color: var(--sl-color-gray-3);
+}
+
+/* Sidebar item active state — left mint accent bar */
+.sidebar-content a[aria-current='page'] {
+  color: var(--sl-color-text-accent);
+  background-color: transparent;
+  font-weight: 600;
+  position: relative;
+}
+.sidebar-content a[aria-current='page']::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1.25rem;
+  width: 2px;
+  background: var(--sl-color-accent);
+  border-radius: 2px;
+}
+
+.sidebar-content a:hover {
+  color: var(--sl-color-text-accent);
+}
+
+/* ==========================================================================
+   Main content — generous spacing, refined typography
+   ========================================================================== */
+
+.sl-markdown-content h1,
+.sl-markdown-content h2 {
+  letter-spacing: -0.02em;
+}
+
+.sl-markdown-content h2 {
+  margin-top: 2.5rem;
+  padding-top: 0;
+}
+
+.sl-markdown-content h2 + *,
+.sl-markdown-content h3 + * {
+  margin-top: 0.75rem;
+}
+
+/* Page title — emerald accent under heading like Windsurf section labels */
+.content-panel:first-of-type h1 {
+  position: relative;
+}
+
+/* Inline code — softer pill */
+.sl-markdown-content :not(pre) > code {
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.875em;
+  border: 1px solid var(--sl-color-hairline);
+}
+
+/* Code blocks — rounded corners, subtle border (matches Windsurf docs) */
+.expressive-code .frame {
+  border-radius: 12px !important;
+  border: 1px solid var(--sl-color-hairline);
+  overflow: hidden;
+}
+
+.expressive-code pre {
+  font-family: var(--sl-font-mono) !important;
+}
+
+/* Tables */
+.sl-markdown-content table {
+  border-collapse: collapse;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sl-markdown-content thead {
+  background: var(--sl-color-bg-sidebar);
+}
+
+/* Links — mint accent + animated underline */
+.sl-markdown-content a:not(.not-content *) {
+  color: var(--sl-color-text-accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklab, var(--sl-color-text-accent) 35%, transparent);
+  transition: border-color 200ms ease;
+}
+.sl-markdown-content a:not(.not-content *):hover {
+  border-bottom-color: var(--sl-color-text-accent);
+}
+
+/* ==========================================================================
+   Asides / callouts — vertical accent border, ghost background
+   ========================================================================== */
+
+.starlight-aside {
+  border-left-width: 3px;
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--sl-color-asides-bg, var(--sl-color-bg-sidebar)) 100%, transparent);
+}
+
+/* ==========================================================================
+   Right-side On-this-page TOC — mint highlight on active heading
+   ========================================================================== */
+
+mobile-starlight-toc nav a[aria-current='true'],
+starlight-toc nav a[aria-current='true'] {
+  color: var(--sl-color-text-accent) !important;
+  font-weight: 600;
+  border-inline-start-color: var(--sl-color-accent) !important;
+}
+
+/* ==========================================================================
+   "Ask Assistant" CTA button (placeholder for AskAssistant React island)
+   ========================================================================== */
+
+.ask-assistant {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--sl-color-text);
+  background: transparent;
+  border: 1px solid var(--sl-color-hairline-shade);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-decoration: none;
+}
+
+.ask-assistant:hover {
+  border-color: var(--sl-color-accent);
+  color: var(--sl-color-text-accent);
+}
+
+.ask-assistant svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* "Download" CTA button — mint pill like Windsurf */
+.download-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sl-color-text-invert, #0b0d0e);
+  background: var(--sl-color-accent);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 150ms ease;
+}
+
+.download-cta:hover {
+  background: var(--sl-color-accent-high);
+  transform: translateY(-1px);
+}
+
+/* Hide the right-side action items wrapper looking empty */
+.header .right-group {
+  gap: 0.5rem;
+}

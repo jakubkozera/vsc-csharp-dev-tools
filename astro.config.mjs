@@ -32,6 +32,11 @@ export default defineConfig({
         },
       ],
       customCss: ['./src/tailwind.css', './src/styles/custom.css'],
+      components: {
+        SiteTitle: './src/components/SiteTitle.astro',
+        PageTitle: './src/components/PageTitle.astro',
+        SocialIcons: './src/components/SocialIcons.astro',
+      },
       sidebar: [
         {
           label: 'Getting Started',
