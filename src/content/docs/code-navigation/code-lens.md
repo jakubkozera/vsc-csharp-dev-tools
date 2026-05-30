@@ -14,7 +14,7 @@ Code Lens shows actionable information above methods, classes, and other code el
 
 ### Test Generation Code Lens
 
-Appears above methods to create tests:
+Appears above public methods and classes to create tests:
 
 ```csharp
 // Create Tests
@@ -29,7 +29,23 @@ Click to:
 - Create AI-powered unit tests
 - Configure test framework and project
 
-**Configuration**: `csharp-dev-tools.testGeneration.enableCodeLens`
+**Configuration**: `csharp-dev-tools.codeLens.enableTestGeneration`
+
+### Test Runner Code Lens
+
+Appears above test methods and test classes in test files:
+
+```csharp
+// Run | Debug
+[Fact]
+public void Should_Pass() { ... }
+```
+
+Click to:
+- Run the individual test (or whole class)
+- Debug the test directly from the editor
+
+**Configuration**: `csharp-dev-tools.codeLens.enableTestRunner`
 
 ### Go to Implementation Code Lens
 
@@ -45,7 +61,52 @@ Click to:
 - Navigate to specific implementation
 - See implementation count
 
-**Configuration**: `csharp-dev-tools.codeAnalysis.showImplementations`
+**Configuration**: `csharp-dev-tools.codeLens.enableGoToImplementation`
+
+### References Code Lens
+
+Appears above types and members:
+
+```csharp
+// 12 references
+public class OrderService { }
+```
+
+Click to:
+- See all places where the type or member is referenced
+- Navigate to a specific reference
+- See total reference count
+
+**Configuration**: `csharp-dev-tools.codeLens.enableReferences`
+
+### Type Initializations Code Lens
+
+Appears above class, struct and interface declarations to show where the type is instantiated (e.g. `new MyType(...)`, `MyType x = ...`):
+
+```csharp
+// 7 initializations
+public class OrderRepository { }
+```
+
+Click to navigate through every place the type is being created.
+
+**Configuration**: `csharp-dev-tools.codeLens.enableTypeInitializations`
+
+### Member Assignments Code Lens
+
+Appears above public properties and fields, indicating where they are being assigned values:
+
+```csharp
+public class Order
+{
+    // 4 assignments
+    public string Status { get; set; }
+}
+```
+
+Click to navigate through every assignment site.
+
+**Configuration**: `csharp-dev-tools.codeLens.enableMemberAssignments`
 
 ### Enum Assignments Code Lens
 
@@ -62,11 +123,11 @@ public enum Status
 ```
 
 Click to:
-- See where enum value is used
+- See where each enum value is assigned
 - Navigate to assignments
 - View usage count
 
-**Configuration**: `csharp-dev-tools.codeAnalysis.showEnumAssignments`
+**Configuration**: `csharp-dev-tools.codeLens.enableEnumAssignments`
 
 ## Enabling/Disabling
 
@@ -80,11 +141,15 @@ Enable/disable all Code Lens:
 
 ### Per-Feature Toggle
 
-Enable/disable specific Code Lens features:
+Each code lens can be toggled independently in **Settings → C# Dev Tools → Code Lens**:
 
-- Test Generation: `csharp-dev-tools.testGeneration.enableCodeLens`
-- Implementations: `csharp-dev-tools.codeAnalysis.showImplementations`
-- Enum Assignments: `csharp-dev-tools.codeAnalysis.showEnumAssignments`
+- `csharp-dev-tools.codeLens.enableTestGeneration`
+- `csharp-dev-tools.codeLens.enableTestRunner`
+- `csharp-dev-tools.codeLens.enableGoToImplementation`
+- `csharp-dev-tools.codeLens.enableReferences`
+- `csharp-dev-tools.codeLens.enableTypeInitializations`
+- `csharp-dev-tools.codeLens.enableMemberAssignments`
+- `csharp-dev-tools.codeLens.enableEnumAssignments`
 
 ## Usage Tips
 

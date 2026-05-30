@@ -23,12 +23,12 @@ Stored in your user profile, available across all workspaces:
 
 ### Workspace Diagrams
 
-Stored per workspace:
+Stored per workspace under `.vscodecsdt/Diagrams` at the workspace root:
 
 - Project-specific diagrams
-- Team collaboration
-- Version controlled
-- Context-specific
+- Team collaboration – check the folder into source control to share with the team
+- Context-specific (architecture, flows, etc.)
+- **Backward compatibility**: existing diagrams from the previous global location (`~/.vscode-csharp-dev-tools/diagrams/workspace/`) are still readable and shown alongside new ones
 
 ## Creating Diagrams
 
@@ -117,7 +117,7 @@ To export:
 
 Workspace diagrams can be version controlled:
 
-- Stored in `.vscode-csharp-dev-tools/diagrams`
+- Stored in `.vscodecsdt/Diagrams` at the workspace root
 - JSON format for diffing
 - Commit with code changes
 - Share with team
@@ -127,7 +127,7 @@ Workspace diagrams can be version controlled:
 Add to `.gitignore` if needed:
 
 ```gitignore
-.vscode-csharp-dev-tools/diagrams/
+.vscodecsdt/Diagrams/
 ```
 
 ## Use Cases

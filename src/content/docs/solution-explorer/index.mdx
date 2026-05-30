@@ -60,3 +60,28 @@ The Solution Explorer can automatically highlight the currently active file:
 3. Toggle the setting as desired
 
 You can also press `Shift+Alt+L` to reveal the current file in the Solution Explorer at any time.
+
+### File Exclusion (`files.exclude`)
+
+The Solution Explorer respects VS Code's `files.exclude` setting from both **workspace** and **user (global)** configurations:
+
+- Files matching exclusion patterns are automatically hidden from the tree
+- Glob patterns are supported (`**/*.ext`, `folder/`, `**/folder/**`, …)
+- Workspace settings override user settings, allowing fine-grained control per project
+
+### Automatic IDE Files Exclusion
+
+When a .NET project is detected (by the presence of `.sln`, `.slnx`, or `.csproj` files) the Solution Explorer automatically hides IDE-generated files:
+
+- Visual Studio user files: `*.csproj.user`, `*.user`, `*.suo`
+- Visual Studio directory: `.vs/`
+- JetBrains Rider directory and settings: `.idea/`, `*.DotSettings.user`
+
+You can override this behavior via your own `files.exclude` settings if you need to see those files.
+
+### Unity Project Support
+
+Unity projects are automatically detected (presence of `Assets/`, `ProjectSettings/`, or Unity references in `.csproj` files) and:
+
+- All `*.meta` files are hidden from the Solution Explorer
+- Moving or renaming files in Unity projects automatically moves/renames the associated `.meta` files alongside them, keeping Unity's asset metadata in sync
