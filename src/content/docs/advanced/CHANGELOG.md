@@ -1,4 +1,13 @@
+---
+title: Changelog
+description: History of changes in C# Dev Tools
+---
+
 # Change Log
+
+## [1.4.14] - 2026-06-03
+
+Detect referenced .dll changes and rebuild the project when running/debugging to ensure metadata sources are up-to-date.
 
 ## [1.4.13] - 2026-06-03
 
