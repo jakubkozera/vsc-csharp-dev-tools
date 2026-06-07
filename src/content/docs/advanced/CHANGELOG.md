@@ -5,6 +5,17 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.15] - 2026-06-06
+
+### Added
+
+- **Code Analysis — Workspace Scope Selection**: The analysis webview now exposes a scope selector for workspace analysis, letting you switch between the full workspace, each loaded solution, and individual projects without rerunning analysis.
+
+### Fixed
+
+- **Code Analysis — Solution Scope Default Selection**: Solution analysis now defaults to the solution scope instead of showing an empty selection in the scope dropdown.
+- **Code Analysis — Scope Labels**: Removed path text from the scope dropdown entries so the selector shows clean Workspace / Solution / Project names only.
+
 ## [1.4.14] - 2026-06-03
 
 Detect referenced .dll changes and rebuild the project when running/debugging to ensure metadata sources are up-to-date.
