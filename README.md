@@ -81,6 +81,21 @@
 
 ## Features
 
+### C# Language Server
+
+**Analyzers and refactorings**
+
+Roslyn-powered analyzers and quick fixes surface code cleanup opportunities and refactoring actions directly in the editor.
+
+![Analyzers and refactorings](https://github.com/jakubkozera/vsc-csharp-dev-tools/blob/main/docs/features/video/c-sharp-devtools-refactorings_1080p.gif?raw=true)
+
+**Hovers**
+
+Rich hover tooltips show types, signatures, docs, and navigation links without leaving the current file.
+
+![Hovers](https://github.com/jakubkozera/vsc-csharp-dev-tools/blob/main/docs/features/video/csharp-dev-tools-lsp-hovers_1080p.gif?raw=true)
+
+
 ### NuGet Management
 
 ![NuGet Manager](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/nuget-manager.png)
