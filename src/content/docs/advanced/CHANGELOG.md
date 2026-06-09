@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.16] - 2026-06-09
+
+## Fixed
+
+Invalid solution path provided fixes and additional logs for troubleshooting.
+
 ## [1.4.15] - 2026-06-06
 
 ### Added
