@@ -4,7 +4,7 @@
 
 <table style="border: none; width: 100%;">
 <tr style="border: none;">
-<td style="border: none; vertical-align: top; width: 50%;">
+<td style="border: none; vertical-align: top; max-width: 50%;">
 
 ### [Solution Explorer](https://jakubkozera.github.io/vsc-csharp-dev-tools/solution-explorer)
 
