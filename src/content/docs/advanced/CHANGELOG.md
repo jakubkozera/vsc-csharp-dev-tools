@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.17] - 2026-06-10
+
+## Fixed
+
+Nuget package manager web view now debouces  refreshes after installing / consilidating packages to prevent multiple rapid refreshes when performing batch operations, improving performance and responsiveness of the UI during bulk package management tasks. This ensures a single refresh occurs after a series of rapid install/uninstall actions, keeping the package list up-to-date without unnecessary intermediate refreshes.
+
 ## [1.4.16] - 2026-06-09
 
 ## Fixed
