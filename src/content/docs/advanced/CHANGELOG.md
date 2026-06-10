@@ -5,6 +5,16 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.18] - 2026-06-10
+
+### Fixed
+
+- **LSP Quick Fixes — Auto Save After Analyzer Edits**: Quick fixes coming from the Roslyn language server now save the affected files after applying workspace edits, so analyzer fixes do not remain in a modified state.
+
+### Adjusted
+
+Icon for Solution fix in scope.. option is aligned with Icon from Solution explorer
+
 ## [1.4.17] - 2026-06-10
 
 ## Fixed
