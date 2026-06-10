@@ -87,18 +87,20 @@
 
 Roslyn-powered analyzers and quick fixes surface code cleanup opportunities and refactoring actions directly in the editor.
 
-![Analyzers and refactorings](https://github.com/jakubkozera/vsc-csharp-dev-tools/blob/main/docs/features/video/c-sharp-devtools-refactorings_1080p.gif?raw=true)
+<video src="https://jakubkozera.github.io/vsc-csharp-dev-tools/videos/c-sharp-devtools-refactorings2.mp4" controls></video>
 
 **Hovers**
 
 Rich hover tooltips show types, signatures, docs, and navigation links without leaving the current file.
 
-![Hovers](https://github.com/jakubkozera/vsc-csharp-dev-tools/blob/main/docs/features/video/csharp-dev-tools-lsp-hovers_1080p.gif?raw=true)
+<video src="https://jakubkozera.github.io/vsc-csharp-dev-tools/videos/csharp-dev-tools-lsp-hovers2.mp4" controls></video>
 
 
 ### NuGet Management
 
-![NuGet Manager](https://raw.githubusercontent.com/jakubkozera/vsc-csharp-dev-tools/refs/heads/main/src/assets/img/nuget-manager.png)
+The built-in NuGet Package Manager allows you to easily browse, install, update, and manage NuGet packages directly within VS Code.
+
+<video src="https://jakubkozera.github.io/vsc-csharp-dev-tools/videos/csharp-dev-tools-nuget-management.mp4" controls></video>
 
 ### Advanced Search
 

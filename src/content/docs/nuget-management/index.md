@@ -10,6 +10,9 @@ Manage your NuGet packages directly from the VS Code environment with comprehens
 
 ## Overview
 
+<video src="https://jakubkozera.github.io/vsc-csharp-dev-tools/videos/csharp-dev-tools-nuget-management.mp4" controls></video>
+
+
 The NuGet Management feature provides a complete package management experience:
 
 - **[Browsing NuGet Packages](./browsing-packages/)** - Search and discover packages
