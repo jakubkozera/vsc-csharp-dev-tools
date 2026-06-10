@@ -6,12 +6,9 @@ sidebar:
 
 Manage your NuGet packages directly from the VS Code environment with comprehensive package management features.
 
-![NuGet Management](../../../assets/img/nuget-manager.png)
-
-## Overview
-
 <video src="https://jakubkozera.github.io/vsc-csharp-dev-tools/videos/csharp-dev-tools-nuget-management.mp4" controls></video>
 
+## Overview
 
 The NuGet Management feature provides a complete package management experience:
 
