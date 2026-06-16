@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.20] - 2026-06-16
+
+### Added
+
+Formating .razor files is now supported by the extension's built-in formatter, providing consistent code styling for Blazor components without requiring external formatters or manual configuration. The formatter handles indentation, spacing, and line breaks according to common C# conventions, ensuring that both the HTML markup and embedded C# code in .razor files are neatly formatted with a single command.
+
 ## [1.4.19] - 2026-06-11
 
 ### Fixed
