@@ -5,6 +5,14 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.19] - 2026-06-11
+
+### Fixed
+
+- **Quick Add JSON — Singular Item Types for Object Arrays**: Quick Add now generates singular item types for JSON arrays of objects, so a property like `budgets` becomes `List<Budget>` instead of `List<Budgets>`.
+  - Applies to nested JSON objects created from Quick Add input
+  - Added a regression test using an anonymized JSON example with `budgets`, `budget_alerting`, and `effective_budget`
+
 ## [1.4.18] - 2026-06-10
 
 ### Fixed
