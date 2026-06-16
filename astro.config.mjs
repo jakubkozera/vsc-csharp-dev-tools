@@ -120,6 +120,10 @@ export default defineConfig({
           label: 'Advanced',
           autogenerate: { directory: 'advanced' },
         },
+        {
+          label: 'Feedback',
+          link: '/feedback',
+        },
       ],
     }),
     react(),

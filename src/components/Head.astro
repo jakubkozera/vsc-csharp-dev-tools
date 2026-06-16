@@ -10,19 +10,29 @@ const connectionString = import.meta.env.PUBLIC_APPINSIGHTS_CONNECTION_STRING ||
 
 {connectionString && (
   <script is:inline define:vars={{ connectionString }}>
-    // Microsoft Application Insights JS SDK (lightweight snippet)
-    !function(T,l,y){var S=T.location,k="script",D="connectionString",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"8",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),n}var h=d.url||y.src;function a(e){var a,t,n,i,o,s,r,c,u,p;if(!g){if(g=!0,m.queue=[],f)return;f=!0;try{for(t=(a=m.queue).length,n=0;n<t;n++)a[n]()}catch(e){}}}if(h){var i=function(){var e=l.createElement(k);e.src=h;var t=y[w];return!t&&""!==t||"undefined"==e[w]||(e[w]=t),e.onload=a,e.onerror=function(){g=!0,f=!0},e}();l.getElementsByTagName("head")[0].appendChild(i)}else a();try{m.cookie=l.cookie}catch(e){}function e(e){m[e]=function(){var t=arguments;m.queue.push(function(){m[e].apply(m,t)})}}var c="track",u=c+"Event",p=c+"Trace",s=c+"Exception",r=c+"PageView";e(u),e(p),e(s),e("start"+r),e("stop"+r),e("set"+c+"User"),e("add"+c+"DependencyListener"),m[u+"Logged"]=function(e){m.queue.push(function(){m[u+"Logged"](e)})};var o="Track",d=o+"Page";return e("start"+d),e("stop"+d),!0===d.split(o)[1][b]()&&e(b()[0].toUpperCase()+b().substring(1)+"PageView"),m}({connectionString:connectionString});T[t]=n;var a=l.createElement(k);a.src="https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js";a.crossOrigin="anonymous";a.onload=function(){n.emptyQueue()};l.getElementsByTagName("head")[0].appendChild(a)}(window,document,{src:"https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js",crossOrigin:"anonymous"});
+    // Initialize Application Insights SDK once (guard against re-init on View Transitions)
+    if (!window.__aiInitialized) {
+      window.__aiInitialized = true;
 
-    // Track page view on initial load
-    window.appInsights && window.appInsights.trackPageView();
+      // Microsoft Application Insights JS SDK snippet
+      !function(T,l,y){var S=T.location,k="script",D="connectionString",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"8",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),n}var h=d.url||y.src;function a(e){var a,t,n,i,o,s,r,c,u,p;if(!g){if(g=!0,m.queue=[],f)return;f=!0;try{for(t=(a=m.queue).length,n=0;n<t;n++)a[n]()}catch(e){}}}if(h){var i=function(){var e=l.createElement(k);e.src=h;var t=y[w];return!t&&""!==t||"undefined"==e[w]||(e[w]=t),e.onload=a,e.onerror=function(){g=!0,f=!0},e}();l.getElementsByTagName("head")[0].appendChild(i)}else a();try{m.cookie=l.cookie}catch(e){}function e(e){m[e]=function(){var t=arguments;m.queue.push(function(){m[e].apply(m,t)})}}var c="track",u=c+"Event",p=c+"Trace",s=c+"Exception",r=c+"PageView";e(u),e(p),e(s),e("start"+r),e("stop"+r),e("set"+c+"User"),e("add"+c+"DependencyListener"),m[u+"Logged"]=function(e){m.queue.push(function(){m[u+"Logged"](e)})};var o="Track",d=o+"Page";return e("start"+d),e("stop"+d),!0===d.split(o)[1][b]()&&e(b()[0].toUpperCase()+b().substring(1)+"PageView"),m}({
+          connectionString: connectionString,
+          // Disable auto page view tracking — we handle it manually via astro:page-load
+          autoTrackPageVisitTime: false,
+          disableFetchTracking: false
+        });T[t]=n;var a=l.createElement(k);a.src="https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js";a.crossOrigin="anonymous";a.onload=function(){n.emptyQueue()};l.getElementsByTagName("head")[0].appendChild(a)}(window,document,{src:"https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js",crossOrigin:"anonymous"});
 
-    // Track page views on client-side navigation (View Transitions)
-    document.addEventListener('astro:page-load', function() {
-      if (window.appInsights) {
-        window.appInsights.trackPageView({
+      // Track page views on every Astro View Transition navigation
+      // astro:page-load fires after every navigation (including the initial one)
+      document.addEventListener('astro:page-load', function () {
+        var ai = window.appInsights;
+        if (!ai) return;
+        ai.trackPageView({
+          name: document.title,
           uri: window.location.pathname
         });
-      }
-    });
+        ai.flush();
+      });
+    }
   </script>
 )}
