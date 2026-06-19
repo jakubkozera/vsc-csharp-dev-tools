@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.21] - 2026-06-19
+
+### Fixed
+
+- **Run Startup Project — "Illegal argument: source" Error**: Fixed a regression introduced in 1.4.20 where running a startup project without debugger (green "Run" button or Ctrl+F5) failed with `Illegal argument: source must be a string of length > 0`. The `source` parameter of the VS Code Task was accidentally set to an empty string during tooltip simplification; restored it to `'C#'`.
+
 ## [1.4.20] - 2026-06-16
 
 ### Added
