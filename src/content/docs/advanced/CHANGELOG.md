@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.22] - 2026-06-22
+
+### Fixed
+
+- **Go to Implementation — Fallback to Definition for Concrete Methods**: Fixed "No implementation found" when invoking "Go to Implementation" (right-click context menu) on a regular (non-virtual, non-abstract) method call. The LSP server does not implement `textDocument/implementation` for concrete methods, so VS Code's built-in command returned empty results. A middleware now detects this case and falls back to the definition provider, so "Go to Implementation" navigates to the method declaration just like "Go to Definition" does. Virtual and interface methods that return actual implementations from the server are unaffected.
+
 ## [1.4.21] - 2026-06-19
 
 ### Fixed
