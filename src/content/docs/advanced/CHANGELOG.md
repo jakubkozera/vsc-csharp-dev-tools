@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.23] - 2026-06-23
+
+### Fixed
+
+- **LSP Hover — Comments No Longer Inherit Next Symbol Hover**: Fixed a regression where hovering over `//`, `/* */`, or documentation comment lines in `.cs` files could display the hover tooltip for the next non-comment token instead of doing nothing. The Roslyn hover fallback now detects comment trivia and skips symbol resolution on comment positions.
+
 ## [1.4.22] - 2026-06-22
 
 ### Fixed
