@@ -5,6 +5,18 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.4.25] - 2026-06-25
+
+### Fixed
+
+- **Runners — Custom Namespace Support**: Fixed runner execution for runner classes declared in a custom namespace. The generated runner program now resolves the namespace from the runner file and adds the correct `using` before registering and invoking the runner type. Added regression tests for file-scoped and block-scoped namespaces.
+
+## [1.4.24] - 2026-06-25
+
+### Fixed
+
+- **Debugger — Jump to Line CodeLens Only Shows When Paused**: Fixed the "Jump to Line" CodeLens appearing whenever a debug session was active, even if the debugger was still running. The provider now checks the current debug stack state and only shows the lens when execution is actually stopped at a breakpoint or paused frame.
+
 ## [1.4.23] - 2026-06-23
 
 ### Fixed
