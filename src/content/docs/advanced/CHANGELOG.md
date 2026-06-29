@@ -5,6 +5,15 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.5.0] - 2026-06-29
+
+### Added
+
+- **LSP 1.5.0 Upgrade**: Updated the language server to version 1.5.0, bringing the latest Roslyn-based editing improvements into the extension.
+- **Blazor Support**: Added new Blazor-focused language features, including semantic coloring for different symbol kinds such as enums, booleans, numbers, and types.
+- **Better Autocomplete**: Improved completion suggestions across C# and Blazor scenarios for a smoother editing experience.
+- **Expression Navigation**: Added Go to Definition and autocomplete support for expressions.
+
 ## [1.4.25] - 2026-06-25
 
 ### Fixed
