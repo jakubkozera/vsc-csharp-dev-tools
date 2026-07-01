@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.5.3] - 2026-06-30
+
+### Fixed
+
+- **Startup Project Detection — Exe Projects With Library Packages**: Fixed a regression where executable projects could be misclassified as libraries when they referenced packages such as EntityFrameworkCore. Startup project detection now relies on explicit executable signals like `OutputType=Exe`/`WinExe` and project SDK characteristics instead of brittle package-based library heuristics.
+
 ## [1.5.2] - 2026-06-30
 
 ### Fixed
