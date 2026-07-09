@@ -5,6 +5,15 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.6.0] - 2026-07-09
+
+### Changed
+
+- **Inline Debug Values — Guid/DateTime Formatting**: Inline values now keep Guid and DateTime values readable even when the debugger exposes them as expandable reference types, and record-generated `EqualityContract` members are ignored in the inline value view.
+- **Create Runner — Locked Source Project Flow**: The Create Runner experience now locks selection to the source project when it can be resolved, derives the source project from the method file path when needed, and adapts the UI to the runner project that already exists for that source.
+- **Runner Generation — Framework-Aware Output**: Runner files now generate deterministic method stubs that prefer file-scoped namespaces on supported target frameworks, use primary constructors when available, and fall back to a classic constructor plus readonly field on older targets.
+- **Create Runner Webview — Browser-Safe Path Handling**: The webview now resolves project directories without importing Node's `path` module, keeping the bundle browser-safe.
+
 ## [1.5.3] - 2026-06-30
 
 ### Fixed
