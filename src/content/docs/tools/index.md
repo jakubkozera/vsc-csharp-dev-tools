@@ -21,7 +21,7 @@ The Tools view groups everything into the following sections:
 - **Security** – Secret scanning ([details](./secret-scanning/))
 - **Database** – Microsoft SQL Server manager
 - **Notebooks** – C# script notebooks (`.csnb`)
-- **Runners** – Quick run/debug entry points for runnable projects
+- **Runners** – Quick run/debug entry points for DI-based projects, without starting the whole application ([details](./runners/))
 - **Azure** – Service Bus Studio and Application Insights Explorer integrations
 
 ## Bookmarks
