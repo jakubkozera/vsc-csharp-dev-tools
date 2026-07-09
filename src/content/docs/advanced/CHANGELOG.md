@@ -5,6 +5,24 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.5.3] - 2026-06-30
+
+### Fixed
+
+- **Startup Project Detection — Exe Projects With Library Packages**: Fixed a regression where executable projects could be misclassified as libraries when they referenced packages such as EntityFrameworkCore. Startup project detection now relies on explicit executable signals like `OutputType=Exe`/`WinExe` and project SDK characteristics instead of brittle package-based library heuristics.
+
+## [1.5.2] - 2026-06-30
+
+### Fixed
+
+- **Solution Explorer Add Menu — Nested Folder Creation**: The standard Add > Folder, files command now supports multi-level relative paths such as `Folder1/Nested1/Class.cs`, creating the full folder tree on disk in one step. This keeps the regular folder workflow aligned with Quick Add and preserves the existing relative-path validation.
+
+## [1.5.1] - 2026-06-29
+
+### Fixed
+
+- **Startup Project Launch Profile Picker — Concise Environment Labels**: The launch profile quick pick now renders well-known environment variables as their value only, instead of showing the raw key name or the previous `ENV` prefix. For example, `ASPNETCORE_ENVIRONMENT = Development` now appears as `Environment: Development`, which keeps the picker shorter and easier to scan.
+
 ## [1.5.0] - 2026-06-29
 
 ### Added
