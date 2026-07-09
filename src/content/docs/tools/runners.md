@@ -18,6 +18,7 @@ C# Runners let you create lightweight entry points for individual methods inside
   <iframe
     width="100%"
     height="420"
+    style="height: 420px;"
     src="https://www.youtube.com/embed/qnWzkcfa-fo"
     title="C# Runners tutorial"
     frameborder="0"
