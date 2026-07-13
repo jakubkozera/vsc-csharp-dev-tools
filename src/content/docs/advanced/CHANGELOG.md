@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.6.1] - 2026-07-13
+
+### Fixed
+
+- **Runners — Concrete DI Forwarding for Shared Interfaces**: Fixed runner startup when multiple classes implement the same interface and the runner injects a concrete type directly. The runner DI container now resolves the matching runtime type instead of forwarding every concrete registration through `GetRequiredService(interface)`, which previously returned the wrong implementation and caused `ArgumentException` during activation. Existing runner `Program.cs` files also auto-regenerate when they contain the stale forwarding pattern.
+
 ## [1.6.0] - 2026-07-09
 
 ### Changed
