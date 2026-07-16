@@ -5,6 +5,34 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.6.5] - 2026-07-15
+
+### Added
+
+- **Target Framework Picker**: Multi-targeted startup projects now show their active target framework in the status bar. Select a framework to run and debug that target, with editor analysis updating to the selected framework.
+
+### Fixed
+
+- **Build Configuration Picker**: Changing the build configuration now refreshes C# conditional compilation highlighting, so the active `#if` branch matches the selected configuration.
+
+## [1.6.4] - 2026-07-15
+
+### Added
+
+- **Build Configuration Picker**: Select Debug, Release, or project-defined configurations directly from the status bar. The chosen configuration is used consistently for running, debugging, testing, and coverage.
+
+## [1.6.3] - 2026-07-15
+
+### Fixed
+
+- **Create Tests and Runners CodeLens — Generic Methods**: Create Tests and Create Runner actions now appear for public methods that declare generic type parameters.
+
+## [1.6.2] - 2026-07-15
+
+### Fixed
+
+- **References CodeLens — Record Declarations**: References CodeLens now appears for records, record structs, and their members.
+
 ## [1.6.1] - 2026-07-13
 
 ### Fixed
