@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.6.6] - 2026-07-18
+
+### Fixed
+
+- **References CodeLens — Constants**: References CodeLens now appears for constant declarations, including `public const` members.
+
 ## [1.6.5] - 2026-07-15
 
 ### Added
