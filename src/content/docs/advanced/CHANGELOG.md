@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.6.7] - 2026-07-20
+
+### Fixed
+
+- **Sync Namespaces**: Syncing namespaces for a project no longer changes files belonging to a neighboring project with a similar name.
+
 ## [1.6.6] - 2026-07-18
 
 ### Fixed
