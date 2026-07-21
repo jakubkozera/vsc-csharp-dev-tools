@@ -5,6 +5,24 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.6.10] - 2026-07-21
+
+### Added
+
+- **Entity Framework Migrations**: Migration designer files now appear nested beneath their corresponding migration files in Solution Explorer.
+
+## [1.6.9] - 2026-07-21
+
+### Fixed
+
+- **NuGet Local Sources**: Local filesystem package sources no longer prompt for credentials during package restore.
+
+## [1.6.8] - 2026-07-21
+
+### Fixed
+
+- **Run Without Debugging — Build Configuration**: Running a startup project without the debugger now uses the build configuration selected in the status bar.
+
 ## [1.6.7] - 2026-07-20
 
 ### Fixed
