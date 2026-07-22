@@ -5,6 +5,31 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.7.0] - 2026-07-22
+
+### Added
+
+- **Language Model Tools**: Added AI-facing tools for building .NET solutions, running .NET tests, and creating Entity Framework migrations from the editor experience.
+- **AI Debugging Workflow**: Added a guided runner-based debugging flow with tools to create debug runners, set breakpoints, run and step through sessions, inspect paused state, evaluate expressions, and continue or stop execution.
+- **Runner Generation**: Improved runner project generation and orchestration so generated runners can be used directly in the new debug workflow.
+- **Test Workflow Updates**: Expanded test runner and test controller integration to support the new tool-driven test execution flow.
+
+### Fixed
+
+- **Type Initialization CodeLens**: Test classes no longer display initialization counts.
+
+## [1.6.12] - 2026-07-22
+
+### Fixed
+
+- **Type Initialization CodeLens**: Test classes no longer display initialization counts.
+
+## [1.6.11] - 2026-07-22
+
+### Fixed
+
+- **LSP — Debounced Workspace Reload on External C# File Changes**: Improved handling of workspace reload when C# files are created or modified by external tools (like AI agents). Workspace reload now consolidates rapid file change events into a single delayed reload, giving all writes time to settle before Roslyn processes the updated project state.
+
 ## [1.6.10] - 2026-07-21
 
 ### Added
