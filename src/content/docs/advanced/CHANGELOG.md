@@ -5,6 +5,24 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.7.3] - 2026-07-24
+
+### Fixed
+
+- **TODO Comment Highlighting**: Added the `csharp-dev-tools.highlights.todoComments` setting to disable the extension's custom TODO/FIXME/HACK/NOTE/UNDONE comment decoration, allowing other comment-coloring extensions and themes to control those comments.
+
+## [1.7.2] - 2026-07-23
+
+### Fixed
+
+- **C# Search**: Generated runner files no longer appear in C# search results.
+
+## [1.7.1] - 2026-07-23
+
+### Fixed
+
+- **Solution Explorer**: Active migration files and their designer files are now tracked correctly.
+
 ## [1.7.0] - 2026-07-22
 
 ### Added
