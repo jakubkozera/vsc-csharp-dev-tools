@@ -5,6 +5,18 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.7.5] - 2026-07-24
+
+### Fixed
+
+- **C# Snippets Scope Filtering**: C# snippets are now filtered based on the current editing scope. Statement snippets no longer appear inside class bodies, property and member snippets no longer appear inside methods or initializers, and snippets are suppressed inside object and collection initializers where they are not useful.
+
+## [1.7.4] - 2026-07-24
+
+### Fixed
+
+- **Language Model Tools - .NET Build and Test Diagnostics**: Failed prerequisite builds for AI-triggered test runs now return their compiler errors to the agent instead of reporting a false successful test run with no results. AI-facing .NET build, test, and Entity Framework migration tools now return only blocking build errors, excluding warnings to keep agent context focused.
+
 ## [1.7.3] - 2026-07-24
 
 ### Fixed
