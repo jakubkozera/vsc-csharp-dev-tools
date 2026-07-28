@@ -5,6 +5,14 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.8.0] - 2026-07-27
+
+### Added
+
+- **Workspace Solution Selection**: Solutions are now loaded without asking whenever every workspace folder holds a single solution — including multi-root workspaces with one solution per folder. The selection prompt only appears for folders that actually contain more than one solution, and an explicitly deselected solution remains unloaded even when it is the only solution in its workspace folder.
+- **Adding and Removing Workspace Folders**: Adding a folder to the workspace now scans it immediately. A folder with a single solution is loaded automatically, while a folder with several solutions opens the selection prompt with the previously chosen solutions still checked. Removing a folder drops its solutions from the saved selection.
+
+
 ## [1.7.5] - 2026-07-24
 
 ### Fixed
