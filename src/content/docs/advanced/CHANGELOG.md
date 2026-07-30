@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.8.1] - 2026-07-30
+
+### Added
+
+- **Custom SDK Startup Project Detection**: Projects using a custom SDK that inherits `Microsoft.NET.Sdk.Web` are now detected as runnable web projects. C# Dev Tools resolves the SDK type through MSBuild once, caches the result globally, and reuses it for subsequent projects without repeating the CLI query.
+
 ## [1.8.0] - 2026-07-27
 
 ### Added
