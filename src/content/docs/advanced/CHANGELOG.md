@@ -5,6 +5,18 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.8.3] - 2026-07-30
+
+### Fixed
+
+- **Better Comments Compatibility**: C# comment delimiters are now included in the C# language configuration, allowing Better Comments and similar extensions to detect and style `//` and `/* ... */` comments correctly.
+
+## [1.8.2] - 2026-07-30
+
+### Fixed
+
+- **Anonymous Type Hover and Inlay Hints**: Hover information and custom type inlay hints now preserve complete anonymous types and nested generic arguments, including LINQ `GroupBy` result types. Anonymous-type hints no longer offer invalid "Go to" or "Double-click to insert" actions.
+
 ## [1.8.1] - 2026-07-30
 
 ### Added
