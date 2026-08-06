@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.8.4] - 2026-08-06
+
+### Fixed
+
+- **Solution Explorer - Nested Folder Icons**: Fixed folder icons remaining open after collapsing and reopening a parent folder. Expansion state for nested folders is now cleared when their parent is collapsed, keeping the icons synchronized with the tree state.
+
 ## [1.8.3] - 2026-07-30
 
 ### Fixed
