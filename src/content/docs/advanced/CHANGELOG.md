@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.8.5] - 2026-08-07
+
+### Fixed
+
+- **C# Editor - Unwanted Autosave on Enter**: Fixed C# files being saved automatically when typing Enter, semicolons, or closing braces while `files.autoSave` is disabled. On-type formatting now works with the in-memory document content without forcing a save.
+
 ## [1.8.4] - 2026-08-06
 
 ### Fixed
