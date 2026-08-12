@@ -47,9 +47,34 @@ The startup project is the project that runs when you press F5:
 
 To run multiple projects simultaneously:
 
-1. Configure launch.json for multiple configurations
-2. Or use VS Code's compound launch configurations
-3. Useful for running client and server projects together
+1. Open the C# Dev Tools settings and go to the **Debug** section
+2. Use **Launch Configurations** to create a named configuration
+3. Add the executable projects that should start together
+4. Choose **Run** or **Debug** separately for each project
+5. Select the configuration in the **Run C# Projects** view or the startup project picker
+
+Launch configurations are stored in the workspace settings with project paths relative to the workspace, so they remain portable when the workspace is moved or shared.
+
+
+### Launch Configuration Manager
+
+The Launch Configuration Manager lets you define reusable, named startup configurations for multi-project workflows.
+
+Each configuration contains:
+
+- A name used in the **Run C# Projects** view and startup project picker
+- One or more executable projects
+- An individual **Run** or **Debug** mode for every project
+
+To use a configuration:
+
+1. Open the C# Dev Tools settings
+2. Select the **Debug** section
+3. Create or edit a launch configuration
+4. Select it as the startup configuration in **Run C# Projects**
+5. Use the launch action to start all configured projects
+
+When a launch configuration is active, the Solution Explorer marks every project included in it. The status bar and editor actions use the configuration name, and changes to the workspace configuration are reflected automatically.
 
 ## Running Applications
 
