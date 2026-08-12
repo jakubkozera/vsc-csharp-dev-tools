@@ -5,6 +5,20 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.9.0] - 2026-08-12
+
+### Added
+
+- **Launch Configuration Manager**: Added a workspace-based Configuration Manager for defining named startup configurations that can launch multiple executable projects together
+  - Configure launch configurations from Settings with project selection, per-project Run/Debug mode, and editable configuration names
+  - Store project paths relative to the workspace for portable configuration across machines and repositories
+  - Select launch configurations alongside individual startup projects in the Run and Debug view and startup project picker
+  - Launch all projects in a configuration with a single action, using each project's configured Run or Debug mode
+  - Added launch configuration entries, icons, tooltips, and launch actions to the Run C# Projects view
+  - Updated status bar, editor CodeLens actions, and project decorations to represent multi-project startup configurations
+  - Refresh active configurations automatically when their workspace settings change
+  - Added command and menu contributions for launching the selected configuration, with regression tests for configuration behavior and UI integration
+
 ## [1.8.5] - 2026-08-07
 
 ### Fixed
