@@ -5,6 +5,32 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.9.2] - 2026-08-13
+
+### Added
+
+- **Solution Explorer - Optional Reveal on Load**: Added the `csharp-dev-tools.solutionViewer.revealOnLoad` setting, enabled by default, to control whether Solution Explorer opens automatically when a `.sln`, `.slnx`, or standalone `.csproj` solution is loaded.
+  - When disabled, the solution is still parsed and loaded in the background.
+  - Solution Explorer remains available and can be opened manually when needed.
+  - Added the setting to Solution Explorer Settings > General.
+
+## [1.9.1] - 2026-08-13
+
+### Added
+
+- **Standalone Launch Configuration Manager**: Added a dedicated launch configuration window that can be opened with the `Open Launch Configurations` command.
+  - The panel automatically opens in a separate VS Code window
+  - Added `Configure multiple projects` to the Solution Explorer context menu for `.sln` and `.slnx` nodes
+  - Reuses the same launch configuration manager from the Debug settings section
+
+### Changed
+
+- **Launch Configuration Storage**: Multi-project launch configurations are now stored in `.vscode/csharp-dev-tools-settings.json` instead of `.vscode/settings.json`.
+  - Existing configurations are migrated automatically from `csharp-dev-tools.debug.launchConfigurations`
+  - The legacy workspace setting is removed after a successful migration
+  - Configuration file changes are watched and reflected in Settings, Run and Debug, and the standalone panel
+- Added persistence, migration, file watching, context menu, and integration test coverage for the launch configuration workflow.
+
 ## [1.9.0] - 2026-08-12
 
 ### Added
