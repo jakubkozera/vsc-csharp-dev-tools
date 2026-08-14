@@ -5,6 +5,38 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.9.8] - 2026-08-14
+
+### Fixed
+
+- **Test Explorer - Debug Failure Details**: Failed tests now show their exception message and stack trace when debugged, instead of only the generic failure message.
+- **Test Explorer - Debug Test Results Output**: Debugged tests now include the per-test output and `Test Run Summary` in the Test Results panel, matching regular test runs.
+
+## [1.9.7] - 2026-08-14
+
+### Fixed
+
+- **Web Project Browser Launch**: Fixed web projects opening the browser twice when debugging with `launchBrowser: true` and a `launchUrl` configured in `launchSettings.json`.
+- **Web Project Launch Settings**: Run and debug modes now consistently respect the current `launchBrowser` value from `launchSettings.json`, including changes made without reloading VS Code.
+
+## [1.9.6] - 2026-08-14
+
+### Fixed
+
+- **Test Explorer - Official VS Code Debugging**: Test debugging now automatically continues past the initial internal `vsdbg` attach stop, so execution reaches user code without requiring a manual Continue. User breakpoints and exception stops remain unaffected.
+
+## [1.9.5] - 2026-08-14
+
+### Fixed
+
+- **Solution Explorer - Active File Tracking After Double-Click**: Fixed active file tracking remaining suppressed after opening a file with a double-click from Solution Explorer, so selecting the file's editor tab now tracks and reveals it correctly.
+
+## [1.9.4] - 2026-08-14
+
+### Fixed
+
+- **Solution Explorer - Active File Tracking in Background**: Active file tracking now continues while Solution Explorer is hidden and reveals the current file when the view becomes visible again, without triggering or revealing the Solution Explorer view in the background.
+
 ## [1.9.3] - 2026-08-13
 
 ### Fixed
