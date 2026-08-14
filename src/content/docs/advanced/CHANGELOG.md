@@ -5,6 +5,17 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.9.3] - 2026-08-13
+
+### Fixed
+
+- **Test Explorer - Run Settings During Debugging**: Selected `.runsettings` files are now passed to the VSTest debug process with `--settings`, so environment variables and other test configuration are applied when debugging tests.
+- **Run Settings - Duplicate File Detection**: The Run Settings panel no longer shows the same `.runsettings` file more than once when it is discovered from both the solution root and a test project folder.
+
+### Improved
+
+- **Run Settings - Panel Layout**: Added balanced horizontal and vertical spacing to the Run Settings view and improved handling of long file names.
+
 ## [1.9.2] - 2026-08-13
 
 ### Added
