@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.9.9] - 2026-08-14
+
+### Fixed
+
+- **Solution Explorer - Build Configuration**: Build, rebuild, clean, and solution build commands now respect the configuration selected in the status bar instead of silently falling back to `Debug` 
+
 ## [1.9.8] - 2026-08-14
 
 ### Fixed
