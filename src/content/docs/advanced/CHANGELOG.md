@@ -5,6 +5,20 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.9.11] - 2026-08-17
+
+### Fixed
+
+- **NuGet Package Manager - Environment Credentials**: NuGet credentials using `%VARIABLE%` values in `nuget.config` are now resolved before package restore, including existing credential blocks that NuGet CLI would not expand itself.
+  - Added support for direct `NuGetPackageSourceCredentials_<source>` environment variables.
+  - Temporary credential replacements are removed after the operation and the original `nuget.config` content is restored exactly.
+
+## [1.9.10] - 2026-08-16
+
+### Fixed
+
+- **NuGet Package Manager - Commented Configuration Entries**: Commented-out package sources, disabled sources, and package source credentials in `nuget.config` are now ignored instead of being displayed or treated as active configuration.
+
 ## [1.9.9] - 2026-08-14
 
 ### Fixed
