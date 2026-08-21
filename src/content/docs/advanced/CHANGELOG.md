@@ -5,6 +5,20 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.10.0] - 2026-08-20
+
+### Added
+
+- **Code Cleanup**: Added configurable cleanup profiles for Roslyn code fixes, including Safe, Recommended, Aggressive, and Custom presets with searchable, category-based rule selection.
+  - Cleanup can run for the active file or selected project, folder, solution, and solution scope, with optional profile selection.
+  - Added automatic cleanup when opening or saving C# files, status bar/editor title actions, and a code action for adding diagnostics to the active profile.
+  - Added Cleanup settings with profile management, active profile selection, button placement, and telemetry tracking.
+
+### Fixed
+
+- **Diagnostics Refresh**: Diagnostics are refreshed after cleanup and fix-in-scope operations, including changes made to files outside the active editor.
+- **Inlay Hints**: Inlay hints are temporarily suppressed while document cleanup applies edits to avoid stale or distracting results.
+
 ## [1.9.11] - 2026-08-17
 
 ### Fixed
