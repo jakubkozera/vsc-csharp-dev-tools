@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.10.1] - 2026-08-23
+
+### Fixed
+
+- **Advanced Search - SLNX Workspaces**: Fixed Advanced Search ignoring workspaces whose solution is stored in the XML-based `.slnx` format. Such workspaces are now detected and indexed correctly, alongside traditional `.sln` solutions.
+
 ## [1.10.0] - 2026-08-20
 
 ### Added
