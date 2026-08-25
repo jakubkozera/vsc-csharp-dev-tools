@@ -5,6 +5,23 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.10.3] - 2026-08-25
+
+### Added
+
+- **JSON, SQL, and XML Formatters**: Added formatter tools with configurable indentation, syntax-aware formatting, input/output Monaco editors, file import/export, clipboard actions, and dedicated editor-tab icons.
+- **Formatter Editor Focus Mode**: Input and output editors can now be expanded to a distraction-free Monaco view and restored with the Minimize action.
+
+### Fixed
+
+- **Monaco Editor Folding**: Re-enabled indentation-based code folding and visible folding controls for structured content such as JSON, SQL, and XML.
+
+## [1.10.2] - 2026-08-24
+
+### Fixed
+
+- **Build Fails with `Ctrl+Shift+B` on a Single Project**: Fixed the "Build Solution" command (bound to `Ctrl+Shift+B`) failing when a standalone project (no `.sln`) was opened. It was trying to build the synthetic `.virtual.sln` grouping used internally for standalone projects, which doesn't exist as a file on disk. It now builds the startup project directly in that case.
+
 ## [1.10.1] - 2026-08-23
 
 ### Fixed
