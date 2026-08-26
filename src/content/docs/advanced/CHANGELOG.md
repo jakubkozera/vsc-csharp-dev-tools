@@ -5,10 +5,48 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
-## [1.10.3] - 2026-08-25
+## [1.10.9] - 2026-08-26
+
+### Fixed
+
+- **Test Explorer - Skipped Tests**: Single skipped tests now remain marked as skipped in the Test Results summary when run normally or in debug mode, instead of being reported as passed or failed.
+
+## [1.10.8] - 2026-08-26
 
 ### Added
 
+- **Create Unit Tests - Saved Preferences**: The selected test framework, assertion library, and custom GitHub Copilot instructions are now remembered per workspace and restored when creating the next test.
+  - Preferences are stored in the dedicated `.vscode/csharp-dev-tools-settings.json` file alongside launch configurations without either feature overwriting the other's settings.
+
+## [1.10.7] - 2026-08-26
+
+### Fixed
+
+- **LSP Hover - XML Documentation Lists**: Numbered XML documentation lists in `<remarks>` now render as separate list items instead of flattened text, without leaving a stray table separator in the hover.
+
+## [1.10.6] - 2026-08-26
+
+### Fixed
+
+- **C# Editor - Commented Logger Templates**: String template placeholders in commented-out logger calls are no longer highlighted.
+
+## [1.10.5] - 2026-08-25
+
+### Fixed
+
+- **Code Cleanup - "Add to Active Cleanup Profile" Quick Action**: The action is no longer offered for every diagnostic under the cursor. It now appears only for diagnostics that a code fix provider can actually fix - the same set the cleanup profile editor lists - so it never shows up for diagnostics a cleanup run could not apply. The fixable rule list is fetched from the language server and cached per document.
+
+### Changed
+
+- **Code Cleanup - Adding a Rule While the Default Profile Is Active**: Instead of reporting that the Default profile cannot be changed, the extension now creates a "User profile" copy of Default containing the new rule and activates it. Subsequent additions go to that profile, and a free name ("User profile 2", "User profile 3", ...) is picked when one already exists.
+
+## [1.10.4] - 2026-08-25
+
+### Added
+
+- **Attach to .NET Process**: Added a Command Palette action that attaches the integrated .NET debugger to an already running application, without launching it through C# Dev Tools.
+  - The process picker lists only processes running on the .NET runtime, detected from the apphost's `runtimeconfig.json` or from assemblies hosted by `dotnet`.
+  - Roslyn and MSBuild build infrastructure is excluded, and every entry shows the executable path so identically named processes can be told apart.
 - **JSON, SQL, and XML Formatters**: Added formatter tools with configurable indentation, syntax-aware formatting, input/output Monaco editors, file import/export, clipboard actions, and dedicated editor-tab icons.
 - **Formatter Editor Focus Mode**: Input and output editors can now be expanded to a distraction-free Monaco view and restored with the Minimize action.
 
