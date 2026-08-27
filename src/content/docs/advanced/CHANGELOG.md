@@ -5,6 +5,25 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.10.12] - 2026-08-26
+
+### Added
+
+- **Create Unit Tests - TUnit**: Added TUnit as an available test framework, including TUnit-compatible project files, test attributes, and standard assertions.
+- **Create Unit Tests - AwesomeAssertions**: Added AwesomeAssertions as an available assertion library, including NuGet package references, using directives, and generated assertion examples.
+
+## [1.10.11] - 2026-08-26
+
+### Fixed
+
+- **Test Results - Skipped Tests**: Added visible spacing between the skipped-test icon and the `Skipped` label.
+
+## [1.10.10] - 2026-08-26
+
+### Fixed
+
+- **Test Explorer - MSTest Data-Driven Tests**: Methods using `[TestMethod]` with `[DataRow]` or `[DynamicData]` are now discovered as parameterized tests and displayed as individual test cases, matching the behavior of `[DataTestMethod]`.
+
 ## [1.10.9] - 2026-08-26
 
 ### Fixed
