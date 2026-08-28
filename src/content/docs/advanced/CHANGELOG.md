@@ -5,6 +5,24 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.10.15] - 2026-08-28
+
+### Fixed
+
+- **NuGet Version Indicators in .csproj**: Fixed duplicated ✅/🆕 indicators appearing next to `PackageReference` entries after editing package versions directly in a `.csproj` file. Overlapping refresh runs — common when a package version cannot be resolved and the feed lookup is slow — no longer interfere with each other, and results computed against an outdated version of the file are discarded instead of being rendered.
+
+## [1.10.14] - 2026-08-28
+
+### Fixed
+
+- **Code Lens - Reference Counts**: References, assignments, and initializations are now counted for the declared member itself instead of a same-named type. Members such as `private readonly JsonSerializerOptions JsonSerializerOptions = new();` no longer report the reference count of their type (including matches from decompiled sources), and clicking the code lens now lists the correct locations.
+
+## [1.10.13] - 2026-08-28
+
+### Fixed
+
+- **Solution Explorer - Rename File and Type**: Fixed C# file renaming with the "Also rename the type" or "Always rename type with file" option not updating the matching class, interface, struct, enum, or record declaration. The rename now also works when no references are returned by the language server and handles Windows path casing correctly. Added regression test coverage.
+
 ## [1.10.12] - 2026-08-26
 
 ### Added
