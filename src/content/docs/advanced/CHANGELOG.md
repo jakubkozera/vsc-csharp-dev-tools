@@ -5,6 +5,16 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.11.0] - 2026-08-29
+
+### Added
+
+- **AI Diagram Tool**: Added a language model tool that creates editable workspace `.excalidraw` files and iteratively updates existing diagrams while they remain open in the built-in editor. The tool supports shapes, native Excalidraw connections that follow manually moved blocks, merge/delete operations with stable element IDs, embedded Azure or Tabler SVG icons, automatic readability checks, and screenshot-driven visual refinement.
+
+### Fixed
+
+- **AI Diagram Live Updates**: Fixed the Excalidraw webview crashing after an agent updated an open diagram because serialized collaborator state replaced Excalidraw's runtime `Map`. Incoming scenes are now restored with binding and text-dimension repair, runtime-only state is excluded from saved files, update completion is acknowledged before screenshot capture, and required Excalidraw fonts are included in the webview build.
+
 ## [1.10.15] - 2026-08-28
 
 ### Fixed
