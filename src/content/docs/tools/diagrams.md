@@ -48,6 +48,21 @@ Stored per workspace under `.vscodecsdt/Diagrams` at the workspace root:
 4. Enter diagram name
 5. Diagram opens in editor
 
+### Create with an AI Agent
+
+Ask a VS Code chat agent to create an architecture, flow, deployment, class, or infrastructure diagram. The `createDiagram` language model tool:
+
+- Creates the editable file under `.vscodecsdt/Diagrams`
+- Opens it immediately in the built-in Excalidraw editor
+- Updates the open canvas live during later tool calls
+- Can merge, replace, or delete elements using stable IDs
+- Embeds matching Azure and Tabler SVG icons into the diagram file
+- Uses native two-way Excalidraw bindings, so connectors follow blocks when you move them manually
+- Expands blocks to fit labels and detects overlaps or obstructed connectors
+- Returns a rendered screenshot to supported agents for visual review
+
+After each change, the agent reviews the full rendered diagram for readability, spacing, hierarchy, colors, and connector routing. If an automatic check or the screenshot reveals a problem, it updates the same `.excalidraw` file with another merge operation. To request later refinements, refer to the existing file so the agent updates the same canvas instead of creating a second diagram.
+
 ## Excalidraw Features
 
 ### Drawing Tools
