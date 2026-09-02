@@ -5,6 +5,13 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.11.1] - 2026-09-02
+
+### Fixed
+
+- **LSP — Semantic Coloring After External C# Changes**: Fixed stale semantic tokens and diagnostics when C# files were modified by GitHub Copilot or another external tool and then opened in the editor. The language server now synchronizes the document text during `didOpen` before calculating diagnostics and semantic tokens.
+- **LSP — External File Change Detection**: File watchers now also detect last-write timestamp changes, including external edits that preserve the file size.
+
 ## [1.11.0] - 2026-08-29
 
 ### Added
