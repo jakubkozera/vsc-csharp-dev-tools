@@ -5,6 +5,13 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.11.2] - 2026-09-04
+
+### Fixed
+
+- **LSP - Git Source Control Diff Documents**: Added language server support for `git:` documents opened by the Source Control diff editor. Git revisions now use isolated virtual document snapshots tied to the original Roslyn project context, so the old and new sides of a diff receive correct semantic coloring.
+- **LSP - Git Diff Hover and Navigation**: Hover information and navigation remain available for the revision shown in Git diffs and resolve against the correct snapshot instead of the current file on disk.
+
 ## [1.11.1] - 2026-09-02
 
 ### Fixed
@@ -152,7 +159,7 @@ description: History of changes in C# Dev Tools
 
 ### Fixed
 
-- **Solution Explorer - Build Configuration**: Build, rebuild, clean, and solution build commands now respect the configuration selected in the status bar instead of silently falling back to `Debug` 
+- **Solution Explorer - Build Configuration**: Build, rebuild, clean, and solution build commands now respect the configuration selected in the status bar instead of silently falling back to `Debug`
 
 ## [1.9.8] - 2026-08-14
 
@@ -273,7 +280,6 @@ description: History of changes in C# Dev Tools
 
 - **Workspace Solution Selection**: Solutions are now loaded without asking whenever every workspace folder holds a single solution — including multi-root workspaces with one solution per folder. The selection prompt only appears for folders that actually contain more than one solution, and an explicitly deselected solution remains unloaded even when it is the only solution in its workspace folder.
 - **Adding and Removing Workspace Folders**: Adding a folder to the workspace now scans it immediately. A folder with a single solution is loaded automatically, while a folder with several solutions opens the selection prompt with the previously chosen solutions still checked. Removing a folder drops its solutions from the saved selection.
-
 
 ## [1.7.5] - 2026-07-24
 
@@ -488,7 +494,7 @@ Icon for Solution fix in scope.. option is aligned with Icon from Solution explo
 
 ## Fixed
 
-Nuget package manager web view now debouces  refreshes after installing / consilidating packages to prevent multiple rapid refreshes when performing batch operations, improving performance and responsiveness of the UI during bulk package management tasks. This ensures a single refresh occurs after a series of rapid install/uninstall actions, keeping the package list up-to-date without unnecessary intermediate refreshes.
+Nuget package manager web view now debouces refreshes after installing / consilidating packages to prevent multiple rapid refreshes when performing batch operations, improving performance and responsiveness of the UI during bulk package management tasks. This ensures a single refresh occurs after a series of rapid install/uninstall actions, keeping the package list up-to-date without unnecessary intermediate refreshes.
 
 ## [1.4.16] - 2026-06-09
 
@@ -662,7 +668,6 @@ Decompiled sources now open as read-only to prevent accidental edits that can't 
 - **Code Analysis — Stale Diagnostics After Fix in Scope**: After applying a "Fix in Scope" across a project or solution, diagnostic squiggles in open editors are now cleared immediately
   - Previously, squiggles remained visible until the file was manually edited or reopened, because the LSP server was not notified about the changes applied via `WorkspaceEdit`
   - Fix: after edits are applied and files saved, the extension sends `textDocument/didChange` with the full updated content for each affected file still open in the editor, triggering server-side re-analysis and diagnostic republishing
-
 
 ## [1.3.8] - 2026-05-09
 
@@ -893,7 +898,7 @@ LSP loading workspace twice issue resolved
 ### Added
 
 - **Add Feed Credential Button**: Added "Add Credential" button to the NuGet Credential Management tab
-  - **Feed Source Selector**: Choose from local feeds (from active nuget.config) or global feeds (from user/machine configs) 
+  - **Feed Source Selector**: Choose from local feeds (from active nuget.config) or global feeds (from user/machine configs)
   - **Username & Password Fields**: Enter credentials for private NuGet feeds with show/hide password toggle
   - **Windows DPAPI Encryption**: Optional checkbox (Windows only) to store credentials as encrypted in nuget.config using dotnet CLI
   - **VS Code Secure Storage**: Default storage method that works cross-platform and integrates with existing credential management
@@ -1080,6 +1085,7 @@ LSP loading workspace twice issue resolved
 ## [1.0.12] - 2026-04-06
 
 ### Added
+
 - **Create Runner Code Lens**: Added "Create Runner" Code Lens on public methods in C# files, allowing quick creation of runner methods from your code
 - Runner creation dialog with support for creating runner methods in existing runner projects or creating new runner projects
 - Visual project selection with icons in the runner creation dialog
@@ -1362,8 +1368,6 @@ New colored icons for Run and Debug status bar buttons
   - **Aspire Dashboard Auto-Open**: When running Aspire AppHost without debugger, extension now captures process output, detects dashboard login URL (e.g., `https://localhost:17081/login?t=TOKEN`), and automatically opens it in the browser
   - **Azure Functions External Terminal**: Fixed issue where `func host start` always launched in VS Code's integrated terminal even when external terminal was configured — now respects `console` setting for both debug and run modes
 
-
-
 ## [0.27.2] - 2026-02-27
 
 ### Changed
@@ -1398,7 +1402,6 @@ New colored icons for Run and Debug status bar buttons
   - **Updates Filter**: Filter installed packages to show only those with newer versions available
   - **Consolidate Filter**: Filter packages that have different versions across projects in the solution, making it easy to align versions
   - **Filter Toggle Buttons**: Dedicated UI buttons with active state indicators and package counts
-
 
 ## [0.26.15] - 2026-02-23
 
@@ -1545,16 +1548,16 @@ New colored icons for Run and Debug status bar buttons
 
 - **Global Usings File Template**: Added "Global usings" option to the "Add" context menu for creating C# global using directives files
   - **Context Menu Integration**: Available when right-clicking on projects or folders in Solution Explorer under "Add > Global usings"
-  - **Configurable Filename**: New setting `csharp-dev-tools.templates.globalUsingsFileName` (default: "GlobalUsings.cs") to customize the global usings filename 
+  - **Configurable Filename**: New setting `csharp-dev-tools.templates.globalUsingsFileName` (default: "GlobalUsings.cs") to customize the global usings filename
   - **Template Content**: Creates a file with example global using directives for common System namespaces
   - **Settings UI**: Added input field in the Settings webview under Templates > Namespace Generation section
   - **No Prompt Creation**: Automatically creates the file using the configured filename from settings without prompting
 
-- **Imports Razor File Template**: Added "Imports razor" option to the "Add" context menu for creating Blazor _Imports.razor files
+- **Imports Razor File Template**: Added "Imports razor" option to the "Add" context menu for creating Blazor \_Imports.razor files
   - **Context Menu Integration**: Available when right-clicking on projects or folders in Solution Explorer under "Add > Imports razor"
-  - **Blazor Integration**: Creates _Imports.razor file with common Blazor using directives
+  - **Blazor Integration**: Creates \_Imports.razor file with common Blazor using directives
   - **Template Content**: Pre-populated with standard Blazor namespaces and component imports
-  - **No Prompt Creation**: Automatically creates _Imports.razor without prompting for a filename
+  - **No Prompt Creation**: Automatically creates \_Imports.razor without prompting for a filename
 
 - **Move Using Statements to GlobalUsings.cs**: Added refactoring feature to move using statements from C# files to a GlobalUsings.cs file with global keyword
   - **Context Menu**: Available in editor context menu when selecting text in C# files as "Move to GlobalUsings.cs"
@@ -1570,20 +1573,19 @@ New colored icons for Run and Debug status bar buttons
   - **Project Detection**: Automatically locates the project directory by searching for .csproj files
   - **Respects Settings**: Uses the configured global usings filename from settings
 
-- **Move Directives to _Imports.razor**: Added refactoring feature to move @using and @inject directives from Blazor files to _Imports.razor
-  - **Context Menu**: Available in editor context menu when selecting text in Razor files (.razor) as "Move to _Imports.razor"
+- **Move Directives to \_Imports.razor**: Added refactoring feature to move @using and @inject directives from Blazor files to \_Imports.razor
+  - **Context Menu**: Available in editor context menu when selecting text in Razor files (.razor) as "Move to \_Imports.razor"
   - **Code Action (Lightbulb)**: Available via Ctrl+. on any `@using` or `@inject` directive line for quick refactoring
   - **Directive Support**: Handles both @using and @inject directives
-  - **Selection Support**: Moves all directives within the selected text to _Imports.razor
+  - **Selection Support**: Moves all directives within the selected text to \_Imports.razor
   - **Cursor Support**: When cursor is on a directive line (without selection), moves that single directive
-  - **Smart Placement**: Finds or creates _Imports.razor in the Blazor project root directory
-  - **Duplicate Prevention**: Checks for existing directives before adding to _Imports.razor
+  - **Smart Placement**: Finds or creates \_Imports.razor in the Blazor project root directory
+  - **Duplicate Prevention**: Checks for existing directives before adding to \_Imports.razor
   - **Grouped Sorting**: Automatically sorts directives in groups - all @using directives (A-Z) first, then @inject directives (A-Z)
-  - **Header Preservation**: Preserves all Razor comments (@* *@) and other content above the first directive
-  - **File Management**: Removes moved directives from the source file and opens _Imports.razor for review
+  - **Header Preservation**: Preserves all Razor comments (@\* \*@) and other content above the first directive
+  - **File Management**: Removes moved directives from the source file and opens \_Imports.razor for review
   - **Project Detection**: Automatically locates the project directory by searching for .csproj files
   - **Blazor-Specific**: Only works with Razor files (razor and aspnetcorerazor language modes)
-
 
 ## [0.26.0] - 2026-01-26
 
@@ -1659,7 +1661,7 @@ New colored icons for Run and Debug status bar buttons
 
 ### Added
 
-- **Nested File Operations**: Enhanced delete and rename operations to handle parent files (.razor, .cshtml) with their nested/dependent files (.cs, .css, .js). Users are shown modal dialogs to choose whether to operate on just the parent file or all related files. For rename operations, the modal appears after entering the new name. 
+- **Nested File Operations**: Enhanced delete and rename operations to handle parent files (.razor, .cshtml) with their nested/dependent files (.cs, .css, .js). Users are shown modal dialogs to choose whether to operate on just the parent file or all related files. For rename operations, the modal appears after entering the new name.
 
 ## [0.25.5] - 2026-01-24
 
@@ -1749,7 +1751,6 @@ New colored icons for Run and Debug status bar buttons
   - Added retry mechanism with delays to handle temporarily locked file handles
   - Improved error messages guide users when manual intervention is needed
 
-
 ## [0.24.6] - 2026-01-20
 
 ### Added
@@ -1795,7 +1796,6 @@ New colored icons for Run and Debug status bar buttons
   - **Path Escaping Fix**: Changed ShellExecution from string concatenation to command+args form to properly handle paths with spaces
   - **Project Path Filtering**: Enhanced filtering to check project path in command line
 
-
 ## [0.24.2] - 2026-01-20
 
 ### Enhanced
@@ -1814,7 +1814,6 @@ New colored icons for Run and Debug status bar buttons
   - **Duplicate Prevention**: Extension now checks if README.md is already registered as a solution item before adding it at the solution level
   - **ID Collision Resolution**: Eliminated "Element with id...already registered" errors that prevented solutions from loading correctly
   - **Consistent Logic**: Applied same duplicate prevention logic used for .props files to README.md files
-
 
 ## [0.24.0] - 2026-01-20
 
@@ -1925,7 +1924,6 @@ New colored icons for Run and Debug status bar buttons
   - **Settings Integration**: Icon theme preferences accessible through the dedicated Settings webview under "Appearance" section
   - **Real-time Theme Switching**: Icon themes update immediately without requiring extension restart
 
-
 ## [0.21.9] - 2026-01-06
 
 ### Enhanced
@@ -1949,8 +1947,6 @@ New colored icons for Run and Debug status bar buttons
 - **Nested Solution Folders**: Improved directory path handling for nested solution folders in project creation to ensure correct physical folder structure
 - **Error Messaging**: Enhanced error handling and user feedback during project creation with clearer, more actionable error messages
 
-
-
 ## [0.21.8] - 2026-01-05
 
 ### Fixed
@@ -1969,14 +1965,11 @@ New colored icons for Run and Debug status bar buttons
   - **Parent-aware duplicate detection**: Duplicate folder checks now consider the parent context (full path) so siblings with the same name can coexist under different parents.
   - **Robust insertion logic**: Improved recursive search and insertion point resolution for both `.sln` and `.slnx` formats.
 
-
 ## [0.21.6] - 2026-01-04
 
 ### Fixed
 
 - **Project Creation - global.json placement**: Ensure `global.json` (when automatically created to satisfy framework/SDK compatibility) is created in the solution root (next to `.sln`/`.slnx`) instead of in project subfolders like `src`. Added unit tests covering both "add project to solution" and "create empty solution" flows. (Files: src/features/projectCreation/newProjectWebView.ts, src/test/newProjectWebViewFramework.test.ts)
-
-
 
 ## [0.21.5] - 2026-01-04
 
@@ -1994,11 +1987,6 @@ New colored icons for Run and Debug status bar buttons
 ### Fixed
 
 - **Solution Explorer Tree Item IDs**: Fixed unique ID generation for FolderTreeItem to ensure proper VS Code tree view operations
-
-
-
-
-
 
 ## [0.21.4] - 2026-01-02
 
@@ -2201,8 +2189,6 @@ New colored icons for Run and Debug status bar buttons
   - **Path Consistency**: Fixed WebView logic to properly use `outputPath` which already contains solution folder path for existing solutions
   - **Git Initialization**: Git repositories are now only initialized when creating new solutions, not when adding projects to existing ones
 
-
-
 ## [0.19.2] - 2025-12-21
 
 ### Fixed
@@ -2305,10 +2291,9 @@ New colored icons for Run and Debug status bar buttons
 
 ### Changed
 
-- **Improved Test Streaming & Multi-Solution Support**: 
+- **Improved Test Streaming & Multi-Solution Support**:
   - **Reliable Streaming Results**: Fixed the real-time streaming result handling so streamed test outcomes are consistently captured, merged with final parsing, and delivered to Test Explorer callbacks. This resolves intermittent missing or duplicated results when using streaming output.
   - **Multi-Solution Test Execution**: Strengthened test execution and result aggregation across multi-root workspaces containing multiple .NET solutions. Test discovery, execution, and result mapping now correctly handle multiple solution roots and aggregate results into the Test Explorer.
-
 
 ## [0.17.2] - 2025-12-09
 
@@ -2436,7 +2421,7 @@ New colored icons for Run and Debug status bar buttons
 
 - **Pull Request Manager - OAuth Authentication Support**: Comprehensive OAuth integration alongside existing Personal Access Token (PAT) authentication
   - **GitHub OAuth Integration**: Native VS Code authentication for GitHub repositories using built-in GitHub provider
-  - **Azure DevOps OAuth Integration**: Native VS Code authentication for Azure DevOps using built-in Microsoft provider  
+  - **Azure DevOps OAuth Integration**: Native VS Code authentication for Azure DevOps using built-in Microsoft provider
   - **Per-Organization Authentication Choice**: Users can choose between OAuth and PAT authentication methods for each connection
   - **Session Management**: Automatic OAuth session handling with token refresh and session recovery
   - **Migration Support**: Seamless migration from existing PAT connections to OAuth with preserved connection settings
@@ -2470,6 +2455,7 @@ New colored icons for Run and Debug status bar buttons
 ## [0.12.6] - 2025-11-06
 
 ### Updated
+
 - **macOS Keyboard Shortcuts for Bookmarks**: Updated bookmark navigation keybindings for better macOS compatibility
   - **Toggle Bookmark**: `Alt+Shift+[` (previously `Alt+Shift+Down`)
   - **Next Bookmark**: `Alt+Shift+]` (previously `Alt+Shift+Right`)
@@ -2554,7 +2540,6 @@ New colored icons for Run and Debug status bar buttons
   - **Security-First Design**: Checksum verification for downloaded binaries, user consent required, and redacted secret display
   - **Tools Panel Integration**: Added "Security" section to Tools panel with one-click secret scanning access
 
-
 ## [0.11.3] - 2025-01-27
 
 ### Fixed
@@ -2618,7 +2603,6 @@ New colored icons for Run and Debug status bar buttons
   - **Result Caching**: Simplified type results are cached by unique variable reference to avoid redundant debugger calls
   - **Type-Specific Exclusions**: Certain problematic types (e.g., HttpRequestData) are automatically excluded from inline display
 
-
 ## [0.10.8] - 2025-10-12
 
 ### Enhanced
@@ -2648,7 +2632,6 @@ New colored icons for Run and Debug status bar buttons
 - **Configurable Folder Width**: New setting to adjust the width of folder nodes in Solution Explorer.
   - **Flexible Layout**: Users can set folder width to small, normal, medium, or large via the extension settings or Solution Explorer Settings webview.
   - **Immediate Effect**: Changes apply instantly without requiring a reload, supporting both workspace and global scopes.
-
 
 ## [0.10.5] - 2025-10-09
 
@@ -2807,8 +2790,6 @@ New colored icons for Run and Debug status bar buttons
   - **Smart Fallback**: Shows all workspace symbols if no active file or no symbols found
   - **Seamless Integration**: Works alongside existing search modes (`@method`, `ClassName@`, `ClassName@method`)
 
-
-
 ## [0.9.0] - 2025-10-02
 
 ### Added
@@ -2837,7 +2818,7 @@ New colored icons for Run and Debug status bar buttons
 - **Gherkin/SpecFlow Feature File Support**: Complete syntax highlighting and editor support for .feature files
   - **Syntax Highlighting**: Comprehensive TextMate grammar for Gherkin language with full keyword support
   - **Feature Keywords**: Highlighting for Feature, Scenario, Scenario Outline, Background, Examples
-  - **Step Keywords**: Support for Given, When, Then, And, But, * with proper coloring
+  - **Step Keywords**: Support for Given, When, Then, And, But, \* with proper coloring
   - **Tag Support**: Custom highlighting for scenario tags (@ignore, @XrayID:AT-12345, @e2e, @regression, etc.) in distinct color
   - **Comments & Strings**: Proper highlighting for # comments, quoted strings, doc strings (""" blocks)
   - **Data Tables**: Syntax support for pipe-delimited Gherkin data tables
@@ -2904,7 +2885,6 @@ New colored icons for Run and Debug status bar buttons
 
 - **Navigation Integration**: Both entries navigate to the same code location for seamless development workflow
 
-
 ## [0.8.4] - 2025-09-25
 
 ### Added
@@ -2918,7 +2898,6 @@ New colored icons for Run and Debug status bar buttons
   - **3-Step Process**: Collects references before file rename, then updates all references with proper URI handling for renamed files
   - **C# Identifier Validation**: Validates that new file names are valid C# identifiers before allowing the rename
   - **Settings Integration**: Available in Solution Explorer Settings webview under File Management section
-
 
 ## [0.8.3] - 2025-09-24
 
@@ -2976,7 +2955,6 @@ New colored icons for Run and Debug status bar buttons
 ### Fixed
 
 - **.NET Tool Installation Reliability**: Enhanced .NET tool installation commands to ensure NuGet.org is always available as a package source
-
 
 ## [0.7.9] - 2025-09-22
 
@@ -3102,7 +3080,6 @@ New colored icons for Run and Debug status bar buttons
   - **Automatic Integration**: Seamlessly integrates with existing debug workflows and startup project management
   - **Smart Visibility**: Only appears when a solution is loaded and debugging is active
 
-
 ## [0.6.3] - 2025-08-21
 
 ### Added
@@ -3130,6 +3107,7 @@ New colored icons for Run and Debug status bar buttons
   - **Generate Diagram with Github Copilot**: AI-powered diagram generation using GitHub Copilot
     - Supports flowcharts, sequence diagrams, and system architecture diagrams
     - Customizable prompts for specific diagram types
+
 ## [0.6.0] - 2025-08-18
 
 ### Added
@@ -3187,7 +3165,6 @@ New colored icons for Run and Debug status bar buttons
   - **Accurate Variable States**: Ensures that only properly evaluated variable values are shown, preventing display of uninitialized or future variable states
   - **Better Debugging Experience**: Reduces confusion by hiding hints for code that hasn't been executed yet
 
-
 ## [0.5.1] - 2025-08-12
 
 ### Enhanced
@@ -3209,14 +3186,13 @@ New colored icons for Run and Debug status bar buttons
   - **Contrast Checker**: WCAG accessibility compliance checker with AA/AAA level validation for text readability
   - **Color Mixer**: Blend two colors with adjustable ratios and see results in multiple formats
 
-
 ## [0.4.10] - 2025-08-10
 
 ### Enhanced
 
 - **Test Generation WebView Improvements**: Enhanced user experience for test creation dialog
   - **Smart Dialog Management**: WebView now automatically closes and reopens when clicking "Create Tests" while dialog is already open, ensuring fresh context is loaded
-  - **Improved Auto-Detection**: Test project auto-population now works reliably based on project naming conventions (*.Test[s])
+  - **Improved Auto-Detection**: Test project auto-population now works reliably based on project naming conventions (\*.Test[s])
   - **Settings Cleanup**: Removed test generation preferences from workspace settings - auto-detection handles all scenarios efficiently
   - **Better User Feedback**: Added notification messages when refreshing dialog context for improved user awareness
 
@@ -3271,13 +3247,11 @@ New colored icons for Run and Debug status bar buttons
   - **Professional Interface**: VS Code-themed interface with side-by-side layout and detailed code preview
   - **Attribution & Licensing**: Proper attribution to Tabler Icons creators with MIT license information
 
-
 ### Changed
 
 - Fix fetching branches in pull request creation
 - The `getBranches` method now correctly retrieves branches from the repository detection service, ensuring accurate branch lists for pull requests.
 - Removed unnecessary repository initialization steps that were causing issues with branch fetching.
-
 
 ## [0.4.5] - 2025-08-07
 
@@ -3287,7 +3261,6 @@ New colored icons for Run and Debug status bar buttons
   - **JWT Encoder / Decoder**: Decode and encode JWT tokens with timestamp hover and validation
   - **HTML Encoder / Decoder**: Encode/decode HTML entities with robust error handling
   - **Base64 Encoder / Decoder**: Encode and decode Base64 text with UTF-8/ASCII support
-
 
 ## [0.4.4] - 2025-08-07
 
@@ -3321,7 +3294,6 @@ New colored icons for Run and Debug status bar buttons
   - **Advanced Configuration**: Support for all JavaScript regex flags (global, case-insensitive, multiline, etc.)
   - **Visual Match Display**: Highlighted matches in text with detailed match information table
   - **Integrated Cheat Sheet**: Built-in regex syntax reference with common patterns and examples
-
 
 ## [0.4.1] - 2025-08-05
 
@@ -3457,6 +3429,7 @@ New colored icons for Run and Debug status bar buttons
 ## [0.2.4] - 2025-07-29
 
 ### Enhanced
+
 - Create PR view starts with loader screen, by default picks the current branch as the source and master/main/develop as the target
 - Removed console.logs
 
@@ -3485,7 +3458,7 @@ New colored icons for Run and Debug status bar buttons
   - **Real-time TODO Synchronization**: TODO comments are detected and synced live to the Todos view as you type (500ms debounce), with instant updates on file save.
   - **CodeLens Integration**: Interactive status badges above TODO comments; click to jump to the Todos view. Visual indicators for TODO, IN PROGRESS, DONE, and BLOCKED.
   - **Smart TODO Management**: Supports global, workspace, and code-detected TODOs. Track status, filter, and sort by text, status, or type.
-  - **Supported Comment Formats**: Detects TODOs in //, /**/, #, and <!-- --> comments.
+  - **Supported Comment Formats**: Detects TODOs in //, /\*\*/, #, and <!-- --> comments.
   - **Getting Started**: Install, open the Todos view, and start typing TODO comments—see them appear instantly.
 
 ## [0.2.0] - 2025-07-26
@@ -3522,7 +3495,6 @@ New colored icons for Run and Debug status bar buttons
   - Generate code review summaries and prompts for GitHub Copilot
   - Custom Copilot code review mode for guided review sessions
 
-
 ## [0.1.16] - 2025-07-22
 
 ### Added
@@ -3535,7 +3507,6 @@ New colored icons for Run and Debug status bar buttons
   - Simplified and multi-stage pipeline options with visual preview
   - Automatic YAML generation with workspace-relative paths for portability
   - Test project exclusion - prevents deployment of test projects
-
 
 ## [0.1.15] - 2025-07-22
 
@@ -3551,15 +3522,16 @@ New colored icons for Run and Debug status bar buttons
 ### Added
 
 **Entity Framework Support**
-  - New interactive dialog for creating Entity Framework migrations
-  - Right-click on solution or project → Entity Framework → Add Migration
-  - Project selection dropdowns for migrations and startup projects
-  - DbContext class name specification for multi-context scenarios
-  - Custom migration folder configuration
-  - Live command preview before execution
-  - One-click execution in integrated terminal
-  - Automatic project discovery and validation
-  - Support for complex multi-project solutions
+
+- New interactive dialog for creating Entity Framework migrations
+- Right-click on solution or project → Entity Framework → Add Migration
+- Project selection dropdowns for migrations and startup projects
+- DbContext class name specification for multi-context scenarios
+- Custom migration folder configuration
+- Live command preview before execution
+- One-click execution in integrated terminal
+- Automatic project discovery and validation
+- Support for complex multi-project solutions
 
 ## [0.1.13] - 2025-07-20
 
@@ -3595,8 +3567,6 @@ Default is set to global.
   - Affects all C# templates: Class, Interface, Enum, Record, Controller, and Razor Page code-behind files
   - Template selection is automatic based on project's target framework detection
   - Available in VS Code settings and Solution Explorer Settings webview under "Templates" section
-
-
 
 ## [0.1.9] - 2025-07-18
 
