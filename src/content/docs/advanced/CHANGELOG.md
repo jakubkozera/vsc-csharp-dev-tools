@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.0] - 2026-09-07
+
+### Added
+
+- **Home Page**: Added a configurable C# Dev Tools home page with quick actions, feature shortcuts, recent solutions, and workspace Git information including branches, commit history, changed files, and commit details.
+
 ## [1.11.2] - 2026-09-04
 
 ### Fixed
