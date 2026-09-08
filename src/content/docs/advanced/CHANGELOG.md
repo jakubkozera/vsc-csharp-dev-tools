@@ -5,6 +5,23 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.2] - 2026-09-07
+
+### Added
+
+- **C# Type Rename - File Rename**: Renaming a class, interface, struct, enum, or record now also renames the containing `.cs` file, including when Rename Symbol is invoked from a reference or when the existing file name no longer matches the type.
+
+### Fixed
+
+- **Test Explorer - Nested Helper Classes**: MSTest, xUnit, and NUnit tests declared after a nested helper class are now grouped under their actual outer test class instead of the helper class.
+
+## [1.12.1] - 2026-09-07
+
+### Fixed
+
+- **C# Unicode Identifiers**: Fixed Test Explorer not discovering tests whose method, class, or namespace names contain non-ASCII characters, including Chinese test names such as `ToHalfWidth_空名稱_應該保持空字串`
+- **Unicode Symbol Parsing**: C# search indexing, type detection, namespace synchronization, test generation, symbol positioning, and interface/enum CodeLens now recognize valid Unicode identifiers in types and members. Existing search index caches are rebuilt automatically after the update.
+
 ## [1.12.0] - 2026-09-07
 
 ### Added
