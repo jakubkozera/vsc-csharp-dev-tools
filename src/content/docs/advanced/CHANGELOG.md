@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.3] - 2026-09-08
+
+### Added
+
+- **Home Page - Pull Requests**: Added repository-scoped pull requests to the Home Git sidebar, including create, refresh, open, browser, checkout, close, and connection-management actions. Pull request titles and descriptions now match the Pull Requests tree, with age-based coloring for recent and older pull requests.
+
 ## [1.12.2] - 2026-09-07
 
 ### Added
