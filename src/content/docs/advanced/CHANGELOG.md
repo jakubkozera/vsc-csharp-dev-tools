@@ -5,6 +5,23 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.5] - 2026-09-09
+
+### Fixed
+
+- **Solution Explorer - Instant Active File Tracking**: Active file tracking now reveals the selected file with a single tree operation instead of expanding each solution, project, and folder level sequentially, removing the visible cascade and delay.
+  - Supports workspaces with multiple solutions, including files from solutions other than the first loaded solution.
+  - Fixed active file reveal for nested project folders, solution folders, and grouped files such as Razor pages, Blazor components, XAML files, appsettings files, and Entity Framework migrations.
+  - Folder icon refreshes are batched while revealing, preventing intermediate refreshes from delaying the reveal.
+
+## [1.12.4] - 2026-09-09
+
+### Fixed
+
+- **Test Explorer - MSTest DataRow Discovery**: Test methods with a long list of `[DataRow]` attributes, or with `[DataRow(...)]` attributes spanning multiple lines (including trailing `//` comments), are now discovered with all of their data rows instead of being missing from the tree or CodeLens.
+- **Test Explorer - DataRow Results with JSON-like Strings**: Data rows whose parameters contain brackets or quotes (e.g. `"[\"odd\",\"all\"]"`) are no longer truncated at `(` and each row now receives its own pass/fail result when running the parent test, instead of only the first row being marked and the rest staying pending.
+- **Test Explorer - Parameterized Result Matching**: Results are matched to data rows by their actual parameter values rather than by position, so a failing row is highlighted on the correct entry for MSTest, xUnit, and NUnit.
+
 ## [1.12.3] - 2026-09-08
 
 ### Added
