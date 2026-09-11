@@ -5,6 +5,32 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.7] - 2026-09-10
+
+### Added
+
+- **Monochrome Icons**: Added an optional Solution Explorer setting that uses the selected folder icon color for both shapes and accents in project and solution folder icons across all five styles and four thicknesses. The default color follows the theme foreground, custom colors are supported, and Aspire retains its colors. Changes apply immediately.
+- **Startup Project Selector Icons**: Replaced generic Codicons in the status bar with dedicated C# Dev Tools icons for web, console, desktop, Azure Functions, Aspire, and library projects. The icons now match the project visuals used in Solution Explorer and fill the status bar icon box more effectively.
+- **Startup Project Icon Fonts**: Added separate color WOFF fonts for each startup project type, including WinForms and WPF desktop projects.
+- **Theme-Aware Dependencies Icon**: Added a monochrome WOFF version of the Solution Explorer Dependencies icon. It inherits the active VS Code theme foreground color automatically.
+- **Icon Font Generator**: Added SVG input support with automatic transparent-margin cropping so generated icons use the available glyph area more fully.
+- **Theme-Aware Solution Folder Fonts**: Added all five folder styles and four thicknesses as WOFF icons combining the theme foreground with a fixed purple emblem. Custom folder colors and user icon themes retain their existing behavior.
+- **Theme-Aware Project Icon Fonts**: Added 140 WOFF variants for C#, web/API, console, test, Azure Functions, Aspire, and desktop projects across five folder styles and four thicknesses. Folder shapes inherit the theme foreground while project accents retain their source colors, including Aspire shades and sampled Azure Functions gradients. Originally monochrome Hero Solid artwork remains monochrome; custom colors and non-folder project icons retain their existing behavior.
+
+### Fixed
+
+- **Folder Icon Geometry**: Generate folder fonts directly from the original SVG generators, restoring the VS Code open/closed shapes and the original Properties folder-and-gear composition across all styles and thicknesses. Versioned font assets avoid stale icon caching.
+
+### Performance
+
+- **Combined Solution Icon Fonts**: Consolidated 444 individual folder and project font assets into 20 shared fonts grouped by style and thickness. The installed WOFF footprint is reduced from approximately 631 KiB across 457 files to 177 KiB across 33 files while preserving all colored and monochrome variants.
+
+## [1.12.6] - 2026-09-10
+
+### Fixed
+
+- **Quick Add - Controller Names**: Fixed Shift+F2 creating classes with a duplicated `Controller` suffix when the entered filename already ended in `Controller`.
+
 ## [1.12.5] - 2026-09-09
 
 ### Fixed
