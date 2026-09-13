@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.8] - 2026-09-13
+
+### Added
+
+- **Entity Framework - Scaffold Database**: Added database reverse engineering from the Solution Explorer Entity Framework menu and Command Palette, with target/startup project selection, built-in or custom providers, masked connection input, and an optional models directory. Runs in a task terminal without shell interpolation, command echo, or embedded connection strings in generated code. Existing files are not overwritten automatically. Resolves #207.
+
 ## [1.12.7] - 2026-09-10
 
 ### Added
