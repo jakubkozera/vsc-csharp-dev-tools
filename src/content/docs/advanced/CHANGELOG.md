@@ -5,6 +5,13 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.9] - 2026-09-15
+
+### Fixed
+
+- **Home Page - Pull Requests**: Pull requests are now loaded only after the section is expanded, so opening the Home page does not immediately trigger GitHub authentication.
+- **Pull Request Authentication**: Repeated interactive GitHub sign-in prompts are throttled for 60 seconds to prevent authentication popups from appearing repeatedly during refreshes.
+
 ## [1.12.8] - 2026-09-13
 
 ### Added
