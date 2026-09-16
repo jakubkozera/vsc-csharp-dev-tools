@@ -5,6 +5,17 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.10] - 2026-09-16
+
+### Improved
+
+- **Advanced Search - Local Symbols**: `@` and `@name` now show matching members from the file active when search opens before results from the rest of the solution. Previewing other results keeps this priority unchanged.
+
+### Fixed
+
+- **Advanced Search**: Results now consistently prioritize types, followed by methods, properties, other members, and files. Equally relevant results have a stable order, and leading or trailing spaces no longer interfere with searches.
+- **Search Within Types**: Improved type and member ordering, corrected navigation back to the containing type, and fixed stale results when a scoped search has no matches. Appending `@` now preserves the type selected with the arrow keys instead of switching to the first result.
+
 ## [1.12.9] - 2026-09-15
 
 ### Fixed
