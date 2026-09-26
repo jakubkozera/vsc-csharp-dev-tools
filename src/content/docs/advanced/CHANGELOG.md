@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.11] - 2026-09-26
+
+### Fixed
+
+- **Semantic Colors**: Existing custom global `editor.semanticTokenColorCustomizations` rules are now detected at startup and protected by disabling C# Dev Tools semantic colors instead of overwriting them.
+
 ## [1.12.10] - 2026-09-16
 
 ### Improved
