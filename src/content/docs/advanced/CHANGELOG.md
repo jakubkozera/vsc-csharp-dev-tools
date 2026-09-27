@@ -5,6 +5,16 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.12] - 2026-09-27
+
+### Fixed
+
+- **Solution Explorer — Drag and Drop Validation**: Fixed drag-and-drop operations allowing items to be dropped onto themselves or recursively into their own subdirectories.
+  - Files and folders dropped into their current location are now silently rejected with no operation performed.
+  - Folders dropped into themselves trigger an infinite recursive copy loop that creates nested directories until the OS path limit is reached; this now fails gracefully before any filesystem changes.
+  - Validation checks normalize paths case-insensitively on Windows and handles trailing separators correctly.
+- **Solution Explorer — Drag and Drop Notifications**: Removed misleading "Successfully moved" notifications for successful drag-and-drop operations (files, folders, projects, solution items). The visual tree update in Solution Explorer provides clear feedback without redundant notifications. Error and warning messages remain unchanged.
+
 ## [1.12.11] - 2026-09-26
 
 ### Fixed
