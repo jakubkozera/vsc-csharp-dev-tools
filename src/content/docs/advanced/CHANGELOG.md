@@ -5,6 +5,29 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.12.14] - 2026-09-28
+
+### Added
+
+- **Test Explorer — LSP Semantic Discovery**: Test discovery now uses the C# Dev Tools language server (Roslyn) when the workspace has loaded, providing more accurate results including inherited test methods, custom test attributes, and properly qualified test names. Falls back to text parsing on older server versions or when LSP is unavailable.
+- **Test Explorer — Setting**: Added `csharp-dev-tools.testing.discoverySource` setting (`auto` / `text`) to control discovery method. Default is `auto` to use LSP when available.
+- **Test Explorer — Dynamic Test Cases from Runtime Sources**: Theory test cases produced by `MemberData`, `TestCaseSource`, or `DynamicData` attributes at runtime are now added as new children in the test tree and persist across discovery refreshes.
+
+### Fixed
+
+- **Test Explorer — Parser Robustness (#273)**: Fixed test discovery missing or incorrectly grouping tests when C# source files contain string literals, char literals, interpolated strings, or comments with test-like syntax (e.g. namespaces, classes, or test attributes inside strings). Parser now sanitizes source by replacing comment and literal contents with spaces before structural analysis.
+- **Test Explorer — Result Matching with VSTest**: VSTest test runs now add TRX logging, and results are matched by fully qualified names (including class name), eliminating collisions when multiple test classes define methods with identical names (e.g. multiple `Indexer` tests).
+- **Test Explorer — Nested Helper Classes**: Test methods declared after nested helper classes are now correctly assigned to their outer test class instead of the helper class in all frameworks (MSTest, xUnit, NUnit).
+- **Test Explorer — Fix with Copilot**: The "Fix with Copilot" button now appears only on official VS Code and VS Code Insiders installations. On forked editors (Cursor, Codium, etc.), the button is hidden since Copilot Chat is not available. Stack traces are passed as short keys instead of inline to fix broken URLs on long error messages.
+- **Test Explorer — CodeLens Precision**: Test CodeLens now uses LSP semantic discovery when available, showing only tests declared (not inherited) in the current file, with correct line numbers from Roslyn analysis.
+
+## [1.12.13] - 2026-09-28
+
+### Fixed
+
+- **Home Page - Older Git Versions**: Fixed the Git panel failing with `error: unknown switch 'z'` on Git versions older than 2.36. Worktrees are now read using a compatible fallback, and a worktree listing failure no longer prevents branches and commit history from loading. Resolves #274.
+- **Home Page - Git Not Installed**: The Git history panel is now hidden when Git is not installed instead of displaying an error. Git availability is detected from the regular Git commands without running an additional check.
+
 ## [1.12.12] - 2026-09-27
 
 ### Fixed
