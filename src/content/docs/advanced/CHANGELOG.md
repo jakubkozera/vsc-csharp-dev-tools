@@ -5,6 +5,13 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.13.0] - 2026-10-03
+
+### Improved
+
+- **Semantic Colors — Active VS Code Theme Support**: The C# Preview in Settings now uses the active VS Code color theme's token colors when the semantic color palette is set to Off, including user token color customizations. Preview colors refresh when the active theme or its color customizations change.
+- **C# Syntax and Hover Colors**: Semantic color palettes now consistently apply to C# files through semantic token and TextMate rules, and the language server uses the resolved palette for type references, parameters, keywords, and other colored content in hover documentation.
+
 ## [1.12.14] - 2026-09-28
 
 ### Added
