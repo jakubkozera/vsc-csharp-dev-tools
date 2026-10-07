@@ -22,6 +22,9 @@ Before installing C# Dev Tools, ensure you have:
 - **Visual Studio Code**: Version 1.100.0 or higher
 - **.NET SDK**: Any recent version of the [.NET SDK](https://dotnet.microsoft.com/download)
 
+> [!NOTE]
+> Other extensions that provide C# language-server or debugging functionality may conflict with C# Dev Tools. For best results, uninstall or disable competing extensions, including Microsoft's **C#** and **C# Dev Kit**.
+
 ## Installation Steps
 
 ### From VS Code Marketplace
@@ -57,7 +60,7 @@ To verify that C# Dev Tools is installed correctly:
 
 If you encounter issues:
 
-- Ensure the official C# extension is installed and activated
+- If C# language features or debugging behave unexpectedly, disable or uninstall other extensions that provide C# language-server or debugging functionality, especially Microsoft's **C#** and **C# Dev Kit**
 - Check that your workspace contains a valid `.sln` file
 - Try reloading the window (`Ctrl+Shift+P` and type "Reload Window")
 - Look for any error messages in the Output panel (`Ctrl+Shift+U` and select "C# Dev Tools" from the dropdown)
