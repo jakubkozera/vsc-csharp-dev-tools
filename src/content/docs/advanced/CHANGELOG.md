@@ -5,6 +5,21 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.14.0] - 2026-10-07
+
+### Improved
+
+- **Roslyn Language Server (1.12.0) — Project Loading**: Added a persistent MSBuild project evaluation cache with project and solution fingerprints, partial reloads for changed projects, and background verification in the default `Verify` mode. Reopening a workspace can now avoid repeating design-time builds when its inputs are unchanged.
+- **Roslyn Language Server — Diagnostics and Code Actions**: Improved diagnostics scheduling so interactive language requests take priority without starving document diagnostics. Diagnostic and workspace snapshot recovery is more reliable when resolving code actions.
+- **Roslyn Language Server — Navigation**: Improved reference searching and implementation results, preferring user-authored declarations over generated files when both are available.
+- **Roslyn Language Server — Project Load Feedback**: Improved project-loading error details and .NET SDK resolution feedback, and removed noisy analyzer/provider loading logs.
+
+## [1.13.1] - 2026-10-04
+
+### Added
+
+- **Auto Collapse Using Statements**: Using directives can automatically collapse when opening C# files. Disabled by default, with a toggle in Settings > Editor > Code Folding, above Inlay Hints. Manually expanded directives remain expanded when switching between tabs.
+
 ## [1.13.0] - 2026-10-03
 
 ### Improved
