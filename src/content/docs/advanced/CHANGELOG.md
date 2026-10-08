@@ -5,6 +5,18 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.14.2] - 2026-10-08
+
+### Added
+
+- **NuGet Vulnerability Scanning**: After a solution loads, referenced NuGet packages are checked against the nuget.org vulnerability database. Vulnerable packages are reported as warnings in the Problems panel (NU1901–NU1904, with advisory links), highlighted in the NuGet Package Manager (new **Vulnerable** filter, severity badges in the list and a _Vulnerabilities_ section in package details), and surfaced in Solution Explorer via a _"This solution contains packages with vulnerabilities"_ item that opens the package manager pre-filtered. A warning notification is shown once per solution. Configurable via `csharp-dev-tools.nuget.checkVulnerabilities` and `csharp-dev-tools.nuget.showVulnerabilityNotification` (Settings > NuGet > Security).
+
+## [1.14.1] - 2026-10-07
+
+### Fixed
+
+- **Startup Projects — Worker SDK Support (#279)**: Projects using `Microsoft.NET.Sdk.Worker` without an explicit `OutputType` are now recognized as executable console apps, can be selected as startup projects, and use the console project icon in Solution Explorer.
+
 ## [1.14.0] - 2026-10-07
 
 ### Improved
