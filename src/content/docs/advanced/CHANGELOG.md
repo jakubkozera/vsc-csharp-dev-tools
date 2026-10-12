@@ -5,6 +5,25 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.14.4] - 2026-10-11
+
+### Added
+
+- **Drag-and-drop project references**: Drop a `.csproj` project on another project to add a reference in the target. Choose **Yes**, **Yes, always**, or **Cancel**. The global **Always add project references on drag and drop** preference defaults to false and can be changed in Solution Explorer Settings.
+
+### Improved
+
+- **Selected-solution file watching**: Shared project-scoped file events now drive the search index, Solution Explorer, test discovery, CodeLens, NuGet rescans and LSP reloads. Unrelated solutions no longer trigger these operations. Project references, literal linked files/imports, source globs and ancestor build configuration are included.
+- **Advanced Search**: Results and recent items are limited to loaded solutions and their referenced projects. File creation/deletion updates the file index without rebuilding the entire workspace.
+- **Watcher lifecycle**: Reuse scope watchers across solution changes, share launch-configuration observation across panels, remove duplicate runner discovery and release the project-activation watcher after activation.
+- **LSP-backed observation scope**: Compatible servers can provide evaluated MSBuild imports, linked files and selected-project dependencies. Scope responses are cached per load and obsolete responses are rejected; older servers retain the static fallback. Native LSP observation is limited to loaded project roots and explicit external documents instead of all workspace folders. Imported `.settings` files now trigger metadata reloads.
+
+## [1.14.3] - 2026-10-09
+
+### Fixed
+
+- **Workspace Solution Selection**: A valid `selectedWorkspaceSolutions` setting now applies to the entire multi-root workspace. Unselected folders no longer trigger the solution picker or load extra solutions on startup or refresh. Use **Change Workspace Solutions** to explicitly change the saved selection.
+
 ## [1.14.2] - 2026-10-08
 
 ### Added
