@@ -5,6 +5,17 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.14.5] - 2026-10-12
+
+### Fixed
+
+- **NuGet Package Manager — Browse Search**: The search box now waits 500 ms after the last keystroke before searching. Changing the text while a search is still loading cancels that search right away, both in the webview and in the extension's HTTP requests, so late results for an earlier query no longer flash on screen or get appended to the list. Retyping a query that was cancelled re-runs it.
+- **Performance Monitor**: Monitoring now starts when debugging apps launched through their native `.exe` host (the default on Windows, and on every IDE once the debugger no longer runs the `.dll`). The monitored process ID is taken from the debugger itself instead of searching for a `dotnet` process by command line. The fallback search also matches the app's own executable and now works on macOS.
+
+### Improved
+
+- **Debugger on VS Code forks (Cursor, VSCodium, Windsurf, ...)**: Upgraded the bundled netcoredbg to the upstream Samsung 3.2.0-1092 build (previously a 2-year-old fork). Launching apps through their native `.exe` host now works, so the `.exe` → `.dll` workaround was removed. The installed version is now tracked, so the debugger is re-downloaded automatically when it is outdated.
+
 ## [1.14.4] - 2026-10-11
 
 ### Added
