@@ -5,6 +5,21 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.14.7] - 2026-10-15
+
+### Fixed
+
+- **Solution Explorer — Symbolic Links**: Symbolic links (and junctions) to folders inside a project now appear as normal folders with their contents, and links to files appear as files. Broken links are hidden instead of breaking the surrounding folder, and links pointing back to a parent folder no longer cause endless nesting.
+
+## [1.14.6] - 2026-10-13
+
+### Fixed
+
+- **Inlay Hints — Type Hints for `var` Declarations**: Type hints now use the type reported by the language server hover. Invisible marker characters in the hover text previously broke parsing, so hints fell back to guessed types such as `I`, `TValue`, `class`, or `return`. Hints now show the real type, and implausible guesses are rejected.
+- **Inlay Hints — Nullable Annotation**: Reference-typed `var` locals no longer show the `?` suffix that the hover adds to every reference type. For example, `var x = MapRegionShortName(region)` shows `string` instead of `string?`. Nullable value types such as `int?` and `Guid?` keep their `?`.
+- **Inlay Hints — Variable Lookup**: The variable name is located after the `var` keyword, so `var r = ...` no longer matches the `r` inside `var`.
+- **Inlay Hints — Type Coloring in Tooltips**: The tooltip's type code block keeps the language server's type-kind markers, so the type name is colored like the hover (interfaces, classes, structs, enums, type parameters) and follows the active theme. The inlay label text stays plain because VS Code cannot color parts of an inlay hint.
+
 ## [1.14.5] - 2026-10-12
 
 ### Fixed
