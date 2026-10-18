@@ -5,6 +5,39 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.15.0] - 2026-10-16
+
+### Added
+
+- **Meziantou Analyzers for Razor**: `.razor`/`.cshtml` files and their `.razor.cs`/`.cshtml.cs` code-behind now get the open-source [Meziantou.Analyzer](https://github.com/meziantou/Meziantou.Analyzer) rules (MA) and their code fixes, built into the language server — e.g. **MA0115** "Unknown component parameter" is shown on the attribute in the `.razor` file, plus the other Blazor rules (`[SupplyParameterFromQuery]`/`[EditorRequired]` without `[Parameter]`, JS interop in `OnInitialized`, …) and the general MA rules for the C# you write in `@code` blocks. Plain `.cs` files are not affected, and the analyzers are loaded only once a Razor file is analyzed, so solutions without Razor pay no CPU or memory. A project that already references the `Meziantou.Analyzer` package keeps using its own copy for code-behind. Toggle with `csharp-dev-tools.roslyn.meziantouAnalyzersEnabled` (default: `true`) or in Settings → **Roslyn**.
+- **Change Severity in Razor Files**: The "Change severity of '…'" quick action is now offered for analyzer diagnostics in `.razor`/`.cshtml` files too (MA, IDE, RCS, CDT, …), writing `dotnet_diagnostic.<id>.severity` to the nearest `.editorconfig`; open Razor files are refreshed right away.
+
+- **Surround With…**: Select code in a `.cs` or `.razor` file and choose **Surround with…** from the editor context menu, the Quick Fix / Refactor lightbulb, or `Ctrl+Alt+T` (`Cmd+Alt+T` on macOS) to pick a construct from a Quick Pick. In C# statements you get `if`, `if / else`, `while`, `for`, `foreach`, `do / while`, `lock`, `using`, `try / catch / finally` variants, `unsafe`, `checked`, `{ }`, `#if` and `#region`; for an expression you get `( )`, `cast`, `!( )`, `await`, `$"{ }"` and `nameof`. In Razor markup it offers a tag (with linked opening/closing name), link, common HTML tags, `@if`, `@foreach`, `@for`, `@{ }` and comments, while selections inside `@code` / `@functions` / `@{ }` behave like regular C#.
+
+### Fixed
+
+- **Razor Formatting — Multi-line Tags and Attributes (#177)**: Formatting `.razor`/`.cshtml` files no longer breaks the indentation after an element whose attributes contain `=>` or `>` (for example `<button @onclick="@(() => Add(item.Id))">`) — its content is indented and the closing tag lines up with the start tag. Attributes continued on the next line are aligned under the first attribute, extra spaces between attributes are removed, lines inside `@{ }` blocks are indented, and generic arguments in directives such as `@inherits Base<T>` or `@inject IOptions<T>` are no longer read as tags.
+- **Formatting on Enter — Brace Placement**: Pressing Enter inside `if (x) {}` (and other blocks: methods, lambdas, object initializers, `} else {`, `} catch {`, …) in `.cs` and `.razor` files now moves the brace to its own line (Allman style, the C# default) instead of keeping it at the end of the line.
+- **Inline Debug Values — Type Names**: Values of variables declared as an interface but holding a different runtime type (for example `IServiceScope`) no longer show a stray `}` after the type. The runtime type is shown, and namespaces are removed from generic arguments too, so `Dictionary<System.String, ...>` is shown as `Dictionary<String, ...>`.
+- **Inline Debug Values — Hover Security**: The hover now runs only C# Dev Tools commands. Values coming from the debugged program are placed in code blocks they cannot break out of, and type names are HTML-escaped, so a value or type such as `List<Person>` can no longer inject links or hide part of the hover.
+- **Inline Debug Values — Stale Values**: Values are removed when the program is resumed (Continue or a step) and are no longer left behind or painted from an earlier stop. Values from the previous stop are not drawn after a quick step.
+- **Inline Debug Values — Selected Stack Frame**: Values now follow the frame selected in the Call Stack instead of always the top frame.
+- **Inline Debug Values — Outdated Type Summaries**: Summaries of types such as `Stopwatch`, `Task` or `Stream` are refreshed on every stop instead of keeping the value from the first stop.
+- **Inline Debug Values — Multiple Variables in One Line**: Several variables on one line, for example method parameters, are shown with names (`a = 1, b = "x"`). A single variable also shows its name.
+- **Inline Debug Values — Changed Value Detection**: Changes are tracked per method and compare the full value instead of the shortened one. A variable with the same name in another method, or a nested property such as `Name`, no longer causes a false "Value changed".
+- **Inline Debug Values — Custom Display**: `[DebuggerDisplay]` and overridden `ToString()` values reported by the debugger are used instead of a generated summary.
+- **Inline Debug Values — Type Recognition**: Collections, dictionaries, Guid and DateTime are recognized by type name. Classes such as `PlaylistService`, `ArrayHelper` or `IDateTimeProvider` are no longer treated as collections or dates, and `ServiceCollection` keeps its own summary.
+- **Inline Debug Values — Variable Location**: Variables are found only inside the current method. Constructors, signatures split over several lines, top-level statements, `var (a, b) = ...`, `is`/`case` patterns and `out var` are supported, and a same-named variable from another method is no longer picked.
+- **Inline Debug Values — File Matching**: A file from the debugger is matched by its full path, or by its path relative to the repository for deterministic builds, instead of by file name alone. Values no longer appear in a different file with the same name, such as another `Program.cs`.
+- **Inline Debug Values — Native Settings**: Enabling the feature no longer turns off `debug.inlineValues` for every language. When it is `on`, it is changed to `auto`, so other languages keep their inline values.
+
+### Improved
+
+- **Settings — Roslyn Tab**: The "Roslynator" settings tab is now called **Roslyn** and groups the C# Dev Tools, Roslynator and Meziantou (Razor) analyzer toggles.
+- **Formatting — `.editorconfig` Support for `.razor`/`.cshtml`**: Razor formatting (Format Document and Enter) now follows `.editorconfig`, which always wins over the editor's tab settings: `indent_style`, `indent_size`, `tab_width`, `max_line_length` (long start tags get their attributes wrapped, aligned under the first one), `csharp_new_line_before_open_brace` (`all`, `none` or a list such as `methods, types`), `csharp_new_line_before_else`/`_catch`/`_finally` for `@if`/`@foreach`/`@try`… blocks, and every `csharp_*`/`dotnet_*` style option for the C# in `@code`/`@functions` blocks. C# options set in `[*.cs]` sections apply to Razor too; `[*.razor]`/`[*.cshtml]` sections override them. Without settings, blocks use Allman braces.
+- **Formatting — `.editorconfig` on Enter in `.cs` Files**: Formatting after Enter uses the document's `.editorconfig` (brace placement per construct, spacing, `indent_style`/`indent_size`) instead of the defaults.
+- **Inline Debug Values — Performance**: Variables from lines that are not yet executed are skipped without being expanded in the debugger, and the document text is split into lines once per refresh instead of once per variable. The `maxNestedDepth` setting now refreshes values immediately.
+
 ## [1.14.7] - 2026-10-15
 
 ### Fixed
