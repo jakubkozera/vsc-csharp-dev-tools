@@ -5,6 +5,20 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.15.2] - 2026-10-19
+
+### Fixed
+
+- **New Project — Parent-Relative Path Preview (#285)**: The creation path preview in the New Project webview now displays parent-relative paths using the current platform's path prefix and separator (`.\\<project>` on Windows and `./<project>` on Linux/macOS) instead of the hardcoded `~\\` prefix.
+
+## [1.15.1] - 2026-10-19
+
+### Fixed
+
+- **Language Server — Corporate Security Policy Fallback (`spawn EPERM`)**: When corporate security policies (AppLocker, Windows Defender Application Control, or EDR software) block running the native `CsharpDevTools.exe` executable from `%APPDATA%\Code\User\globalStorage`, or remove the executable while leaving `CsharpDevTools.dll` in place, the extension now automatically falls back to launching the server through the signed system .NET host (`dotnet "<path>/LanguageServer/CsharpDevTools.dll"`).
+  - Suppresses the premature _"couldn't create connection to server"_ error notification when direct `.exe` launch fails and retries via `dotnet CsharpDevTools.dll` first; the error notification with **Go to output** is only shown if the `.dll` fallback also fails.
+  - Caches the `dotnet CsharpDevTools.dll` launch preference on the machine for 24 hours so subsequent VS Code sessions start immediately via `dotnet` without waiting for the blocked `.exe` attempt to time out.
+
 ## [1.15.0] - 2026-10-16
 
 ### Added
