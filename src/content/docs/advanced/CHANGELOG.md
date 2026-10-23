@@ -5,6 +5,37 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.15.5] - 2026-10-23
+
+### Fixed
+
+- **Create Tests / Create Runner CodeLens — Only on Public Methods**: The `Create Tests` and `Create Runner` CodeLenses no longer appear on fields and properties with initializers (for example `public static readonly IReadOnlyDictionary<string, int> Map = new Dictionary<string, int>(StringComparer.Ordinal)`, `public List<T> Items { get; } = new List<T>()` or `public int Count => Compute();`). They are shown only on public methods.
+
+## [1.15.4] - 2026-10-23
+
+### Fixed
+
+- **Razor Formatting — Line Break in Interpolated String (#177)**: A line break inside an interpolation hole (`$"{(... ? "-" :` newline `...)}"`) in `@code` no longer flattens the rest of the block. Members after the statement keep their indentation, including `#region` / `#endregion` lines, and interpolated strings with braces or quotes in holes no longer end the `@code` block early.
+- **Razor Formatting — Razor Templates in Code Blocks (#177)**: The content of `@<div>…</div>` and `@<ul>…</ul>` templates inside `@{ }` is indented one level below the opening tag, and continued attributes stay aligned under the first attribute.
+- **Razor Formatting — Block Lambdas in Multi-line Statements (#177)**: A block lambda passed as an argument (`Groups.Any(g => … { … }))`) keeps its braces aligned with the line it starts on, and a statement continued after the lambda (`})` followed by `.ToList();`) keeps its continuation indentation.
+- **Razor Formatting — String Content in Attribute Values (#177)**: Spaces inside C# strings in attribute expressions (`title="@($"Results  {From:d}")"`) are no longer changed, and an expression containing the quote character no longer ends the attribute early. Long start tags are wrapped only between attributes, so an attribute such as `style="@(...)"` moves to the next line as a whole, aligned under the first attribute.
+- **Razor Formatting — `@code` Block and `<style>` Indentation (#177)**: `@code` with extra spaces or no space before the brace (`   @code{`) is normalized to `@code {` at column 0, and its closing `}` is moved to column 0. CSS inside `<style>` is re-indented by rule nesting, multi-line comments keep their relative layout, and declarations continued on the next line are indented one level further.
+- **Razor Formatting — Extra Spaces in Initializers and Expressions (#177)**: Runs of spaces between tokens are collapsed in multi-line C# inside `@code` (collection expressions such as `[1,    2,   3]`, dictionary and object initializers, lambdas in chained calls) and in explicit expressions `@( ... )`. Spaces before trailing comments and indentation are kept, and `csharp_space_around_binary_operators = ignore` in `.editorconfig` disables the collapse.
+
+## [1.15.3] - 2026-10-20
+
+### Fixed
+
+- **Razor Formatting — Markup in `RenderFragment` Lambdas (#177)**: Markup written inside C# in `@code` blocks (`__builder => { <li>@value</li> }`, `@<li>...</li>` templates, `if`/`@if` blocks with markup) is no longer formatted as C# (`< li > @value </ li >`, `@bind - Value = "text"`, which broke the generated component). The markup is formatted like the rest of the template and the surrounding C# is still formatted by Roslyn using your `.editorconfig`. A block with markup that can't be balanced is left untouched.
+- **Razor Formatting — Block Opened with a Comment (#177)**: `{ /* comment */` and `{ // comment` open a block like a plain `{`, so the content keeps its indentation (also after the closing `}`).
+- **Razor Formatting — Multi-line Expressions and Statements (#177)**: Continuation lines of `@( ... )` expressions and of multi-line statements in `@{ }` / `@foreach` blocks (ternaries, method chains) keep their indentation relative to the first line instead of being flush with it.
+- **Razor Formatting — Elements with Content on the Start Tag Line (#177)**: Children of `<p><b>Status:</b>` or `<label>Name:` are indented one level and the closing tag lines up with the start tag. Elements with an optional end tag (`<li>`, `<p>`, `<td>`, …) no longer pile up indentation.
+- **Razor Formatting — Spaces in Block Headers (#177)**: Runs of spaces in `@if`, `@foreach`, `@while`, `else if`, `catch`, … conditions are collapsed (`@if (   Mode   ==   1)` → `@if (Mode == 1)`); string and char literals are left alone.
+- **Razor Formatting — Edge Cases (#177)**: A `}` or `{` inside a string or comment in `@code` no longer ends the block early, every `@code`/`@functions` block in a file is formatted (not just the first), `case`/`default` labels in `@switch` are indented, the content of `<pre>` and `<textarea>` is copied exactly, markup written on one line inside braces in `@code` (`=> { <p>x</p> }`) is no longer formatted as C#, and chained lines of a multi-line `@foreach (...)` header are indented.
+- **C# Formatting — Block Comments (#177)**: Format Document no longer removes the empty lines inside `/* ... */` comments (and multi-line string literals) and joins their lines when a line ends with a `.`.
+- **Razor Coloring — Markup in `@code` Blocks**: Tags, attributes, `@bind-Value`-style directive attributes, components and `@` transitions inside C# code of `.razor` files (for example in `RenderFragment` lambdas) are now colored like markup in the template instead of as C# operators and identifiers.
+- **Razor Semantic Coloring — Generic Arguments**: `List<Product>`, `Task<Foo>` and similar generic type arguments in C# code are no longer mistaken for component tags when coloring.
+
 ## [1.15.2] - 2026-10-19
 
 ### Fixed
