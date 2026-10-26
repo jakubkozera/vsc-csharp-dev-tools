@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.15.6] - 2026-10-26
+
+### Fixed
+
+- **Language Server — .NET SDK Detection**: Fixed _"Failed to register .NET SDK"_ and _"Could not load file or assembly 'Microsoft.Build.Framework, Version=15.1.0.0'"_ when opening a solution on machines where the SDK is not in the default location. The server now looks for the SDK in `DOTNET_ROOT` / `DOTNET_INSTALL_DIR`, next to the `dotnet` executable found on `PATH` (symlinks such as `/usr/bin/dotnet` are resolved), in the standard install folders for Windows, macOS and Linux (including `/usr/lib/dotnet`, Homebrew and `~/.dotnet`), and finally via `dotnet --list-sdks`. A folder that has only the runtime and no `sdk` directory (for example `/usr/share/dotnet` installed from a distro package) is skipped, and the default Windows path is no longer resolved as a drive-relative `C:Program Files\dotnet`.
+
 ## [1.15.5] - 2026-10-23
 
 ### Fixed
