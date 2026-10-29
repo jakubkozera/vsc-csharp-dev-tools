@@ -5,6 +5,21 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.15.7] - 2026-10-27
+
+### Added
+
+- **GitHub Pull Request — Edit Title and Target Branch**: Double-click the pull request title in the GitHub view to edit it, and pick a new target branch from a dropdown (branches are loaded on demand). Saving updates the pull request, and changing the target branch reloads the diff and commit list. Update failures are shown as an error notification.
+- **GitHub Pull Request — Copy Link**: A new action copies the pull request URL to the clipboard and confirms with a notification.
+- **GitHub Pull Request — Markdown Comments**: Pull request descriptions and comments are rendered as Markdown using GitHub's rendered HTML, sanitized before display. The new `MarkdownContent` component is shared by the activity timeline and the description.
+- **Avatars with Fallback**: The activity timeline and reviewer list show author avatars and fall back to a default when the image is unavailable. Comment authors now carry their GitHub avatar, profile link and account type.
+
+### Improved
+
+- **File Icons in Pull Request Views**: Changed files in the Create Pull Request and GitHub pull request views use the active VS Code file icon theme, including folder icons, instead of fixed icons.
+- **GitHub Comments Loading**: Pull request comments and review comments are requested with `per_page=100` and the full JSON media type, so rendered HTML is available and fewer pages are needed.
+- **Pull Request Webviews Cleanup**: The legacy vanilla JS/HTML/CSS pull request views were removed in favor of the React webviews, and the unused fallback HTML in the Create Pull Request webview was dropped.
+
 ## [1.15.6] - 2026-10-26
 
 ### Fixed
