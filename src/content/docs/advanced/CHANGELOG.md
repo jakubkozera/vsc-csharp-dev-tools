@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.15.8] - 2026-10-30
+
+### Fixed
+
+- **Solution Explorer — File Watching with Nested Solution Folders (#286)**: Fixed _"Could not update file watching for the selected solutions"_ when loading `.sln` or `.slnx` solutions containing a solution folder nested inside another solution folder. Parent references are now excluded from the watcher selection cache key, preventing circular JSON serialization errors and restoring automatic updates for file changes. The solution folder hierarchy is preserved.
+
 ## [1.15.7] - 2026-10-27
 
 ### Added
