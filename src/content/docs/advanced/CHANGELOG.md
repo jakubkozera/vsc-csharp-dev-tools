@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.15.9] - 2026-11-03
+
+### Added
+
+- **Pull Requests — Review with Copilot Code Reviewer**: When the **Github Copilot Code Reviewer** extension (`jakubkozera.github-copilot-code-reviewer`) is installed, a new **Review with Copilot Code Reviewer** action appears in the right-click menu of a pull request in the Pull Requests view and as a **Review with Copilot** button in the pull request details (GitHub and Azure DevOps). It fetches the pull request's source and target branches from `origin` and starts `@codereview /review origin/<source> origin/<target>` in a new Copilot chat. The action is hidden when the extension is not installed, and appears or disappears without a reload when it is installed or removed.
+
 ## [1.15.8] - 2026-10-30
 
 ### Fixed
