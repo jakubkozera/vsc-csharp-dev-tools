@@ -5,6 +5,14 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.15.10] - 2026-11-04
+
+### Fixed
+
+- **Hover — Go to Type of Nullable Variables**: The **Go to** link in the hover of a local variable or parameter with a nullable type (e.g. `UserActivity? userActivity`) no longer fails with _"No type definition found"_. Go to Type Definition now targets the underlying type instead of `Nullable<T>`, resolves local types the same way the hover does when inference fails, and prefers the source of a project open in the workspace over decompiled metadata. The link label now shows `UserActivity` instead of `UserActivity?`.
+- **Hover — "in class" Link for Framework Types**: Clicking the **in class** link in the hover of an external (metadata) type such as `InvalidOperationException` no longer jumps to an unrelated symbol whose name merely starts with the type name (e.g. a test method `CalculateAndUpdateBilling_..._ShouldThrowInvalidOperationException`). Only an exact class, interface, struct or enum match in the matching namespace is used; otherwise the link behaves like Go to Definition and opens the decompiled source.
+- **Go to Definition — Decompiled Framework Types No Longer Break Later Navigation**: After navigating into a decompiled framework type (e.g. `HttpResponseMessage`), the decompiled source was added to your own project, shadowing the real type and making later Go to Definition / Go to Type Definition / inlay-hint type links fail for `var` locals such as `var response = await _retryPipeline.ExecuteAsync(...)` (_"No definition found for type"_). Decompiled and compiler-generated files now live in a separate navigation project, so your project's compilation is left untouched.
+
 ## [1.15.9] - 2026-11-03
 
 ### Added
