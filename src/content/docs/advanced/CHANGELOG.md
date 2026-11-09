@@ -5,12 +5,25 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.16.2] - 2026-11-09
+
+### Fixed
+
+- **Solution Explorer — User Secrets for Aspire AppHost and Other Project Types (#290)**: **User Secrets** is no longer limited to projects whose file mentions `Microsoft.NET.Sdk`. It now works for `Aspire.AppHost.Sdk` projects and any other project that `dotnet user-secrets` supports, instead of failing with _"User secrets are only supported for .NET SDK-style projects"_. A `UserSecretsId` is initialized when missing and `secrets.json` opens as before; if the project can't be initialized, the error from the .NET SDK is shown.
+
+## [1.16.1] - 2026-11-05
+
+### Fixed
+
+- **Test Explorer — Tests Inherited from a Base Class (#288)**: When tests are discovered by text parsing (before the language server has loaded the workspace, when it is unavailable, or with `csharp-dev-tools.testing.discoverySource` set to `text`), tests declared in a base class now appear under every concrete derived fixture, as with Test Explorer in C# Dev Kit and as the test runner executes them. Abstract and generic base classes (e.g. `BaseExportCommandTests<TOptions>`) are no longer shown as a separate group whose tests never receive results. Multi-level hierarchies, base classes in other files, partial classes and methods redeclared in the derived class are handled, and inherited tests still navigate to their declaration in the base class.
+
 ## [1.16.0] - 2026-11-05
 
 ### Added
 
 - **Solution Explorer — Find Unused Code**: New **Refactor → Find Unused Code** action on solutions, solution folders, projects, folders and C# files. It lists the types, methods, properties, fields and events declared in the selected scope that have neither references nor base references anywhere in the loaded solution, so a method is only reported when nothing calls it directly or through the interface or base member it implements. Code invoked by a framework or the compiler is excluded: entry points, overrides and implementations of library members (e.g. `Dispose`, `ExecuteAsync`, MediatR `Handle`), members with attributes (`[HttpGet]`, `[Fact]`, `[JsonPropertyName]`...), public members of controllers, Razor Pages, hubs and components, types deriving from or implementing non-BCL library types, compiler-pattern methods (`GetEnumerator`, `Deconstruct`...) and `(object sender, EventArgs e)` event handlers. A type whose members are only used inside the type itself is reported once, without its members. The results open in a panel where you can filter by kind or text, group by file, kind or project, and click a result to go to its declaration. Public settable properties and public fields, which serializers, model binding and ORMs often use, are hidden by default behind a **maybe used** toggle. Usages in Razor components are taken into account. The search runs in the language server (`csharpdevtools/findUnusedCode`) and binds the solution once instead of searching references per declaration.
 - **Editor — Fade Unreferenced Members**: Types and members (public ones too) with neither references nor base references are now faded in the editor, like in Rider; previously only unused private members were. Controllers, framework callbacks and other members used by convention or reflection are not faded, and neither are "maybe used" public properties and fields. It follows **Highlight Unused Symbols**, **Unused Symbol Style** and **Unused Symbol Opacity**, and can be turned off with the new **Highlight Unreferenced Members** toggle (`csharp-dev-tools.editor.highlightUnreferencedMembers`) on the Settings page, shown under **Highlight Unused Symbols** and only in effect while that one is on. The file is checked after it is opened, saved or the workspace is compiled.
+
 
 ## [1.15.10] - 2026-11-04
 
