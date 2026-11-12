@@ -5,6 +5,19 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.16.3] - 2026-11-12
+
+### Added
+
+- **Language Server — .NET 11 and C# 15**: The language server now analyzes code with the Roslyn compiler that ships in the .NET 11 SDK, so projects targeting `net11.0` (C# 15) no longer show false errors on the new syntax. Union types (`union Pet(Cat, Dog);`), closed hierarchies (`closed` classes), extension indexers, collection expression arguments (`[with(capacity: 4), ..values]`) and labeled `break`/`continue` are parsed, compiled, highlighted and completed (`union` and `closed` keywords, `with(...)` in collection expressions), and go to definition, find references and hover work on loop labels. The outline now lists `union` declarations and `extension(...)` blocks, and hover shows `union Pet(Cat, Dog)` and `closed` modifiers. In hover the `union` and `closed` keywords are highlighted, the union name is coloured as a struct, each case type is coloured by its kind (class, struct, interface, enum), and unions with more than three cases list one case per line.
+- **Quick fix — Add missing cases (C# Dev Tools)**: a `switch` over a C# 15 union that does not cover every case type now offers "Add missing cases" next to Roslyn's "Add default case". For switch expressions it is a quick fix on the exhaustiveness warning and adds `Type => throw new NotImplementedException()` arms; for switch statements (where the compiler reports nothing) it is a refactoring on the `switch (...)` header and adds `case Type: break;` sections.
+
+### Fixed
+
+- **Language Server — Workspace with Several Solutions Sharing a Project**: Opening a workspace with two or more solutions that reference the same `.csproj` (e.g. `SolutionA.sln` and `SolutionB.sln` both pointing at `SharedProject.csproj`) no longer fails with _"Failed to load …sln: Project name '…' already exists in the 'Root' solution folder"_. Project paths written with Windows backslashes (`..\..\services\SharedProject\SharedProject.csproj`) in `.sln`, `.slnx` and `.slnf` files are now normalized before they are compared, so the same project is loaded once. Projects are also de-duplicated by full path when the merged solution used for batch loading is generated, and different projects with the same name get a unique name instead of breaking the load.
+- **Language Server — Build Host Missing After an Update**: A stale `BuildHost-netcore` folder left over from an older build (without `Microsoft.CodeAnalysis.Workspaces.MSBuild.Contracts.dll`) made the build host crash on start, and the solution failed to load after a minute with _"The operation has timed out"_ or _"We expected a non-null result but got null back"_. The shipped server now contains a complete build host.
+- **Solution Explorer — "Actual command not found" When Clicking a Project**: Clicking a project in a solution after the tree had been refreshed (common while several solutions are loading) showed _"Actual command not found, wanted to execute solutionViewer.toggleProject"_. The toggle command no longer carries a tree item argument, which VS Code caches and drops on refresh; it expands or collapses the selected item instead.
+
 ## [1.16.2] - 2026-11-09
 
 ### Fixed
