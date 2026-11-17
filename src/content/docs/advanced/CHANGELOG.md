@@ -5,6 +5,12 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.16.4] - 2026-11-16
+
+### Fixed
+
+- **Test Explorer — xUnit Theories with Long String Arguments (#291)**: xUnit shortens string arguments longer than 50 characters in test names (`Theory(to: "https://…navigator.h"···)`), so these cases were never matched to their results. Run All left some cases without a result and gave others the result of a different case, and running a single case failed with _"No test results received - test may have been skipped or failed to execute"_. Shortened values are now matched against the full `InlineData` values, results are no longer assigned to cases by their order when the runner executes cases out of declaration order, and the `···` marker is no longer corrupted when it is split across output chunks.
+
 ## [1.16.3] - 2026-11-12
 
 ### Added
