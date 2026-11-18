@@ -1,5 +1,6 @@
 ---
 title: Diagrams
+description: Create and manage editable Excalidraw diagrams in VS Code
 sidebar:
   order: 3
 ---
@@ -231,6 +232,12 @@ Excalidraw supports:
 - Update diagrams with code changes
 
 ## Troubleshooting
+
+### CJK Text Fonts
+
+The extension keeps the standard diagram fonts in the VSIX. The additional Xiaolai font used for Chinese, Japanese, and Korean text is downloaded only when Excalidraw needs it, then reused from the browser cache. An internet connection is therefore required the first time a CJK font range is used in the editor.
+
+If the device is offline, use the locally bundled fonts or install a suitable system font. Diagram editing and saving remain available, but CJK glyph appearance can fall back to another font until the Xiaolai resource can be downloaded.
 
 ### Diagram Won't Open
 

@@ -14,6 +14,7 @@ description: History of changes in C# Dev Tools
 
 ### Fixed
 
+- **Smaller Extension Package with On-Demand CJK Diagram Fonts**: Standard Excalidraw fonts remain available offline, while the additional Xiaolai font for Chinese, Japanese, and Korean text is downloaded only when that character range is first used and then reused from the browser cache. Offline diagram editing and saving remain available, with system-font fallback until the CJK resource can be downloaded.
 - **New Files Ignore `end_of_line` (#296)**: Files created from Solution Explorer (Add → Class, Interface, Enum…), by Quick Add (Shift+F2) and by the JSON to C# converter always had LF line endings. They now use `end_of_line` from the nearest applicable `.editorconfig`, or an explicit `files.eol` setting when `.editorconfig` has no preference. Format Document (and format on save) also converts existing `.cs` files to the `end_of_line` set in `.editorconfig`.
 
 ## [1.16.5] - 2026-11-17
