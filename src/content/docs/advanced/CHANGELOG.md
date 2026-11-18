@@ -5,6 +5,23 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.17.0] - 2026-11-19
+
+### Added
+
+- **MCP Server for AI Agents (Claude Code, Codex, Cursor, …)**: The agent tools that GitHub Copilot already uses (build, tests, EF migrations, debug runners and breakpoints, diagrams) are now also available to other agents through a Model Context Protocol server, together with a new `usages` tool that finds every usage of a C# symbol by name or position using the Roslyn language server. Each VS Code window serves its own workspace. Agents start `~/.csharp-dev-tools/bin/csdt-mcp`, which joins the window open on their folder. **C# Dev Tools: Connect an AI Agent (MCP)…** sets it up for Claude Code, Codex, Cursor (registered automatically) or any other MCP client. The server is off by default (`csharp-dev-tools.mcp.enabled`). The window asks before an agent first uses it and before each tool that changes something (`csharp-dev-tools.mcp.autoApprove`), and the status bar shows the connected agents.
+- **Agent Tools — Diagnostics, Cleanup and Format Document**: GitHub Copilot and MCP agents get three new tools. `get_diagnostics` returns fresh compiler and analyzer diagnostics from the language server for a file, project, solution or everything loaded, including files that are not open, filtered by severity or diagnostic id. `cleanup` runs a cleanup profile (the active one by default, `default`, or one by name) on a file, project or solution, as the Cleanup command does. `format_document` formats a file with your `.editorconfig` and indentation settings. Files are saved after cleanup and formatting, except files with your unsaved changes. A file the agent has just written is picked up before it is formatted or cleaned up.
+
+### Fixed
+
+- **New Files Ignore `end_of_line` (#296)**: Files created from Solution Explorer (Add → Class, Interface, Enum…), by Quick Add (Shift+F2) and by the JSON to C# converter always had LF line endings. They now use `end_of_line` from the nearest applicable `.editorconfig`, or an explicit `files.eol` setting when `.editorconfig` has no preference. Format Document (and format on save) also converts existing `.cs` files to the `end_of_line` set in `.editorconfig`.
+
+## [1.16.5] - 2026-11-17
+
+### Fixed
+
+- **Extension Fails to Activate in code-server (#294)**: In code-server (including the linuxserver.io Docker image) the extension failed to start with `PendingMigrationError: navigator is now a global in nodejs`, leaving all language server features non-functional. The extension no longer touches the global `navigator` while loading, so it activates normally.
+
 ## [1.16.4] - 2026-11-16
 
 ### Fixed
