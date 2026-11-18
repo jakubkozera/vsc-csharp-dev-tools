@@ -65,6 +65,12 @@
 - [Secret Scanning](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/secret-scanning)
 - [Runners](https://jakubkozera.github.io/vsc-csharp-dev-tools/tools/runners)
 
+### [AI Agents and MCP](https://jakubkozera.github.io/vsc-csharp-dev-tools/ai-agents)
+
+- [Setup and Client Configuration](https://jakubkozera.github.io/vsc-csharp-dev-tools/ai-agents)
+- [Available Agent Tools](https://jakubkozera.github.io/vsc-csharp-dev-tools/ai-agents/available-tools)
+- [Security and Approvals](https://jakubkozera.github.io/vsc-csharp-dev-tools/ai-agents/security)
+
 </td>
 <td style="border: none; vertical-align: top; width: 30%; text-align: center;">
 

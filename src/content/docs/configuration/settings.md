@@ -51,6 +51,17 @@ Options for `launchConsole`:
 - `internalConsole`: Launch in VS Code's Debug Console
 - `externalTerminal`: Launch in an external terminal window
 
+## AI Agent / MCP Settings
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| `csharp-dev-tools.mcp.enabled` | Expose C# Dev Tools agent tools through the MCP server in this trusted VS Code window | `false` |
+| `csharp-dev-tools.mcp.autoApprove` | Control connection and tool confirmations: `none`, `connections` or `all` | `none` |
+| `csharp-dev-tools.mcp.http.enabled` | Add a loopback-only HTTP endpoint for clients that require a URL | `false` |
+| `csharp-dev-tools.mcp.http.port` | HTTP port; `0` selects a free port | `0` |
+
+Use **C# Dev Tools: Connect an AI Agent (MCP)…** to enable the server and configure a client. See [Security and approvals](/vsc-csharp-dev-tools/ai-agents/security/) before changing automatic approval.
+
 ## Color Customization
 
 You can customize the colors used by C# Dev Tools:

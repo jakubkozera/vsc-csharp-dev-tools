@@ -113,6 +113,10 @@ export default defineConfig({
           autogenerate: { directory: 'tools' },
         },
         {
+          label: 'AI Agents and MCP',
+          autogenerate: { directory: 'ai-agents' },
+        },
+        {
           label: 'Configuration',
           autogenerate: { directory: 'configuration' },
         },

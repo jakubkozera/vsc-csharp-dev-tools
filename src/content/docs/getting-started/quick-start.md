@@ -68,3 +68,4 @@ Now that you're familiar with the basics, explore these features:
 - [Test Generation](/vsc-csharp-dev-tools/testing-integration/test-generation/): Generate AI-powered unit tests with GitHub Copilot
 - [Advanced Search](/vsc-csharp-dev-tools/solution-explorer/advanced-search/): Quickly find types and symbols in your codebase
 - [NuGet Management](/vsc-csharp-dev-tools/nuget-management/): Manage your project's packages
+- [AI Agents and MCP](/vsc-csharp-dev-tools/ai-agents/): Connect Claude Code, Codex, Cursor and other agents to the extension's build, test, code-analysis and debugging tools
