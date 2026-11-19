@@ -5,6 +5,18 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.17.2] - 2026-11-18
+
+### Fixed
+
+- **Correct Launch Profile in VS Code Forks (#271)**: Debugging a project from VSCodium and other VS Code forks now honors the launch profile selected in C# Dev Tools. The selected profile's application URL, environment variables, command-line arguments and launch URL are no longer replaced by the default `https` profile.
+
+## [1.17.1] - 2026-11-18
+
+### Fixed
+
+- **Public NuGet Feeds No Longer Ask for Credentials (#297)**: Custom package feeds are now checked for anonymous access before the extension offers to configure credentials. Public feeds continue to work without prompts, while feeds that respond with an authentication challenge still offer the credential setup flow.
+
 ## [1.17.0] - 2026-11-19
 
 ### Added
@@ -20,6 +32,8 @@ description: History of changes in C# Dev Tools
 
 - **Smaller Extension Package**: Standard Excalidraw fonts remain available offline, while the additional Xiaolai font for Chinese, Japanese, and Korean text is downloaded only when that character range is first used. Release Notes screenshots are also loaded from the documentation website instead of being included in the VSIX, reducing the extension package size. Release notes text remains available offline; remote screenshots require an internet connection.
 - **New Files Ignore `end_of_line` (#296)**: Files created from Solution Explorer (Add → Class, Interface, Enum…), by Quick Add (Shift+F2) and by the JSON to C# converter always had LF line endings. They now use `end_of_line` from the nearest applicable `.editorconfig`, or an explicit `files.eol` setting when `.editorconfig` has no preference. Format Document (and format on save) also converts existing `.cs` files to the `end_of_line` set in `.editorconfig`.
+- **Release Notes — Complete List**: The Release Notes sidebar now lists every packaged release note, not only notes opened in the current VS Code instance. Previously viewed notes still show when they were last opened.
+- **Webview Icons — Dark Theme Contrast**: Notebook, homepage, pull-request, NuGet and settings icons now remain clearly visible in both light and dark VS Code themes. The notebook tab also uses separate light and dark icon assets.
 
 ## [1.16.5] - 2026-11-17
 
@@ -537,7 +551,7 @@ description: History of changes in C# Dev Tools
 - **Code Cleanup**: Added configurable cleanup profiles for Roslyn code fixes, including Safe, Recommended, Aggressive, and Custom presets with searchable, category-based rule selection.
   - Cleanup can run for the active file or selected project, folder, solution, and solution scope, with optional profile selection.
   - Added automatic cleanup when opening or saving C# files, status bar/editor title actions, and a code action for adding diagnostics to the active profile.
-  - Added Cleanup settings with profile management, active profile selection, button placement, and telemetry tracking.
+  - Added Cleanup settings with profile management, active profile selection, and button placement.
 
 ### Fixed
 
@@ -949,7 +963,7 @@ Decompiled sources now open as read-only to prevent accidental edits that can't 
 
 ### Fixed
 
-- **Create Runner — Azure Functions Compatibility**: Fixed an exception that occurred when running an auto-generated runner for an Azure Functions project with `AutoRegisterConcreteTypes` enabled, where services that only support asynchronous disposal (such as `FunctionsTelemetryModule`) caused the runner to fail during startup
+- **Create Runner — Azure Functions Compatibility**: Fixed an exception that occurred when running an auto-generated runner for an Azure Functions project with `AutoRegisterConcreteTypes` enabled, where services that only support asynchronous disposal caused the runner to fail during startup
 
 ## [1.4.7] - 2026-05-30
 
@@ -2010,7 +2024,6 @@ New colored icons for Run and Debug status bar buttons
   - **New Setting**: `csharp-dev-tools.solutionExplorer.fileManagement.recreateSolutionPathForNewSolutionFiles`
     - **Default**: false - Files are created in the solution root directory
     - **When true**: Recreates solution folder hierarchy in the file system (e.g., /src solution folder creates src/ directory)
-  - **Telemetry**: Tracks template usage, target location (solution root vs folder), and file types created
   - **Comprehensive Tests**: Added full test coverage for SLN and SLNX formats, including nested folders and various settings configurations
 - **Add Existing Item**: Added "Add Existing Item" command to solution explorer for adding files to solution folders
   - **Context Menu Integration**: Available when right-clicking on solution folders or solution root in Solution Explorer
@@ -2533,7 +2546,6 @@ New colored icons for Run and Debug status bar buttons
   - **Open Solution**: Opens solution in current window and loads it in Solution Explorer
   - **Open Solution in new window**: Opens solution in a new VS Code window
   - Works with both .sln and .slnx solution file formats
-  - Includes comprehensive telemetry tracking for usage analytics
 
 - **Solution Explorer Multi-Solution Context Menu**: Added solution-specific context menu commands when multiple solutions are loaded
   - **Open Solution**: Opens selected solution in current window from within Solution Explorer
@@ -3251,7 +3263,6 @@ New colored icons for Run and Debug status bar buttons
   - **Testhost Process Detection**: Automatically finds and attaches to testhost processes using platform-specific process listing (tasklist on Windows, ps on Unix)
   - **JustMyCode Support**: Configured debugger to focus on user code (`justMyCode: true`) and skip framework internals for better debugging experience
   - **Multi-Level Debugging Support**: Supports debugging individual test methods, classes, and namespaces with appropriate test filters
-  - **Telemetry Integration**: Added comprehensive telemetry tracking for test debugging sessions with success/failure metrics
   - **Enhanced Error Handling**: Proper cleanup of test processes and clear error messages when debugging fails to start or attach
 
 ## [0.8.6] - 2025-09-26
@@ -3265,7 +3276,6 @@ New colored icons for Run and Debug status bar buttons
   - **Intelligent Cooldowns**: 5-minute notification cooldowns per provider/connection to prevent spam while maintaining awareness
   - **Enhanced Pull Request Providers**: Updated Azure DevOps and GitHub providers with `makeRequestWithErrorHandling()` methods
   - **NuGet Authentication Enhancement**: Improved existing 401 error handling with feed-type detection and provider-specific guidance
-  - **Telemetry Integration**: Comprehensive tracking of authentication errors, PAT expiration warnings, and credential renewal actions
   - **Centralized Error Handling**: New `AuthenticationErrorHandler` utility class for consistent error management across all providers
   - **User Experience Improvements**: Context-aware notifications showing affected connections/feeds and failed operations
 
@@ -3426,7 +3436,6 @@ New colored icons for Run and Debug status bar buttons
   - **Seamless VS Code Integration**: Custom editor provider that embeds speedscope directly in VS Code editor tabs
   - **Web Application Integration**: Uses the complete speedscope web application (v1.23.1) with WebGL rendering support
   - **Automatic File Loading**: Performance profiles load automatically without requiring manual import steps
-  - **Telemetry Integration**: Track speedscope editor usage and performance analysis workflows
 
 ## [0.7.3] - 2025-08-28
 
@@ -3442,7 +3451,6 @@ New colored icons for Run and Debug status bar buttons
   - **Launch Profile Priority**: Command line arguments from launch profiles (`commandLineArgs`) take precedence over workspace program arguments
   - **Environment Variables Integration**: Automatic application of environment variables from selected launch profiles
   - **Debug Configuration Enhancement**: Launch profiles seamlessly integrate with VS Code debug configurations
-  - **Telemetry Tracking**: Comprehensive usage analytics for launch profile selection and usage patterns
   - **Persistent Selection**: Launch profile preferences are saved per solution and project combination
   - **Multiple Profile Support**: Support for web, console, and desktop application launch profiles
   - **Application URL Handling**: Automatic browser launching for web applications with profile-specific URLs
