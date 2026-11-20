@@ -284,6 +284,10 @@ The extension supports multiple test frameworks:
 - Inline and member data
 - Test collections
 
+For xUnit v3 4.0.3 or later with the Microsoft.Testing.Platform v2 runner, select a single target framework to match theory rows using full string values. No project configuration change is needed. The runner enumerates theory data at execution time in this mode, so custom case ordering can differ from a command-line run with pre-enumeration enabled.
+
+In other runner modes, the test summary can count multiple executions even when the runner gives them the same name. When Test Explorer cannot tell which source row owns a result, it leaves that row unmarked instead of assigning another row's status. Run the whole theory and check the test output for details.
+
 ### NUnit
 
 - Test fixtures and tests
