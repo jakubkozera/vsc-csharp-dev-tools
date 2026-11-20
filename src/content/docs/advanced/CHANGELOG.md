@@ -5,6 +5,19 @@ description: History of changes in C# Dev Tools
 
 # Change Log
 
+## [1.17.4] - 2026-11-20
+
+### Fixed
+
+- **NuGet Version Ordering (#297)**: Prerelease versions are now ordered by SemVer 2.0 rules, so `ci.153` sorts above `ci.99` and `preview.10` above `preview.2`. Build metadata such as `+main.9dabab2` no longer affects the order. The NuGet Package Manager, the version picker and `.csproj` hints no longer report an update when the newest version is already installed.
+- **NuGet Package Dependencies (#297)**: The Dependencies section of the NuGet Package Manager is no longer empty for packages that have dependencies. This affected versions with build metadata or non-normalized numbers, packages whose nuspec lists dependencies without target-framework groups, setups with a custom `NUGET_PACKAGES` folder, and nuget.org search results that are not installed yet.
+
+## [1.17.3] - 2026-11-20
+
+### Fixed
+
+- **xUnit Theory Results (#291)**: Test Explorer now counts executions separately even when they have the same display name. With supported xUnit versions on Microsoft.Testing.Platform, Run All and individual row runs distinguish long strings with shared prefixes, empty and whitespace-only strings, URLs, and escaped C# literals.
+
 ## [1.17.2] - 2026-11-18
 
 ### Fixed
